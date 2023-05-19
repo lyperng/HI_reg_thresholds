@@ -1,0 +1,993 @@
+variable_code,description
+residents_00,Number of residents - 2000
+residents_10,Number of residents - 2010
+residents_11,Number of residents - 2011
+residents_12,Number of residents - 2012
+residents_13,Number of residents - 2013
+residents_14,Number of residents - 2014
+residents_15,Number of residents - 2015
+residents_16,Number of residents - 2016
+residents_17,Number of residents - 2017
+visitors_10,Number of visitors - 2010
+visitors_11,Number of visitors - 2011
+visitors_12,Number of visitors - 2012
+visitors_13,Number of visitors - 2013
+visitors_14,Number of visitors - 2014
+visitors_15,Number of visitors - 2015
+visitors_16,Number of visitors - 2016
+visitors_17,Number of visitors - 2017
+hcost_00,Median monthly housing cost for all owner occupied housing units - 2000
+hhsize_00,Average household size - 2000
+hu_00,Total occupied housing units - 2000
+huown_00,Owner occupied housing units - 2000
+hurent_00,Renter occupied housing units - 2000
+kit_00,proportion of all HHs without complete kitchen facilities - 2000
+medage_00,Median age - 2000
+pct18_00,Percent of population18 years of age and under - 2000
+pct5_00,Percent of population 5 years of age and under - 2000
+pct65_00,Percent of population 65 years of age and over - 2000
+pctfem_00,Percent of population that is female - 2000
+rural_00,Population inside Rural areas - 2000
+urban_00,Population in Urban areas - 2000
+urbarea_00,Urban: Population Inside urbanized areas - 2000
+urbclus_00,Urban: Population Inside urban clusters - 2000
+hcost_10,Median monthly housing cost for all owner occupied housing units - 2010
+hhsize_10,Average household size - 2010
+hu_10,Total occupied housing units - 2010
+huown_10,Owner occupied housing units - 2010
+hurent_10,Renter occupied housing units - 2010
+kit_10,proportion of all HHs without complete kitchen facilities - 2010
+medage_10,Median age - 2010
+pct18_10,Percent of population18 years of age and under - 2010
+pct5_10,Percent of population 5 years of age and under - 2010
+pct65_10,Percent of population 65 years of age and over - 2010
+pctfem_10,Percent of population that is female - 2010
+rural_10,Population inside Rural areas - 2010
+urban_10,Population in Urban areas - 2010
+urbarea_10,Urban: Population Inside urbanized areas - 2010
+urbclus_10,Urban: Population Inside urban clusters - 2010
+totalcommyield_05,total commercial fishery landings - 2005
+totalcommyield_06,total commercial fishery landings - 2006
+totalcommyield_07,total commercial fishery landings - 2007
+totalcommyield_08,total commercial fishery landings - 2008
+totalcommyield_09,total commercial fishery landings - 2009
+totalcommyield_10,total commercial fishery landings - 2010
+totalcommyield_11,total commercial fishery landings - 2011
+totalcommyield_12,total commercial fishery landings - 2012
+totalcommyield_13,total commercial fishery landings - 2013
+totalcommyield_14,total commercial fishery landings - 2014
+totalcommyield_15,total commercial fishery landings - 2015
+totalcommyield_16,total commercial fishery landings - 2016
+totalcommreefyield_05,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2005
+totalcommreefyield_06,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2006
+totalcommreefyield_07,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2007
+totalcommreefyield_08,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2008
+totalcommreefyield_09,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2009
+totalcommreefyield_10,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2010
+totalcommreefyield_11,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2011
+totalcommreefyield_12,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2012
+totalcommreefyield_13,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2013
+totalcommreefyield_14,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2014
+totalcommreefyield_15,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2015
+totalcommreefyield_16,total commercial fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2016
+totalcommrev_05,total commercial fishery revenue - 2005
+totalcommrev_06,total commercial fishery revenue - 2006
+totalcommrev_07,total commercial fishery revenue - 2007
+totalcommrev_08,total commercial fishery revenue - 2008
+totalcommrev_09,total commercial fishery revenue - 2009
+totalcommrev_10,total commercial fishery revenue - 2010
+totalcommrev_11,total commercial fishery revenue - 2011
+totalcommrev_12,total commercial fishery revenue - 2012
+totalcommrev_13,total commercial fishery revenue - 2013
+totalcommrev_14,total commercial fishery revenue - 2014
+totalcommrev_15,total commercial fishery revenue - 2015
+totalcommrev_16,total commercial fishery revenue - 2016
+totalcommreefrev_05,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2005
+totalcommreefrev_06,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2006
+totalcommreefrev_07,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2007
+totalcommreefrev_08,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2008
+totalcommreefrev_09,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2009
+totalcommreefrev_10,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2010
+totalcommreefrev_11,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2011
+totalcommreefrev_12,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2012
+totalcommreefrev_13,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2013
+totalcommreefrev_14,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2014
+totalcommreefrev_15,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2015
+totalcommreefrev_16,total commercial fishery revenue for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2016
+totalrecyield_05,total recreational fishery landings - 2005
+totalrecyield_06,total recreational fishery landings - 2006
+totalrecyield_07,total recreational fishery landings - 2007
+totalrecyield_08,total recreational fishery landings - 2008
+totalrecyield_09,total recreational fishery landings - 2009
+totalrecyield_10,total recreational fishery landings - 2010
+totalrecyield_11,total recreational fishery landings - 2011
+totalrecyield_12,total recreational fishery landings - 2012
+totalrecyield_13,total recreational fishery landings - 2013
+totalrecyield_14,total recreational fishery landings - 2014
+totalrecyield_15,total recreational fishery landings - 2015
+totalrecyield_16,total recreational fishery landings - 2016
+totalrecreefyield_05,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2005
+totalrecreefyield_06,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2006
+totalrecreefyield_07,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2007
+totalrecreefyield_08,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2008
+totalrecreefyield_09,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2009
+totalrecreefyield_10,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2010
+totalrecreefyield_11,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2011
+totalrecreefyield_12,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2012
+totalrecreefyield_13,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2013
+totalrecreefyield_14,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2014
+totalrecreefyield_15,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2015
+totalrecreefyield_16,total recreational fishery landings for reef and bottom fish species in addition to any other shellfish and marine life that depend on a coral reef or rocky hard bottom ecosystem - 2016
+liv_res_GDP_05,total GDP produced by the living resources industry - 2005
+liv_res_GDP_06,total GDP produced by the living resources industry - 2006
+liv_res_GDP_07,total GDP produced by the living resources industry - 2007
+liv_res_GDP_08,total GDP produced by the living resources industry - 2008
+liv_res_GDP_09,total GDP produced by the living resources industry - 2009
+liv_res_GDP_10,total GDP produced by the living resources industry - 2010
+liv_res_GDP_11,total GDP produced by the living resources industry - 2011
+liv_res_GDP_12,total GDP produced by the living resources industry - 2012
+liv_res_GDP_13,total GDP produced by the living resources industry - 2013
+liv_res_GDP_14,total GDP produced by the living resources industry - 2014
+liv_res_GDP_15,total GDP produced by the living resources industry - 2015
+liv_res_emp_05,total employment within living resources industry - 2005
+liv_res_emp_06,total employment within living resources industry - 2006
+liv_res_emp_07,total employment within living resources industry - 2007
+liv_res_emp_08,total employment within living resources industry - 2008
+liv_res_emp_09,total employment within living resources industry - 2009
+liv_res_emp_10,total employment within living resources industry - 2010
+liv_res_emp_11,total employment within living resources industry - 2011
+liv_res_emp_12,total employment within living resources industry - 2012
+liv_res_emp_13,total employment within living resources industry - 2013
+liv_res_emp_14,total employment within living resources industry - 2014
+liv_res_emp_15,total employment within living resources industry - 2015
+liv_res_estbl_05,total establishments within living resources industry - 2005
+liv_res_estbl_06,total establishments within living resources industry - 2006
+liv_res_estbl_07,total establishments within living resources industry - 2007
+liv_res_estbl_08,total establishments within living resources industry - 2008
+liv_res_estbl_09,total establishments within living resources industry - 2009
+liv_res_estbl_10,total establishments within living resources industry - 2010
+liv_res_estbl_11,total establishments within living resources industry - 2011
+liv_res_estbl_12,total establishments within living resources industry - 2012
+liv_res_estbl_13,total establishments within living resources industry - 2013
+liv_res_estbl_14,total establishments within living resources industry - 2014
+liv_res_estbl_15,total establishments within living resources industry - 2015
+liv_res_GDP_prop_05,Proportion of total GDP produced by living resources industry - 2005
+liv_res_GDP_prop_06,Proportion of total GDP produced by living resources industry - 2006
+liv_res_GDP_prop_07,Proportion of total GDP produced by living resources industry - 2007
+liv_res_GDP_prop_08,Proportion of total GDP produced by living resources industry - 2008
+liv_res_GDP_prop_09,Proportion of total GDP produced by living resources industry - 2009
+liv_res_GDP_prop_10,Proportion of total GDP produced by living resources industry - 2010
+liv_res_GDP_prop_11,Proportion of total GDP produced by living resources industry - 2011
+liv_res_GDP_prop_12,Proportion of total GDP produced by living resources industry - 2012
+liv_res_GDP_prop_13,Proportion of total GDP produced by living resources industry - 2013
+liv_res_GDP_prop_14,Proportion of total GDP produced by living resources industry - 2014
+liv_res_GDP_prop_15,Proportion of total GDP produced by living resources industry - 2015
+liv_res_emp_prop_05,Proportion of total employees employed in living resources - 2005
+liv_res_emp_prop_06,Proportion of total employees employed in living resources - 2006
+liv_res_emp_prop_07,Proportion of total employees employed in living resources - 2007
+liv_res_emp_prop_08,Proportion of total employees employed in living resources - 2008
+liv_res_emp_prop_09,Proportion of total employees employed in living resources - 2009
+liv_res_emp_prop_10,Proportion of total employees employed in living resources - 2010
+liv_res_emp_prop_11,Proportion of total employees employed in living resources - 2011
+liv_res_emp_prop_12,Proportion of total employees employed in living resources - 2012
+liv_res_emp_prop_13,Proportion of total employees employed in living resources - 2013
+liv_res_emp_prop_14,Proportion of total employees employed in living resources - 2014
+liv_res_emp_prop_15,Proportion of total employees employed in living resources - 2015
+liv_res_estbl_prop_05,Proportion of total estblishments dedicated to living resources - 2005
+liv_res_estbl_prop_06,Proportion of total estblishments dedicated to living resources - 2006
+liv_res_estbl_prop_07,Proportion of total estblishments dedicated to living resources - 2007
+liv_res_estbl_prop_08,Proportion of total estblishments dedicated to living resources - 2008
+liv_res_estbl_prop_09,Proportion of total estblishments dedicated to living resources - 2009
+liv_res_estbl_prop_10,Proportion of total estblishments dedicated to living resources - 2010
+liv_res_estbl_prop_11,Proportion of total estblishments dedicated to living resources - 2011
+liv_res_estbl_prop_12,Proportion of total estblishments dedicated to living resources - 2012
+liv_res_estbl_prop_13,Proportion of total estblishments dedicated to living resources - 2013
+liv_res_estbl_prop_14,Proportion of total estblishments dedicated to living resources - 2014
+liv_res_estbl_prop_15,Proportion of total estblishments dedicated to living resources - 2015
+comm_license_rev_05,Commerical fishing license revenue - 2005
+comm_license_rev_06,Commerical fishing license revenue - 2006
+comm_license_rev_07,Commerical fishing license revenue - 2007
+comm_license_rev_08,Commerical fishing license revenue - 2008
+comm_license_rev_09,Commerical fishing license revenue - 2009
+comm_license_rev_10,Commerical fishing license revenue - 2010
+comm_license_rev_11,Commerical fishing license revenue - 2011
+comm_license_rev_12,Commerical fishing license revenue - 2012
+comm_license_rev_13,Commerical fishing license revenue - 2013
+comm_license_rev_14,Commerical fishing license revenue - 2014
+comm_license_rev_15,Commerical fishing license revenue - 2015
+comm_license_rev_16,Commerical fishing license revenue - 2016
+rec_license_rev_05,Recreational fishing license revenue - 2005
+rec_license_rev_06,Recreational fishing license revenue - 2006
+rec_license_rev_07,Recreational fishing license revenue - 2007
+rec_license_rev_08,Recreational fishing license revenue - 2008
+rec_license_rev_09,Recreational fishing license revenue - 2009
+rec_license_rev_10,Recreational fishing license revenue - 2010
+rec_license_rev_11,Recreational fishing license revenue - 2011
+rec_license_rev_12,Recreational fishing license revenue - 2012
+rec_license_rev_13,Recreational fishing license revenue - 2013
+rec_license_rev_14,Recreational fishing license revenue - 2014
+rec_license_rev_15,Recreational fishing license revenue - 2015
+rec_license_rev_16,Recreational fishing license revenue - 2016
+Arrivals_05,Total number of tourism arrivals - 2005
+Arrivals_06,Total number of tourism arrivals - 2006
+Arrivals_07,Total number of tourism arrivals - 2007
+Arrivals_08,Total number of tourism arrivals - 2008
+Arrivals_09,Total number of tourism arrivals - 2009
+Arrivals_10,Total number of tourism arrivals - 2010
+Arrivals_11,Total number of tourism arrivals - 2011
+Arrivals_12,Total number of tourism arrivals - 2012
+Arrivals_13,Total number of tourism arrivals - 2013
+Arrivals_14,Total number of tourism arrivals - 2014
+Arrivals_15,Total number of tourism arrivals - 2015
+Arrivals_16,Total number of tourism arrivals - 2016
+tourism_GDP_05,total GDP produced by the tourism industry - 2005
+tourism_GDP_06,total GDP produced by the tourism industry - 2006
+tourism_GDP_07,total GDP produced by the tourism industry - 2007
+tourism_GDP_08,total GDP produced by the tourism industry - 2008
+tourism_GDP_09,total GDP produced by the tourism industry - 2009
+tourism_GDP_10,total GDP produced by the tourism industry - 2010
+tourism_GDP_11,total GDP produced by the tourism industry - 2011
+tourism_GDP_12,total GDP produced by the tourism industry - 2012
+tourism_GDP_13,total GDP produced by the tourism industry - 2013
+tourism_GDP_14,total GDP produced by the tourism industry - 2014
+tourism_GDP_15,total GDP produced by the tourism industry - 2015
+tourism_GDP_16,total GDP produced by the tourism industry - 2016
+tourism_emp_05,total employment within tourism industry - 2005
+tourism_emp_06,total employment within tourism industry - 2006
+tourism_emp_07,total employment within tourism industry - 2007
+tourism_emp_08,total employment within tourism industry - 2008
+tourism_emp_09,total employment within tourism industry - 2009
+tourism_emp_10,total employment within tourism industry - 2010
+tourism_emp_11,total employment within tourism industry - 2011
+tourism_emp_12,total employment within tourism industry - 2012
+tourism_emp_13,total employment within tourism industry - 2013
+tourism_emp_14,total employment within tourism industry - 2014
+tourism_emp_15,total employment within tourism industry - 2015
+tourism_emp_16,total employment within tourism industry - 2016
+tourism_estbl_05,total establishments within tourism industry - 2005
+tourism_estbl_06,total establishments within tourism industry - 2006
+tourism_estbl_07,total establishments within tourism industry - 2007
+tourism_estbl_08,total establishments within tourism industry - 2008
+tourism_estbl_09,total establishments within tourism industry - 2009
+tourism_estbl_10,total establishments within tourism industry - 2010
+tourism_estbl_11,total establishments within tourism industry - 2011
+tourism_estbl_12,total establishments within tourism industry - 2012
+tourism_estbl_13,total establishments within tourism industry - 2013
+tourism_estbl_14,total establishments within tourism industry - 2014
+tourism_estbl_15,total establishments within tourism industry - 2015
+tourism_estbl_16,total establishments within tourism industry - 2016
+tourism_GDP_prop_05,Proportion of total GDP produced by tourism industry - 2005
+tourism_GDP_prop_06,Proportion of total GDP produced by tourism industry - 2006
+tourism_GDP_prop_07,Proportion of total GDP produced by tourism industry - 2007
+tourism_GDP_prop_08,Proportion of total GDP produced by tourism industry - 2008
+tourism_GDP_prop_09,Proportion of total GDP produced by tourism industry - 2009
+tourism_GDP_prop_10,Proportion of total GDP produced by tourism industry - 2010
+tourism_GDP_prop_11,Proportion of total GDP produced by tourism industry - 2011
+tourism_GDP_prop_12,Proportion of total GDP produced by tourism industry - 2012
+tourism_GDP_prop_13,Proportion of total GDP produced by tourism industry - 2013
+tourism_GDP_prop_14,Proportion of total GDP produced by tourism industry - 2014
+tourism_GDP_prop_15,Proportion of total GDP produced by tourism industry - 2015
+tourism_GDP_prop_16,Proportion of total GDP produced by tourism industry - 2016
+tourism_emp_prop_05,Proportion of total employees employed in tourism - 2005
+tourism_emp_prop_06,Proportion of total employees employed in tourism - 2006
+tourism_emp_prop_07,Proportion of total employees employed in tourism - 2007
+tourism_emp_prop_08,Proportion of total employees employed in tourism - 2008
+tourism_emp_prop_09,Proportion of total employees employed in tourism - 2009
+tourism_emp_prop_10,Proportion of total employees employed in tourism - 2010
+tourism_emp_prop_11,Proportion of total employees employed in tourism - 2011
+tourism_emp_prop_12,Proportion of total employees employed in tourism - 2012
+tourism_emp_prop_13,Proportion of total employees employed in tourism - 2013
+tourism_emp_prop_14,Proportion of total employees employed in tourism - 2014
+tourism_emp_prop_15,Proportion of total employees employed in tourism - 2015
+tourism_emp_prop_16,Proportion of total employees employed in tourism - 2016
+tourism_estbl_prop_05,Proportion of total estblishments dedicated to tourism - 2005
+tourism_estbl_prop_06,Proportion of total estblishments dedicated to tourism - 2006
+tourism_estbl_prop_07,Proportion of total estblishments dedicated to tourism - 2007
+tourism_estbl_prop_08,Proportion of total estblishments dedicated to tourism - 2008
+tourism_estbl_prop_09,Proportion of total estblishments dedicated to tourism - 2009
+tourism_estbl_prop_10,Proportion of total estblishments dedicated to tourism - 2010
+tourism_estbl_prop_11,Proportion of total estblishments dedicated to tourism - 2011
+tourism_estbl_prop_12,Proportion of total estblishments dedicated to tourism - 2012
+tourism_estbl_prop_13,Proportion of total estblishments dedicated to tourism - 2013
+tourism_estbl_prop_14,Proportion of total estblishments dedicated to tourism - 2014
+tourism_estbl_prop_15,Proportion of total estblishments dedicated to tourism - 2015
+tourism_estbl_prop_16,Proportion of total estblishments dedicated to tourism - 2016
+vis_spending_05,Total visitor spending - 2005
+vis_spending_06,Total visitor spending - 2006
+vis_spending_07,Total visitor spending - 2007
+vis_spending_08,Total visitor spending - 2008
+vis_spending_09,Total visitor spending - 2009
+vis_spending_10,Total visitor spending - 2010
+vis_spending_11,Total visitor spending - 2011
+vis_spending_12,Total visitor spending - 2012
+vis_spending_13,Total visitor spending - 2013
+vis_spending_14,Total visitor spending - 2014
+vis_spending_15,Total visitor spending - 2015
+vis_spending_16,Total visitor spending - 2016
+prop_vis_spending_05,Ratio of visitor spending to resident spending - 2005
+prop_vis_spending_06,Ratio of visitor spending to resident spending - 2006
+prop_vis_spending_07,Ratio of visitor spending to resident spending - 2007
+prop_vis_spending_08,Ratio of visitor spending to resident spending - 2008
+prop_vis_spending_09,Ratio of visitor spending to resident spending - 2009
+prop_vis_spending_10,Ratio of visitor spending to resident spending - 2010
+prop_vis_spending_11,Ratio of visitor spending to resident spending - 2011
+prop_vis_spending_12,Ratio of visitor spending to resident spending - 2012
+prop_vis_spending_13,Ratio of visitor spending to resident spending - 2013
+prop_vis_spending_14,Ratio of visitor spending to resident spending - 2014
+prop_vis_spending_15,Ratio of visitor spending to resident spending - 2015
+prop_vis_spending_16,Ratio of visitor spending to resident spending - 2016
+hotel_occ_05,Hotel occupancy rate - 2005
+hotel_occ_06,Hotel occupancy rate - 2006
+hotel_occ_07,Hotel occupancy rate - 2007
+hotel_occ_08,Hotel occupancy rate - 2008
+hotel_occ_09,Hotel occupancy rate - 2009
+hotel_occ_10,Hotel occupancy rate - 2010
+hotel_occ_11,Hotel occupancy rate - 2011
+hotel_occ_12,Hotel occupancy rate - 2012
+hotel_occ_13,Hotel occupancy rate - 2013
+hotel_occ_14,Hotel occupancy rate - 2014
+hotel_occ_15,Hotel occupancy rate - 2015
+hotel_occ_16,Hotel occupancy rate - 2016
+NPS_total_val_12,Total value added by National Parks - 2012
+NPS_total_val_13,Total value added by National Parks - 2013
+NPS_total_val_14,Total value added by National Parks - 2014
+NPS_total_val_15,Total value added by National Parks - 2015
+NPS_total_val_16,Total value added by National Parks - 2016
+NPS_coral_val_12,Total value added by National Parks containing coral reefs - 2012
+NPS_coral_val_13,Total value added by National Parks containing coral reefs - 2013
+NPS_coral_val_14,Total value added by National Parks containing coral reefs - 2014
+NPS_coral_val_15,Total value added by National Parks containing coral reefs - 2015
+NPS_coral_val_16,Total value added by National Parks containing coral reefs - 2016
+NPS_spending_12,Total visitor spending at National Parks - 2012
+NPS_spending_13,Total visitor spending at National Parks - 2013
+NPS_spending_14,Total visitor spending at National Parks - 2014
+NPS_spending_15,Total visitor spending at National Parks - 2015
+NPS_spending_16,Total visitor spending at National Parks - 2016
+NPS_coral_spending_12,Total visitor spending by visitors at National Parks containing coral reefs - 2012
+NPS_coral_spending_13,Total visitor spending by visitors at National Parks containing coral reefs - 2013
+NPS_coral_spending_14,Total visitor spending by visitors at National Parks containing coral reefs - 2014
+NPS_coral_spending_15,Total visitor spending by visitors at National Parks containing coral reefs - 2015
+NPS_coral_spending_16,Total visitor spending by visitors at National Parks containing coral reefs - 2016
+NPS_emp_12,Jobs supported by National Parks - 2012
+NPS_emp_13,Jobs supported by National Parks - 2013
+NPS_emp_14,Jobs supported by National Parks - 2014
+NPS_emp_15,Jobs supported by National Parks - 2015
+NPS_emp_16,Jobs supported by National Parks - 2016
+NPS_coral_emp_12,Jobs supported by National Parks that contain coral reefs- 2012
+NPS_coral_emp_13,Jobs supported by National Parks that contain coral reefs- 2013
+NPS_coral_emp_14,Jobs supported by National Parks that contain coral reefs- 2014
+NPS_coral_emp_15,Jobs supported by National Parks that contain coral reefs- 2015
+NPS_coral_emp_16,Jobs supported by National Parks that contain coral reefs- 2016
+pov_2000,Poverty Rate - 2000
+pov_2001,Poverty Rate - 2001
+pov_2002,Poverty Rate - 2002
+pov_2003,Poverty Rate - 2003
+pov_2004,Poverty Rate - 2004
+pov_2005,Poverty Rate - 2005
+pov_2006,Poverty Rate - 2006
+pov_2007,Poverty Rate - 2007
+pov_2008,Poverty Rate - 2008
+pov_2009,Poverty Rate - 2009
+pov_2010,Poverty Rate - 2010
+pov_2011,Poverty Rate - 2011
+pov_2012,Poverty Rate - 2012
+pov_2013,Poverty Rate - 2013
+pov_2014,Poverty Rate - 2014
+pov_2015,Poverty Rate - 2015
+pov_2016,Poverty Rate - 2016
+hhinc_2000,Median Household Income - 2000
+hhinc_2001,Median Household Income - 2001
+hhinc_2002,Median Household Income - 2002
+hhinc_2003,Median Household Income - 2003
+hhinc_2004,Median Household Income - 2004
+hhinc_2005,Median Household Income - 2005
+hhinc_2006,Median Household Income - 2006
+hhinc_2007,Median Household Income - 2007
+hhinc_2008,Median Household Income - 2008
+hhinc_2009,Median Household Income - 2009
+hhinc_2010,Median Household Income - 2010
+hhinc_2011,Median Household Income - 2011
+hhinc_2012,Median Household Income - 2012
+hhinc_2013,Median Household Income - 2013
+hhinc_2014,Median Household Income - 2014
+hhinc_2015,Median Household Income - 2015
+hhinc_2016,Median Household Income - 2016
+unemp_2000,Unemployment Rate - 2000
+unemp_2001,Unemployment Rate - 2001
+unemp_2002,Unemployment Rate - 2002
+unemp_2003,Unemployment Rate - 2003
+unemp_2004,Unemployment Rate - 2004
+unemp_2005,Unemployment Rate - 2005
+unemp_2006,Unemployment Rate - 2006
+unemp_2007,Unemployment Rate - 2007
+unemp_2008,Unemployment Rate - 2008
+unemp_2009,Unemployment Rate - 2009
+unemp_2010,Unemployment Rate - 2010
+unemp_2011,Unemployment Rate - 2011
+unemp_2012,Unemployment Rate - 2012
+unemp_2013,Unemployment Rate - 2013
+unemp_2014,Unemployment Rate - 2014
+unemp_2015,Unemployment Rate - 2015
+unemp_2016,Unemployment Rate - 2016
+unemp_2017,Unemployment Rate - 2017
+med_home_val_2000,Median Home Value - 2000
+med_home_val_2001,Median Home Value - 2001
+med_home_val_2002,Median Home Value - 2002
+med_home_val_2003,Median Home Value - 2003
+med_home_val_2004,Median Home Value - 2004
+med_home_val_2005,Median Home Value - 2005
+med_home_val_2006,Median Home Value - 2006
+med_home_val_2007,Median Home Value - 2007
+med_home_val_2008,Median Home Value - 2008
+med_home_val_2009,Median Home Value - 2009
+med_home_val_2010,Median Home Value - 2010
+med_home_val_2011,Median Home Value - 2011
+med_home_val_2012,Median Home Value - 2012
+med_home_val_2013,Median Home Value - 2013
+med_home_val_2014,Median Home Value - 2014
+med_home_val_2015,Median Home Value - 2015
+med_home_val_2016,Median Home Value - 2016
+med_home_val_2017,Median Home Value - 2017
+HS_2000,Percent of people age 25+ with High school Diploma - 2000
+HS_2001,Percent of people age 25+ with High school Diploma - 2001
+HS_2002,Percent of people age 25+ with High school Diploma - 2002
+HS_2003,Percent of people age 25+ with High school Diploma - 2003
+HS_2004,Percent of people age 25+ with High school Diploma - 2004
+HS_2005,Percent of people age 25+ with High school Diploma - 2005
+HS_2006,Percent of people age 25+ with High school Diploma - 2006
+HS_2007,Percent of people age 25+ with High school Diploma - 2007
+HS_2008,Percent of people age 25+ with High school Diploma - 2008
+HS_2009,Percent of people age 25+ with High school Diploma - 2009
+HS_2010,Percent of people age 25+ with High school Diploma - 2010
+HS_2011,Percent of people age 25+ with High school Diploma - 2011
+HS_2012,Percent of people age 25+ with High school Diploma - 2012
+HS_2013,Percent of people age 25+ with High school Diploma - 2013
+HS_2014,Percent of people age 25+ with High school Diploma - 2014
+HS_2015,Percent of people age 25+ with High school Diploma - 2015
+HS_2016,Percent of people age 25+ with High school Diploma - 2016
+HS_2017,Percent of people age 25+ with High school Diploma - 2017
+bach_2000,Percent of people age 25+ with Bachelor's Degree_2000
+bach_2001,Percent of people age 25+ with Bachelor's Degree_2001
+bach_2002,Percent of people age 25+ with Bachelor's Degree_2002
+bach_2003,Percent of people age 25+ with Bachelor's Degree_2003
+bach_2004,Percent of people age 25+ with Bachelor's Degree_2004
+bach_2005,Percent of people age 25+ with Bachelor's Degree_2005
+bach_2006,Percent of people age 25+ with Bachelor's Degree_2006
+bach_2007,Percent of people age 25+ with Bachelor's Degree_2007
+bach_2008,Percent of people age 25+ with Bachelor's Degree_2008
+bach_2009,Percent of people age 25+ with Bachelor's Degree_2009
+bach_2010,Percent of people age 25+ with Bachelor's Degree_2010
+bach_2011,Percent of people age 25+ with Bachelor's Degree_2011
+bach_2012,Percent of people age 25+ with Bachelor's Degree_2012
+bach_2013,Percent of people age 25+ with Bachelor's Degree_2013
+bach_2014,Percent of people age 25+ with Bachelor's Degree_2014
+bach_2015,Percent of people age 25+ with Bachelor's Degree_2015
+bach_2016,Percent of people age 25+ with Bachelor's Degree_2016
+bach_2017,Percent of people age 25+ with Bachelor's Degree_2017
+k12enroll_2000,Proportion ofchildren age 3-19 enrolled in K-12 - 2000
+k12enroll_2005,Proportion ofchildren age 3-19 enrolled in K-12 - 2005
+k12enroll_2006,Proportion ofchildren age 3-19 enrolled in K-12 - 2006
+k12enroll_2007,Proportion ofchildren age 3-19 enrolled in K-12 - 2007
+k12enroll_2008,Proportion ofchildren age 3-19 enrolled in K-12 - 2008
+k12enroll_2009,Proportion ofchildren age 3-19 enrolled in K-12 - 2009
+k12enroll_2010,Proportion ofchildren age 3-19 enrolled in K-12 - 2010
+k12enroll_2011,Proportion ofchildren age 3-19 enrolled in K-12 - 2011
+k12enroll_2012,Proportion ofchildren age 3-19 enrolled in K-12 - 2012
+k12enroll_2013,Proportion ofchildren age 3-19 enrolled in K-12 - 2013
+k12enroll_2014,Proportion ofchildren age 3-19 enrolled in K-12 - 2014
+k12enroll_2015,Proportion ofchildren age 3-19 enrolled in K-12 - 2015
+k12enroll_2016,Proportion ofchildren age 3-19 enrolled in K-12 - 2016
+edu_expenditure_2000,Education Expenditure per pupil - 2000
+edu_expenditure_2001,Education Expenditure per pupil - 2001
+edu_expenditure_2002,Education Expenditure per pupil - 2002
+edu_expenditure_2003,Education Expenditure per pupil - 2003
+edu_expenditure_2004,Education Expenditure per pupil - 2004
+edu_expenditure_2005,Education Expenditure per pupil - 2005
+edu_expenditure_2006,Education Expenditure per pupil - 2006
+edu_expenditure_2007,Education Expenditure per pupil - 2007
+edu_expenditure_2008,Education Expenditure per pupil - 2008
+edu_expenditure_2009,Education Expenditure per pupil - 2009
+edu_expenditure_2010,Education Expenditure per pupil - 2010
+edu_expenditure_2011,Education Expenditure per pupil - 2011
+edu_expenditure_2012,Education Expenditure per pupil - 2012
+edu_expenditure_2013,Education Expenditure per pupil - 2013
+edu_expenditure_2014,Education Expenditure per pupil - 2014
+edu_expenditure_2015,Education Expenditure per pupil - 2015
+soc_assist_capita_2000,Government Payments for Social Assistance per capita - 2000
+soc_assist_capita_2001,Government Payments for Social Assistance per capita - 2001
+soc_assist_capita_2002,Government Payments for Social Assistance per capita - 2002
+soc_assist_capita_2003,Government Payments for Social Assistance per capita - 2003
+soc_assist_capita_2004,Government Payments for Social Assistance per capita - 2004
+soc_assist_capita_2005,Government Payments for Social Assistance per capita - 2005
+soc_assist_capita_2006,Government Payments for Social Assistance per capita - 2006
+soc_assist_capita_2007,Government Payments for Social Assistance per capita - 2007
+soc_assist_capita_2008,Government Payments for Social Assistance per capita - 2008
+soc_assist_capita_2009,Government Payments for Social Assistance per capita - 2009
+soc_assist_capita_2010,Government Payments for Social Assistance per capita - 2010
+soc_assist_capita_2011,Government Payments for Social Assistance per capita - 2011
+soc_assist_capita_2012,Government Payments for Social Assistance per capita - 2012
+soc_assist_capita_2013,Government Payments for Social Assistance per capita - 2013
+soc_assist_capita_2014,Government Payments for Social Assistance per capita - 2014
+soc_assist_capita_2015,Government Payments for Social Assistance per capita - 2015
+soc_assist_capita_2016,Government Payments for Social Assistance per capita - 2016
+%hh_public_assist_2000,Percent receiving public assistance income - 2000
+%hh_public_assist_2005,Percent receiving public assistance income - 2005
+%hh_public_assist_2006,Percent receiving public assistance income - 2006
+%hh_public_assist_2007,Percent receiving public assistance income - 2007
+%hh_public_assist_2008,Percent receiving public assistance income - 2008
+%hh_public_assist_2009,Percent receiving public assistance income - 2009
+%hh_public_assist_2010,Percent receiving public assistance income - 2010
+%hh_public_assist_2011,Percent receiving public assistance income - 2011
+%hh_public_assist_2012,Percent receiving public assistance income - 2012
+%hh_public_assist_2013,Percent receiving public assistance income - 2013
+%hh_public_assist_2014,Percent receiving public assistance income - 2014
+%hh_public_assist_2015,Percent receiving public assistance income - 2015
+%hh_public_assist_2016,Percent receiving public assistance income - 2016
+beds_per_thous_2000,"Hospital beds per 1,000 people - 2000"
+beds_per_thous_2001,"Hospital beds per 1,000 people - 2001"
+beds_per_thous_2002,"Hospital beds per 1,000 people - 2002"
+beds_per_thous_2003,"Hospital beds per 1,000 people - 2003"
+beds_per_thous_2004,"Hospital beds per 1,000 people - 2004"
+beds_per_thous_2005,"Hospital beds per 1,000 people - 2005"
+beds_per_thous_2006,"Hospital beds per 1,000 people - 2006"
+beds_per_thous_2007,"Hospital beds per 1,000 people - 2007"
+beds_per_thous_2008,"Hospital beds per 1,000 people - 2008"
+beds_per_thous_2009,"Hospital beds per 1,000 people - 2009"
+beds_per_thous_2010,"Hospital beds per 1,000 people - 2010"
+beds_per_thous_2011,"Hospital beds per 1,000 people - 2011"
+beds_per_thous_2012,"Hospital beds per 1,000 people - 2012"
+beds_per_thous_2013,"Hospital beds per 1,000 people - 2013"
+beds_per_thous_2014,"Hospital beds per 1,000 people - 2014"
+beds_per_thous_2015,"Hospital beds per 1,000 people - 2015"
+beds_per_thous_2016,"Hospital beds per 1,000 people - 2016"
+beds_per_thous_2018,"Hospital beds per 1,000 people - 2018"
+%tele_2000,Percent with telephone access - 2000
+%tele_2001,Percent with telephone access - 2001
+%tele_2002,Percent with telephone access - 2002
+%tele_2003,Percent with telephone access - 2003
+%tele_2004,Percent with telephone access - 2004
+%tele_2005,Percent with telephone access - 2005
+%tele_2006,Percent with telephone access - 2006
+%tele_2007,Percent with telephone access - 2007
+%tele_2008,Percent with telephone access - 2008
+%tele_2009,Percent with telephone access - 2009
+%tele_2010,Percent with telephone access - 2010
+%tele_2011,Percent with telephone access - 2011
+%tele_2012,Percent with telephone access - 2012
+%tele_2013,Percent with telephone access - 2013
+%tele_2014,Percent with telephone access - 2014
+%tele_2015,Percent with telephone access - 2015
+%tele_2016,Percent with telephone access - 2016
+%internet_2004,Percent with internet access - 2004
+%internet_2005,Percent with internet access - 2005
+%internet_2006,Percent with internet access - 2006
+%internet_2007,Percent with internet access - 2007
+%internet_2008,Percent with internet access - 2008
+%internet_2009,Percent with internet access - 2009
+%internet_2010,Percent with internet access - 2010
+%internet_2011,Percent with internet access - 2011
+%internet_2012,Percent with internet access - 2012
+%internet_2013,Percent with internet access - 2013
+%internet_2014,Percent with internet access - 2014
+%internet_2015,Percent with internet access - 2015
+%internet_2016,Percent with internet access - 2016
+%internet_2017,Percent with internet access - 2017
+tenure_2000,Median number of years householder has lived in unit - 2000
+tenure_2001,Median number of years householder has lived in unit - 2001
+tenure_2002,Median number of years householder has lived in unit - 2002
+tenure_2003,Median number of years householder has lived in unit - 2003
+tenure_2004,Median number of years householder has lived in unit - 2004
+tenure_2005,Median number of years householder has lived in unit - 2005
+tenure_2006,Median number of years householder has lived in unit - 2006
+tenure_2007,Median number of years householder has lived in unit - 2007
+tenure_2008,Median number of years householder has lived in unit - 2008
+tenure_2009,Median number of years householder has lived in unit - 2009
+tenure_2010,Median number of years householder has lived in unit - 2010
+tenure_2011,Median number of years householder has lived in unit - 2011
+tenure_2012,Median number of years householder has lived in unit - 2012
+tenure_2013,Median number of years householder has lived in unit - 2013
+tenure_2014,Median number of years householder has lived in unit - 2014
+tenure_2015,Median number of years householder has lived in unit - 2015
+tenure_2016,Median number of years householder has lived in unit - 2016
+life_2000,Life expectancy - 2000
+life_2001,Life expectancy - 2001
+life_2002,Life expectancy - 2002
+life_2003,Life expectancy - 2003
+life_2004,Life expectancy - 2004
+life_2005,Life expectancy - 2005
+life_2006,Life expectancy - 2006
+life_2007,Life expectancy - 2007
+life_2008,Life expectancy - 2008
+life_2009,Life expectancy - 2009
+life_2010,Life expectancy - 2010
+life_2011,Life expectancy - 2011
+life_2012,Life expectancy - 2012
+life_2013,Life expectancy - 2013
+life_2014,Life expectancy - 2014
+life_2015,Life expectancy - 2015
+life_2016,Life expectancy - 2016
+life_2017,Life expectancy - 2017
+infant_2000,"Infant moratlity rate (per 100,000 population) - 2000"
+infant_2001,"Infant moratlity rate (per 100,000 population) - 2001"
+infant_2002,"Infant moratlity rate (per 100,000 population) - 2002"
+infant_2003,"Infant moratlity rate (per 100,000 population) - 2003"
+infant_2004,"Infant moratlity rate (per 100,000 population) - 2004"
+infant_2005,"Infant moratlity rate (per 100,000 population) - 2005"
+infant_2006,"Infant moratlity rate (per 100,000 population) - 2006"
+infant_2007,"Infant moratlity rate (per 100,000 population) - 2007"
+infant_2008,"Infant moratlity rate (per 100,000 population) - 2008"
+infant_2009,"Infant moratlity rate (per 100,000 population) - 2009"
+infant_2010,"Infant moratlity rate (per 100,000 population) - 2010"
+infant_2011,"Infant moratlity rate (per 100,000 population) - 2011"
+infant_2012,"Infant moratlity rate (per 100,000 population) - 2012"
+infant_2013,"Infant moratlity rate (per 100,000 population) - 2013"
+infant_2014,"Infant moratlity rate (per 100,000 population) - 2014"
+infant_2015,"Infant moratlity rate (per 100,000 population) - 2015"
+infant_2016,"Infant moratlity rate (per 100,000 population) - 2016"
+infant_2017,"Infant moratlity rate (per 100,000 population) - 2017"
+physicians_per_thous_1995,"Physicians (per 1,000 people) - 1995"
+physicians_per_thous_2000,"Physicians (per 1,000 people) - 2000"
+physicians_per_thous_2001,"Physicians (per 1,000 people) - 2001"
+physicians_per_thous_2002,"Physicians (per 1,000 people) - 2002"
+physicians_per_thous_2003,"Physicians (per 1,000 people) - 2003"
+physicians_per_thous_2004,"Physicians (per 1,000 people) - 2004"
+physicians_per_thous_2005,"Physicians (per 1,000 people) - 2005"
+physicians_per_thous_2006,"Physicians (per 1,000 people) - 2006"
+physicians_per_thous_2007,"Physicians (per 1,000 people) - 2007"
+physicians_per_thous_2008,"Physicians (per 1,000 people) - 2008"
+physicians_per_thous_2009,"Physicians (per 1,000 people) - 2009"
+physicians_per_thous_2010,"Physicians (per 1,000 people) - 2010"
+physicians_per_thous_2011,"Physicians (per 1,000 people) - 2011"
+physicians_per_thous_2012,"Physicians (per 1,000 people) - 2012"
+physicians_per_thous_2013,"Physicians (per 1,000 people) - 2013"
+physicians_per_thous_2014,"Physicians (per 1,000 people) - 2014"
+physicians_per_thous_2015,"Physicians (per 1,000 people) - 2015"
+physicians_per_thous_2016,"Physicians (per 1,000 people) - 2016"
+death_2000,"Age adjusted death rate (per 1,000 people) - 2000"
+death_2001,"Age adjusted death rate (per 1,000 people) - 2001"
+death_2002,"Age adjusted death rate (per 1,000 people) - 2002"
+death_2003,"Age adjusted death rate (per 1,000 people) - 2003"
+death_2004,"Age adjusted death rate (per 1,000 people) - 2004"
+death_2005,"Age adjusted death rate (per 1,000 people) - 2005"
+death_2006,"Age adjusted death rate (per 1,000 people) - 2006"
+death_2007,"Age adjusted death rate (per 1,000 people) - 2007"
+death_2008,"Age adjusted death rate (per 1,000 people) - 2008"
+death_2009,"Age adjusted death rate (per 1,000 people) - 2009"
+death_2010,"Age adjusted death rate (per 1,000 people) - 2010"
+death_2011,"Age adjusted death rate (per 1,000 people) - 2011"
+death_2012,"Age adjusted death rate (per 1,000 people) - 2012"
+death_2013,"Age adjusted death rate (per 1,000 people) - 2013"
+death_2014,"Age adjusted death rate (per 1,000 people) - 2014"
+death_2015,"Age adjusted death rate (per 1,000 people) - 2015"
+death_2016,"Age adjusted death rate (per 1,000 people) - 2016"
+insurance_2005,Health insurance coverage rate - 2005
+insurance_2006,Health insurance coverage rate - 2006
+insurance_2007,Health insurance coverage rate - 2007
+insurance_2008,Health insurance coverage rate - 2008
+insurance_2009,Health insurance coverage rate - 2009
+insurance_2010,Health insurance coverage rate - 2010
+insurance_2011,Health insurance coverage rate - 2011
+insurance_2012,Health insurance coverage rate - 2012
+insurance_2013,Health insurance coverage rate - 2013
+insurance_2014,Health insurance coverage rate - 2014
+insurance_2015,Health insurance coverage rate - 2015
+insurance_2016,Health insurance coverage rate - 2016
+insurance_2017,Health insurance coverage rate - 2017
+healthy_food_per_thous_2002,"Healthy food outlets per 1,000 people - 2002"
+healthy_food_per_thous_2003,"Healthy food outlets per 1,000 people - 2003"
+healthy_food_per_thous_2004,"Healthy food outlets per 1,000 people - 2004"
+healthy_food_per_thous_2005,"Healthy food outlets per 1,000 people - 2005"
+healthy_food_per_thous_2006,"Healthy food outlets per 1,000 people - 2006"
+healthy_food_per_thous_2007,"Healthy food outlets per 1,000 people - 2007"
+healthy_food_per_thous_2008,"Healthy food outlets per 1,000 people - 2008"
+healthy_food_per_thous_2009,"Healthy food outlets per 1,000 people - 2009"
+healthy_food_per_thous_2010,"Healthy food outlets per 1,000 people - 2010"
+healthy_food_per_thous_2011,"Healthy food outlets per 1,000 people - 2011"
+healthy_food_per_thous_2012,"Healthy food outlets per 1,000 people - 2012"
+healthy_food_per_thous_2013,"Healthy food outlets per 1,000 people - 2013"
+healthy_food_per_thous_2014,"Healthy food outlets per 1,000 people - 2014"
+healthy_food_per_thous_2015,"Healthy food outlets per 1,000 people - 2015"
+healthy_food_per_thous_2016,"Healthy food outlets per 1,000 people - 2016"
+%no_vehicle_2000,Percent of households without vehicle - 2000
+%no_vehicle_2001,Percent of households without vehicle - 2001
+%no_vehicle_2002,Percent of households without vehicle - 2002
+%no_vehicle_2003,Percent of households without vehicle - 2003
+%no_vehicle_2004,Percent of households without vehicle - 2004
+%no_vehicle_2005,Percent of households without vehicle - 2005
+%no_vehicle_2006,Percent of households without vehicle - 2006
+%no_vehicle_2007,Percent of households without vehicle - 2007
+%no_vehicle_2008,Percent of households without vehicle - 2008
+%no_vehicle_2009,Percent of households without vehicle - 2009
+%no_vehicle_2010,Percent of households without vehicle - 2010
+%no_vehicle_2011,Percent of households without vehicle - 2011
+%no_vehicle_2012,Percent of households without vehicle - 2012
+%no_vehicle_2013,Percent of households without vehicle - 2013
+%no_vehicle_2014,Percent of households without vehicle - 2014
+%no_vehicle_2015,Percent of households without vehicle - 2015
+%no_vehicle_2016,Percent of households without vehicle - 2016
+%imp_cover_2010,Percent impervious cover - 2010
+%imp_cover_2011,Percent impervious cover - 2011
+%imp_cover_2012,Percent impervious cover - 2012
+%imp_cover_2016,Percent impervious cover - 2016
+%days_affected_2000,Percent of beach days affected by notification actions at monitored beaches - 2000
+%days_affected_2001,Percent of beach days affected by notification actions at monitored beaches - 2001
+%days_affected_2002,Percent of beach days affected by notification actions at monitored beaches - 2002
+%days_affected_2003,Percent of beach days affected by notification actions at monitored beaches - 2003
+%days_affected_2004,Percent of beach days affected by notification actions at monitored beaches - 2004
+%days_affected_2005,Percent of beach days affected by notification actions at monitored beaches - 2005
+%days_affected_2006,Percent of beach days affected by notification actions at monitored beaches - 2006
+%days_affected_2007,Percent of beach days affected by notification actions at monitored beaches - 2007
+%days_affected_2008,Percent of beach days affected by notification actions at monitored beaches - 2008
+%days_affected_2009,Percent of beach days affected by notification actions at monitored beaches - 2009
+%days_affected_2010,Percent of beach days affected by notification actions at monitored beaches - 2010
+%days_affected_2011,Percent of beach days affected by notification actions at monitored beaches - 2011
+%days_affected_2012,Percent of beach days affected by notification actions at monitored beaches - 2012
+%days_affected_2013,Percent of beach days affected by notification actions at monitored beaches - 2013
+%days_affected_2014,Percent of beach days affected by notification actions at monitored beaches - 2014
+%days_affected_2015,Percent of beach days affected by notification actions at monitored beaches - 2015
+%days_affected_2016,Percent of beach days affected by notification actions at monitored beaches - 2016
+%days_affected_2017,Percent of beach days affected by notification actions at monitored beaches - 2017
+%coast_impaired_2016,% coastal shoreline miles impaired - 2016
+%coast_impaired_2018,% coastal shoreline miles impaired - 2018
+%cult_2010,Percentage of cultivated land area - 2010
+%cult_2011,Percentage of cultivated land area - 2011
+%cult_2012,Percentage of cultivated land area - 2012
+%cult_2016,Percentage of cultivated land area - 2016
+%noplumb_2000,Percentage of households with out complete plumbing facilities - 2000
+%noplumb_2005,Percentage of households with out complete plumbing facilities - 2005
+%noplumb_2006,Percentage of households with out complete plumbing facilities - 2006
+%noplumb_2007,Percentage of households with out complete plumbing facilities - 2007
+%noplumb_2008,Percentage of households with out complete plumbing facilities - 2008
+%noplumb_2009,Percentage of households with out complete plumbing facilities - 2009
+%noplumb_2010,Percentage of households with out complete plumbing facilities - 2010
+%noplumb_2011,Percentage of households with out complete plumbing facilities - 2011
+%noplumb_2012,Percentage of households with out complete plumbing facilities - 2012
+%noplumb_2013,Percentage of households with out complete plumbing facilities - 2013
+%noplumb_2014,Percentage of households with out complete plumbing facilities - 2014
+%noplumb_2015,Percentage of households with out complete plumbing facilities - 2015
+%noplumb_2016,Percentage of households with out complete plumbing facilities - 2016
+%noplumb_2017,Percentage of households with out complete plumbing facilities - 2017
+bldg_perm_2000,Number of construction permits - 2000
+bldg_perm_2001,Number of construction permits - 2001
+bldg_perm_2002,Number of construction permits - 2002
+bldg_perm_2003,Number of construction permits - 2003
+bldg_perm_2004,Number of construction permits - 2004
+bldg_perm_2005,Number of construction permits - 2005
+bldg_perm_2006,Number of construction permits - 2006
+bldg_perm_2007,Number of construction permits - 2007
+bldg_perm_2008,Number of construction permits - 2008
+bldg_perm_2009,Number of construction permits - 2009
+bldg_perm_2010,Number of construction permits - 2010
+bldg_perm_2011,Number of construction permits - 2011
+bldg_perm_2012,Number of construction permits - 2012
+bldg_perm_2013,Number of construction permits - 2013
+bldg_perm_2014,Number of construction permits - 2014
+bldg_perm_2015,Number of construction permits - 2015
+bldg_perm_2016,Number of construction permits - 2016
+bldg_perm_2017,Number of construction permits - 2017
+NPDES_2000,Number of effective NPDES permits - 2000
+NPDES_2001,Number of effective NPDES permits - 2001
+NPDES_2002,Number of effective NPDES permits - 2002
+NPDES_2003,Number of effective NPDES permits - 2003
+NPDES_2004,Number of effective NPDES permits - 2004
+NPDES_2005,Number of effective NPDES permits - 2005
+NPDES_2006,Number of effective NPDES permits - 2006
+NPDES_2007,Number of effective NPDES permits - 2007
+NPDES_2008,Number of effective NPDES permits - 2008
+NPDES_2009,Number of effective NPDES permits - 2009
+NPDES_2010,Number of effective NPDES permits - 2010
+NPDES_2011,Number of effective NPDES permits - 2011
+NPDES_2012,Number of effective NPDES permits - 2012
+NPDES_2013,Number of effective NPDES permits - 2013
+NPDES_2014,Number of effective NPDES permits - 2014
+NPDES_2015,Number of effective NPDES permits - 2015
+NPDES_2016,Number of effective NPDES permits - 2016
+NPDES_2017,Number of effective NPDES permits - 2017
+releases_2000,Total toxic releases - 2000
+releases_2001,Total toxic releases - 2001
+releases_2002,Total toxic releases - 2002
+releases_2003,Total toxic releases - 2003
+releases_2004,Total toxic releases - 2004
+releases_2005,Total toxic releases - 2005
+releases_2006,Total toxic releases - 2006
+releases_2007,Total toxic releases - 2007
+releases_2008,Total toxic releases - 2008
+releases_2009,Total toxic releases - 2009
+releases_2010,Total toxic releases - 2010
+releases_2011,Total toxic releases - 2011
+releases_2012,Total toxic releases - 2012
+releases_2013,Total toxic releases - 2013
+releases_2014,Total toxic releases - 2014
+releases_2015,Total toxic releases - 2015
+releases_2016,Total toxic releases - 2016
+releases_2017,Total toxic releases - 2017
+landfills_2000,Number of operating landfills - 2000
+landfills_2001,Number of operating landfills - 2001
+landfills_2002,Number of operating landfills - 2002
+landfills_2003,Number of operating landfills - 2003
+landfills_2004,Number of operating landfills - 2004
+landfills_2005,Number of operating landfills - 2005
+landfills_2006,Number of operating landfills - 2006
+landfills_2007,Number of operating landfills - 2007
+landfills_2008,Number of operating landfills - 2008
+landfills_2009,Number of operating landfills - 2009
+landfills_2010,Number of operating landfills - 2010
+landfills_2011,Number of operating landfills - 2011
+landfills_2012,Number of operating landfills - 2012
+landfills_2013,Number of operating landfills - 2013
+landfills_2014,Number of operating landfills - 2014
+landfills_2015,Number of operating landfills - 2015
+landfills_2016,Number of operating landfills - 2016
+landfills_2017,Number of operating landfills - 2017
+DOD_2000,Area of military bases/installations - 2000
+DOD_2001,Area of military bases/installations - 2001
+DOD_2002,Area of military bases/installations - 2002
+DOD_2003,Area of military bases/installations - 2003
+DOD_2004,Area of military bases/installations - 2004
+DOD_2005,Area of military bases/installations - 2005
+DOD_2006,Area of military bases/installations - 2006
+DOD_2007,Area of military bases/installations - 2007
+DOD_2008,Area of military bases/installations - 2008
+DOD_2009,Area of military bases/installations - 2009
+DOD_2010,Area of military bases/installations - 2010
+DOD_2011,Area of military bases/installations - 2011
+DOD_2012,Area of military bases/installations - 2012
+DOD_2013,Area of military bases/installations - 2013
+DOD_2014,Area of military bases/installations - 2014
+DOD_2016,Area of military bases/installations - 2016
+DOD_2017,Area of military bases/installations - 2017
+%DOD_2000,Percent of total area dedicated to military bases/installations - 2000
+%DOD_2001,Percent of total area dedicated to military bases/installations - 2001
+%DOD_2002,Percent of total area dedicated to military bases/installations - 2002
+%DOD_2003,Percent of total area dedicated to military bases/installations - 2003
+%DOD_2004,Percent of total area dedicated to military bases/installations - 2004
+%DOD_2005,Percent of total area dedicated to military bases/installations - 2005
+%DOD_2006,Percent of total area dedicated to military bases/installations - 2006
+%DOD_2007,Percent of total area dedicated to military bases/installations - 2007
+%DOD_2008,Percent of total area dedicated to military bases/installations - 2008
+%DOD_2009,Percent of total area dedicated to military bases/installations - 2009
+%DOD_2010,Percent of total area dedicated to military bases/installations - 2010
+%DOD_2011,Percent of total area dedicated to military bases/installations - 2011
+%DOD_2012,Percent of total area dedicated to military bases/installations - 2012
+%DOD_2013,Percent of total area dedicated to military bases/installations - 2013
+%DOD_2014,Percent of total area dedicated to military bases/installations - 2014
+%DOD_2016,Percent of total area dedicated to military bases/installations - 2016
+%DOD_2017,Percent of total area dedicated to military bases/installations - 2017
+landarea,total area of land
+coast,Total linear miles of coastline
+bldg_perm_per_coast_2000,number of construction permits per mile of coastline - 2000
+bldg_perm_per_coast_2001,number of construction permits per mile of coastline - 2001
+bldg_perm_per_coast_2002,number of construction permits per mile of coastline - 2002
+bldg_perm_per_coast_2003,number of construction permits per mile of coastline - 2003
+bldg_perm_per_coast_2004,number of construction permits per mile of coastline - 2004
+bldg_perm_per_coast_2005,number of construction permits per mile of coastline - 2005
+bldg_perm_per_coast_2006,number of construction permits per mile of coastline - 2006
+bldg_perm_per_coast_2007,number of construction permits per mile of coastline - 2007
+bldg_perm_per_coast_2008,number of construction permits per mile of coastline - 2008
+bldg_perm_per_coast_2009,number of construction permits per mile of coastline - 2009
+bldg_perm_per_coast_2010,number of construction permits per mile of coastline - 2010
+bldg_perm_per_coast_2011,number of construction permits per mile of coastline - 2011
+bldg_perm_per_coast_2012,number of construction permits per mile of coastline - 2012
+bldg_perm_per_coast_2013,number of construction permits per mile of coastline - 2013
+bldg_perm_per_coast_2014,number of construction permits per mile of coastline - 2014
+bldg_perm_per_coast_2015,number of construction permits per mile of coastline - 2015
+bldg_perm_per_coast_2016,number of construction permits per mile of coastline - 2016
+bldg_perm_per_coast_2017,number of construction permits per mile of coastline - 2017
+NPDES_per_coast_2000,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2001,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2002,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2003,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2004,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2005,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2006,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2007,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2008,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2009,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2010,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2011,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2012,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2013,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2014,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2015,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2016,number of effective NPDES permits per mile of coastline
+NPDES_per_coast_2017,number of effective NPDES permits per mile of coastline
+Releases_per_coast_2000,Toxic releases per mile of coastline
+Releases_per_coast_2001,Toxic releases per mile of coastline
+Releases_per_coast_2002,Toxic releases per mile of coastline
+Releases_per_coast_2003,Toxic releases per mile of coastline
+Releases_per_coast_2004,Toxic releases per mile of coastline
+Releases_per_coast_2005,Toxic releases per mile of coastline
+Releases_per_coast_2006,Toxic releases per mile of coastline
+Releases_per_coast_2007,Toxic releases per mile of coastline
+Releases_per_coast_2008,Toxic releases per mile of coastline
+Releases_per_coast_2009,Toxic releases per mile of coastline
+Releases_per_coast_2010,Toxic releases per mile of coastline
+Releases_per_coast_2011,Toxic releases per mile of coastline
+Releases_per_coast_2012,Toxic releases per mile of coastline
+Releases_per_coast_2013,Toxic releases per mile of coastline
+Releases_per_coast_2014,Toxic releases per mile of coastline
+Releases_per_coast_2015,Toxic releases per mile of coastline
+Releases_per_coast_2016,Toxic releases per mile of coastline
+Releases_per_coast_2017,Toxic releases per mile of coastline
+landfills_per_coast_2000,Number of operating landfills per mile of coastline
+landfills_per_coast_2001,Number of operating landfills per mile of coastline
+landfills_per_coast_2002,Number of operating landfills per mile of coastline
+landfills_per_coast_2003,Number of operating landfills per mile of coastline
+landfills_per_coast_2004,Number of operating landfills per mile of coastline
+landfills_per_coast_2005,Number of operating landfills per mile of coastline
+landfills_per_coast_2006,Number of operating landfills per mile of coastline
+landfills_per_coast_2007,Number of operating landfills per mile of coastline
+landfills_per_coast_2008,Number of operating landfills per mile of coastline
+landfills_per_coast_2009,Number of operating landfills per mile of coastline
+landfills_per_coast_2010,Number of operating landfills per mile of coastline
+landfills_per_coast_2011,Number of operating landfills per mile of coastline
+landfills_per_coast_2012,Number of operating landfills per mile of coastline
+landfills_per_coast_2013,Number of operating landfills per mile of coastline
+landfills_per_coast_2014,Number of operating landfills per mile of coastline
+landfills_per_coast_2015,Number of operating landfills per mile of coastline
+landfills_per_coast_2016,Number of operating landfills per mile of coastline
+landfills_per_coast_2017,Number of operating landfills per mile of coastline
+mng_plan_2011,Average score on a 1-3 scale for Management Planning in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+ecological_2011,Average score on a 1-3 scale for Ecological Network Development in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+governance_2011,Average score on a 1-3 scale for Governance in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+onsite_2011,Average score on a 1-3 scale for On-Site Management in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+enf_2011,Average score on a 1-3 scale for Enforcement in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+bound_2011,Average score on a 1-3 scale for Boundaries in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+bio_mon_2011,Average score on a 1-3 scale for Biophysical Monitoring in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+scio_mon_2011,Average score on a 1-3 scale for Socio-economic Monitoring in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+effectiveness_2011,Average score on a 1-3 scale for MPA Effectiveness Evaluation in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+stake_2011,Average score on a 1-3 scale for Stakeholder Engagement in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+finance_2011,Average score on a 1-3 scale for Financing in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+outreach_2011,Average score on a 1-3 scale for Outreach and Education in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+conflict_2011,Average score on a 1-3 scale for Conflict Resolution Mechanism in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+climate_2011,Average score on a 1-3 scale for Climate Change Resilience in MPAs assessed in the jurisdiction - 2011 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+mng_plan_2014,Average score on a 1-3 scale for Management Planning in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+ecological_2014,Average score on a 1-3 scale for Ecological Network Development in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+governance_2014,Average score on a 1-3 scale for Governance in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+onsite_2014,Average score on a 1-3 scale for On-Site Management in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+enf_2014,Average score on a 1-3 scale for Enforcement in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+bound_2014,Average score on a 1-3 scale for Boundaries in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+bio_mon_2014,Average score on a 1-3 scale for Biophysical Monitoring in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+scio_mon_2014,Average score on a 1-3 scale for Socio-economic Monitoring in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+effectiveness_2014,Average score on a 1-3 scale for MPA Effectiveness Evaluation in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+stake_2014,Average score on a 1-3 scale for Stakeholder Engagement in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+finance_2014,Average score on a 1-3 scale for Financing in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+outreach_2014,Average score on a 1-3 scale for Outreach and Education in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+conflict_2014,Average score on a 1-3 scale for Conflict Resolution Mechanism in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+climate_2014,Average score on a 1-3 scale for Climate Change Resilience in MPAs assessed in the jurisdiction - 2014 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+mng_plan_2017,Average score on a 1-3 scale for Management Planning in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+ecological_2017,Average score on a 1-3 scale for Ecological Network Development in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+governance_2017,Average score on a 1-3 scale for Governance in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+onsite_2017,Average score on a 1-3 scale for On-Site Management in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+enf_2017,Average score on a 1-3 scale for Enforcement in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+bound_2017,Average score on a 1-3 scale for Boundaries in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+bio_mon_2017,Average score on a 1-3 scale for Biophysical Monitoring in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+scio_mon_2017,Average score on a 1-3 scale for Socio-economic Monitoring in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+effectiveness_2017,Average score on a 1-3 scale for MPA Effectiveness Evaluation in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+stake_2017,Average score on a 1-3 scale for Stakeholder Engagement in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+finance_2017,Average score on a 1-3 scale for Financing in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+outreach_2017,Average score on a 1-3 scale for Outreach and Education in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+conflict_2017,Average score on a 1-3 scale for Conflict Resolution Mechanism in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+climate_2017,Average score on a 1-3 scale for Climate Change Resilience in MPAs assessed in the jurisdiction - 2017 (1 = 2 steps away from target; 2 = meets target; 3 = exceeds target)
+mpa_tot_11,total inventoried MPAs in 2011
+mgmt_plan_no_11,inventoried MPAs without any management plan in 2011
+notake_11,no take protection level for inventoried MPAs in 2011
+fish_reg_11,commercial and recreational fishing prohibited for inventoried MPAs in 2011
+cult_hert_11,cultural heritage is primary conservation focus for inventoried MPAs in 2011
+nat_hert_11,natural heritage is primary conservation focus for inventoried MPAs in 2011
+sus_prod_11,sustainable production is primary conservation focus for inventoried MPAs in 2011
+mpa_tot_14,total inventoried MPAs in 2014
+mgmt_plan_no_14,inventoried MPAs without any management plan in 2014
+notake_14,no take protection level for inventoried MPAs in 2014
+fish_reg_14,commercial and recreational fishing prohibited for inventoried MPAs in 2014
+cult_hert_14,cultural heritage is primary conservation focus for inventoried MPAs in 2014
+nat_hert_14,natural heritage is primary conservation focus for inventoried MPAs in 2014
+sus_prod_14,sustainable production is primary conservation focus for inventoried MPAs in 2014
+mpa_tot_17,total inventoried MPAs in 2017
+mgmt_plan_no_17,inventoried MPAs without any management plan in 2017
+notake_17,no take protection level for inventoried MPAs in 2017
+fish_reg_17,commercial and recreational fishing prohibited for inventoried MPAs in 2017
+cult_hert_17,cultural heritage is primary conservation focus for inventoried MPAs in 2017
+nat_hert_17,natural heritage is primary conservation focus for inventoried MPAs in 2017
+sus_prod_17,sustainable production is primary conservation focus for inventoried MPAs in 2017
+coral_area_managed,Area of Coral Reef and Colonized Hardbottom habitat within management boundaries

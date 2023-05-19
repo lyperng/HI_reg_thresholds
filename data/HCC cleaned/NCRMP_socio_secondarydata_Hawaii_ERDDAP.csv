@@ -1,0 +1,997 @@
+Variable,Hawaii data,category_text,category_numeric,date,data source(s),units
+residents_00,"1,211,537",Human population changes near coral reefs,5,1/1/00,1,number of people
+residents_10,"1,363,817",Human population changes near coral reefs,5,1/1/10,1,number of people
+residents_11,"1,378,323",Human population changes near coral reefs,5,1/1/11,2;3,number of people
+residents_12,"1,392,772",Human population changes near coral reefs,5,1/1/12,2;3,number of people
+residents_13,"1,408,038",Human population changes near coral reefs,5,1/1/13,2;3,number of people
+residents_14,"1,417,710",Human population changes near coral reefs,5,1/1/14,2;3,number of people
+residents_15,"1,426,320",Human population changes near coral reefs,5,1/1/15,2;3,number of people
+residents_16,"1,428,683",Human population changes near coral reefs,5,1/1/16,2;3,number of people
+residents_17,"1,427,538",Human population changes near coral reefs,5,1/1/17,2;3,number of people
+visitors_10,"7,018,133",Human population changes near coral reefs,5,1/1/10,3;4;5;6,number of people
+visitors_11,"7,299,047",Human population changes near coral reefs,5,1/1/11,3;4;5;6,number of people
+visitors_12,"8,028,743",Human population changes near coral reefs,5,1/1/12,3;4;5;6,number of people
+visitors_13,"8,174,461",Human population changes near coral reefs,5,1/1/13,3;4;5;6,number of people
+visitors_14,"8,320,785",Human population changes near coral reefs,5,1/1/14,3;4;5;6,number of people
+visitors_15,"8,679,564",Human population changes near coral reefs,5,1/1/15,3;4;5;6,number of people
+visitors_16,"8,934,277",Human population changes near coral reefs,5,1/1/16,3;4;5;6,number of people
+visitors_17,"9,404,346",Human population changes near coral reefs,5,1/1/17,3;4;5;6,number of people
+hcost_00,$953.50 ,Human population changes near coral reefs,5,1/1/00,1,year 1999 US dollars
+hhsize_00,2.92,Human population changes near coral reefs,5,1/1/00,1,number of people
+hu_00,"403,240",Human population changes near coral reefs,5,1/1/00,1,number of housing units
+huown_00,"227,888",Human population changes near coral reefs,5,1/1/00,1,number of housing units
+hurent_00,"175,352",Human population changes near coral reefs,5,1/1/00,1,number of housing units
+kit_00,1.40%,Human population changes near coral reefs,5,1/1/00,1,percent
+medage_00,36.2,Human population changes near coral reefs,5,1/1/00,1,number of years
+pct18_00,8.71%,Human population changes near coral reefs,5,1/1/00,1,percent
+pct5_00,6.50%,Human population changes near coral reefs,5,1/1/00,1,percent
+pct65_00,13.26%,Human population changes near coral reefs,5,1/1/00,1,percent
+pctfem_00,49.76%,Human population changes near coral reefs,5,1/1/00,1,percent
+rural_00,"103,312",Human population changes near coral reefs,5,1/1/00,1,number of people
+urban_00,"1,108,225",Human population changes near coral reefs,5,1/1/00,1,number of people
+urbarea_00,"835,912",Human population changes near coral reefs,5,1/1/00,1,number of people
+urbclus_00,"272,313",Human population changes near coral reefs,5,1/1/00,1,number of people
+hcost_10,"$2,335.00 ",Human population changes near coral reefs,5,1/1/10,1;2,year 2009 US dollars
+hhsize_10,3.09,Human population changes near coral reefs,5,1/1/10,1;2,number of people
+hu_10,"455,338",Human population changes near coral reefs,5,1/1/10,1;2,number of housing units
+huown_10,"262,682",Human population changes near coral reefs,5,1/1/10,1;2,number of housing units
+hurent_10,"192,656",Human population changes near coral reefs,5,1/1/10,1;2,number of housing units
+kit_10,1.90%,Human population changes near coral reefs,5,1/1/10,1;2,percent
+medage_10,38.6,Human population changes near coral reefs,5,1/1/10,1;2,number of years
+pct18_10,22.30%,Human population changes near coral reefs,5,1/1/10,1;2,percent
+pct5_10,6.40%,Human population changes near coral reefs,5,1/1/10,1;2,percent
+pct65_10,14.30%,Human population changes near coral reefs,5,1/1/10,1;2,percent
+pctfem_10,49.90%,Human population changes near coral reefs,5,1/1/10,1;2,percent
+rural_10,"109,812",Human population changes near coral reefs,5,1/1/10,1;2,number of people
+urban_10,"1,250,489",Human population changes near coral reefs,5,1/1/10,1;2,number of people
+urbarea_10,"972,075",Human population changes near coral reefs,5,1/1/10,1;2,number of people
+urbclus_10,"278,414",Human population changes near coral reefs,5,1/1/10,1;2,number of people
+totalcommyield_05,"28,139,038.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,7;8;9,lbs
+totalcommyield_06,"26,020,904.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,7;8;9,lbs
+totalcommyield_07,"28,934,161.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,7;8;9,lbs
+totalcommyield_08,"30,651,522.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,7;8;9,lbs
+totalcommyield_09,"26,906,045.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,7;8;9,lbs
+totalcommyield_10,"28,068,656.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,7;8;9,lbs
+totalcommyield_11,"29,289,341.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,7;8;9,lbs
+totalcommyield_12,"31,047,571.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,7;8;9,lbs
+totalcommyield_13,"32,447,284.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,7;8;9,lbs
+totalcommyield_14,"33,473,842.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,7;8;9,lbs
+totalcommyield_15,"34,622,881.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,7;8;9,lbs
+totalcommyield_16,"35,051,334.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/16,7;8;9,lbs
+totalcommreefyield_05,"990,802.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,7;8;9,lbs
+totalcommreefyield_06,"868,748.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,7;8;9,lbs
+totalcommreefyield_07,"924,203.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,7;8;9,lbs
+totalcommreefyield_08,"1,038,465.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,7;8;9,lbs
+totalcommreefyield_09,"995,239.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,7;8;9,lbs
+totalcommreefyield_10,"1,064,062.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,7;8;9,lbs
+totalcommreefyield_11,"806,573.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,7;8;9,lbs
+totalcommreefyield_12,"1,210,102.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,7;8;9,lbs
+totalcommreefyield_13,"1,651,459.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,7;8;9,lbs
+totalcommreefyield_14,"1,679,284.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,7;8;9,lbs
+totalcommreefyield_15,"1,376,071.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,7;8;9,lbs
+totalcommreefyield_16,"1,516,323.00",Economic impact of coral reef fishing to jurisdiction,6,1/1/16,7;8;9,lbs
+totalcommrev_05,"$87,437,688.61 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,7;8;9,Year 2017 US Dollars
+totalcommrev_06,"$80,038,675.39 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,7;8;9,Year 2017 US Dollars
+totalcommrev_07,"$88,343,850.22 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,7;8;9,Year 2017 US Dollars
+totalcommrev_08,"$97,176,612.30 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,7;8;9,Year 2017 US Dollars
+totalcommrev_09,"$80,903,568.40 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,7;8;9,Year 2017 US Dollars
+totalcommrev_10,"$94,394,565.95 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,7;8;9,Year 2017 US Dollars
+totalcommrev_11,"$100,738,191.83 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,7;8;9,Year 2017 US Dollars
+totalcommrev_12,"$121,225,367.59 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,7;8;9,Year 2017 US Dollars
+totalcommrev_13,"$114,550,856.29 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,7;8;9,Year 2017 US Dollars
+totalcommrev_14,"$105,416,576.71 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,7;8;9,Year 2017 US Dollars
+totalcommrev_15,"$106,515,585.70 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,7;8;9,Year 2017 US Dollars
+totalcommrev_16,"$120,378,736.73 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/16,7;8;9,Year 2017 US Dollars
+totalcommreefrev_05,"$3,054,856.41 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,7;8;9,Year 2017 US Dollars
+totalcommreefrev_06,"$2,632,946.72 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,7;8;9,Year 2017 US Dollars
+totalcommreefrev_07,"$2,934,473.11 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,7;8;9,Year 2017 US Dollars
+totalcommreefrev_08,"$3,383,905.61 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,7;8;9,Year 2017 US Dollars
+totalcommreefrev_09,"$3,088,615.62 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,7;8;9,Year 2017 US Dollars
+totalcommreefrev_10,"$3,532,666.28 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,7;8;9,Year 2017 US Dollars
+totalcommreefrev_11,"$3,063,315.77 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,7;8;9,Year 2017 US Dollars
+totalcommreefrev_12,"$4,124,097.21 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,7;8;9,Year 2017 US Dollars
+totalcommreefrev_13,"$4,962,218.55 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,7;8;9,Year 2017 US Dollars
+totalcommreefrev_14,"$4,435,754.90 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,7;8;9,Year 2017 US Dollars
+totalcommreefrev_15,"$3,135,742.66 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,7;8;9,Year 2017 US Dollars
+totalcommreefrev_16,"$4,965,120.92 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/16,7;8;9,Year 2017 US Dollars
+totalrecyield_05,"4,738,849.18",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,10,number of fish
+totalrecyield_06,"5,175,380.57",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,10,number of fish
+totalrecyield_07,"3,710,230.91",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,10,number of fish
+totalrecyield_08,"4,681,069.25",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,10,number of fish
+totalrecyield_09,"6,093,065.54",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,10,number of fish
+totalrecyield_10,"5,206,511.06",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,10,number of fish
+totalrecyield_11,"2,667,712.18",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,10,number of fish
+totalrecyield_12,"3,056,765.83",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,10,number of fish
+totalrecyield_13,"3,944,354.55",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,10,number of fish
+totalrecyield_14,"4,153,702.12",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,10,number of fish
+totalrecyield_15,"5,179,095.18",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,10,number of fish
+totalrecyield_16,"2,865,543.23",Economic impact of coral reef fishing to jurisdiction,6,1/1/16,10,number of fish
+totalrecreefyield_05,"2,101,776.74",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,10,number of fish
+totalrecreefyield_06,"2,352,017.65",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,10,number of fish
+totalrecreefyield_07,"1,169,547.79",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,10,number of fish
+totalrecreefyield_08,"1,598,614.43",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,10,number of fish
+totalrecreefyield_09,"2,323,375.47",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,10,number of fish
+totalrecreefyield_10,"1,424,394.01",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,10,number of fish
+totalrecreefyield_11,"878,694.72",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,10,number of fish
+totalrecreefyield_12,"1,054,552.07",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,10,number of fish
+totalrecreefyield_13,"1,706,261.54",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,10,number of fish
+totalrecreefyield_14,"1,597,837.94",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,10,number of fish
+totalrecreefyield_15,"2,019,709.65",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,10,number of fish
+totalrecreefyield_16,"1,031,666.03",Economic impact of coral reef fishing to jurisdiction,6,1/1/16,10,number of fish
+liv_res_GDP_05,"$68,572,497.27 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,11,Year 2017 US Dollars
+liv_res_GDP_06,"$69,149,955.14 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,11,Year 2017 US Dollars
+liv_res_GDP_07,"$68,321,001.88 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,11,Year 2017 US Dollars
+liv_res_GDP_08,"$60,329,977.32 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,11,Year 2017 US Dollars
+liv_res_GDP_09,"$58,699,650.84 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,11,Year 2017 US Dollars
+liv_res_GDP_10,"$67,970,254.35 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,11,Year 2017 US Dollars
+liv_res_GDP_11,"$70,284,249.90 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,11,Year 2017 US Dollars
+liv_res_GDP_12,"$72,940,463.60 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,11,Year 2017 US Dollars
+liv_res_GDP_13,"$74,685,736.80 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,11,Year 2017 US Dollars
+liv_res_GDP_14,"$70,978,308.80 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,11,Year 2017 US Dollars
+liv_res_GDP_15,"$88,833,635.52 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,11,Year 2017 US Dollars
+liv_res_emp_05,"2,090",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,11,number of people
+liv_res_emp_06,"2,001",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,11,number of people
+liv_res_emp_07,"2,033",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,11,number of people
+liv_res_emp_08,"1,974",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,11,number of people
+liv_res_emp_09,"1,908",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,11,number of people
+liv_res_emp_10,"1,931",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,11,number of people
+liv_res_emp_11,"2,040",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,11,number of people
+liv_res_emp_12,"2,135",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,11,number of people
+liv_res_emp_13,"2,129",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,11,number of people
+liv_res_emp_14,"2,159",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,11,number of people
+liv_res_emp_15,"2,219",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,11,number of people
+liv_res_estbl_05,160,Economic impact of coral reef fishing to jurisdiction,6,1/1/05,11,number of businesses
+liv_res_estbl_06,149,Economic impact of coral reef fishing to jurisdiction,6,1/1/06,11,number of businesses
+liv_res_estbl_07,151,Economic impact of coral reef fishing to jurisdiction,6,1/1/07,11,number of businesses
+liv_res_estbl_08,153,Economic impact of coral reef fishing to jurisdiction,6,1/1/08,11,number of businesses
+liv_res_estbl_09,150,Economic impact of coral reef fishing to jurisdiction,6,1/1/09,11,number of businesses
+liv_res_estbl_10,147,Economic impact of coral reef fishing to jurisdiction,6,1/1/10,11,number of businesses
+liv_res_estbl_11,139,Economic impact of coral reef fishing to jurisdiction,6,1/1/11,11,number of businesses
+liv_res_estbl_12,131,Economic impact of coral reef fishing to jurisdiction,6,1/1/12,11,number of businesses
+liv_res_estbl_13,122,Economic impact of coral reef fishing to jurisdiction,6,1/1/13,11,number of businesses
+liv_res_estbl_14,123,Economic impact of coral reef fishing to jurisdiction,6,1/1/14,11,number of businesses
+liv_res_estbl_15,123,Economic impact of coral reef fishing to jurisdiction,6,1/1/15,11,number of businesses
+liv_res_GDP_prop_05,0.09%,Economic impact of coral reef fishing to jurisdiction,6,1/1/05,11;12;3,Percent
+liv_res_GDP_prop_06,0.09%,Economic impact of coral reef fishing to jurisdiction,6,1/1/06,11;12;3,Percent
+liv_res_GDP_prop_07,0.09%,Economic impact of coral reef fishing to jurisdiction,6,1/1/07,11;12;3,Percent
+liv_res_GDP_prop_08,0.08%,Economic impact of coral reef fishing to jurisdiction,6,1/1/08,11;12;3,Percent
+liv_res_GDP_prop_09,0.08%,Economic impact of coral reef fishing to jurisdiction,6,1/1/09,11;12;3,Percent
+liv_res_GDP_prop_10,0.09%,Economic impact of coral reef fishing to jurisdiction,6,1/1/10,11;12;3,Percent
+liv_res_GDP_prop_11,0.09%,Economic impact of coral reef fishing to jurisdiction,6,1/1/11,11;12;3,Percent
+liv_res_GDP_prop_12,0.09%,Economic impact of coral reef fishing to jurisdiction,6,1/1/12,11;12;3,Percent
+liv_res_GDP_prop_13,0.09%,Economic impact of coral reef fishing to jurisdiction,6,1/1/13,11;12;3,Percent
+liv_res_GDP_prop_14,0.09%,Economic impact of coral reef fishing to jurisdiction,6,1/1/14,11;12;3,Percent
+liv_res_GDP_prop_15,0.11%,Economic impact of coral reef fishing to jurisdiction,6,1/1/15,11;12;3,Percent
+liv_res_emp_prop_05,0.30%,Economic impact of coral reef fishing to jurisdiction,6,1/1/05,11;13;14;20,Percent
+liv_res_emp_prop_06,0.28%,Economic impact of coral reef fishing to jurisdiction,6,1/1/06,11;13;14;20,Percent
+liv_res_emp_prop_07,0.28%,Economic impact of coral reef fishing to jurisdiction,6,1/1/07,11;13;14;20,Percent
+liv_res_emp_prop_08,0.28%,Economic impact of coral reef fishing to jurisdiction,6,1/1/08,11;13;14;20,Percent
+liv_res_emp_prop_09,0.28%,Economic impact of coral reef fishing to jurisdiction,6,1/1/09,11;13;14;20,Percent
+liv_res_emp_prop_10,0.28%,Economic impact of coral reef fishing to jurisdiction,6,1/1/10,11;13;14;20,Percent
+liv_res_emp_prop_11,0.30%,Economic impact of coral reef fishing to jurisdiction,6,1/1/11,11;13;14;20,Percent
+liv_res_emp_prop_12,0.30%,Economic impact of coral reef fishing to jurisdiction,6,1/1/12,11;13;14;20,Percent
+liv_res_emp_prop_13,0.30%,Economic impact of coral reef fishing to jurisdiction,6,1/1/13,11;13;14;20,Percent
+liv_res_emp_prop_14,0.30%,Economic impact of coral reef fishing to jurisdiction,6,1/1/14,11;13;14;20,Percent
+liv_res_emp_prop_15,0.30%,Economic impact of coral reef fishing to jurisdiction,6,1/1/15,11;13;14;20,Percent
+liv_res_estbl_prop_05,0.44%,Economic impact of coral reef fishing to jurisdiction,6,1/1/05,11;13;17;20,Percent
+liv_res_estbl_prop_06,0.41%,Economic impact of coral reef fishing to jurisdiction,6,1/1/06,11;13;17;20,Percent
+liv_res_estbl_prop_07,0.40%,Economic impact of coral reef fishing to jurisdiction,6,1/1/07,11;13;17;20,Percent
+liv_res_estbl_prop_08,0.40%,Economic impact of coral reef fishing to jurisdiction,6,1/1/08,11;13;17;20,Percent
+liv_res_estbl_prop_09,0.39%,Economic impact of coral reef fishing to jurisdiction,6,1/1/09,11;13;17;20,Percent
+liv_res_estbl_prop_10,0.39%,Economic impact of coral reef fishing to jurisdiction,6,1/1/10,11;13;17;20,Percent
+liv_res_estbl_prop_11,0.37%,Economic impact of coral reef fishing to jurisdiction,6,1/1/11,11;13;17;20,Percent
+liv_res_estbl_prop_12,0.35%,Economic impact of coral reef fishing to jurisdiction,6,1/1/12,11;13;17;20,Percent
+liv_res_estbl_prop_13,0.32%,Economic impact of coral reef fishing to jurisdiction,6,1/1/13,11;13;17;20,Percent
+liv_res_estbl_prop_14,0.32%,Economic impact of coral reef fishing to jurisdiction,6,1/1/14,11;13;17;20,Percent
+liv_res_estbl_prop_15,0.31%,Economic impact of coral reef fishing to jurisdiction,6,1/1/15,11;13;17;20,Percent
+comm_license_rev_05,"$251,838.74 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/05,9;15,Year 2017 US Dollars
+comm_license_rev_06,"$257,866.59 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/06,9;15,Year 2017 US Dollars
+comm_license_rev_07,"$250,593.99 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/07,9;15,Year 2017 US Dollars
+comm_license_rev_08,"$247,014.70 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/08,9;15,Year 2017 US Dollars
+comm_license_rev_09,"$231,169.43 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/09,9;15,Year 2017 US Dollars
+comm_license_rev_10,"$286,012.61 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/10,9;15,Year 2017 US Dollars
+comm_license_rev_11,"$285,168.08 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/11,9;15,Year 2017 US Dollars
+comm_license_rev_12,"$302,416.32 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/12,9;15,Year 2017 US Dollars
+comm_license_rev_13,"$298,632.62 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/13,9;15,Year 2017 US Dollars
+comm_license_rev_14,"$287,361.57 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/14,9;15,Year 2017 US Dollars
+comm_license_rev_15,"$284,783.94 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/15,9;15,Year 2017 US Dollars
+comm_license_rev_16,"$187,394.51 ",Economic impact of coral reef fishing to jurisdiction,6,1/1/16,9;15,Year 2017 US Dollars
+rec_license_rev_05,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/05,9,Year 2017 US Dollars
+rec_license_rev_06,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/06,9,Year 2017 US Dollars
+rec_license_rev_07,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/07,9,Year 2017 US Dollars
+rec_license_rev_08,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/08,9,Year 2017 US Dollars
+rec_license_rev_09,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/09,9,Year 2017 US Dollars
+rec_license_rev_10,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/10,9,Year 2017 US Dollars
+rec_license_rev_11,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/11,9,Year 2017 US Dollars
+rec_license_rev_12,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/12,9,Year 2017 US Dollars
+rec_license_rev_13,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/13,9,Year 2017 US Dollars
+rec_license_rev_14,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/14,9,Year 2017 US Dollars
+rec_license_rev_15,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/15,9,Year 2017 US Dollars
+rec_license_rev_16,.,Economic impact of coral reef fishing to jurisdiction,6,1/1/16,9,Year 2017 US Dollars
+Arrivals_05,"67,687,479",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,3;5;16,number of people
+Arrivals_06,"69,145,854",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,3;5;16,number of people
+Arrivals_07,"69,135,310",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,3;5;16,number of people
+Arrivals_08,"63,130,133",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,3;5;16,number of people
+Arrivals_09,"60,255,061",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,3;5;16,number of people
+Arrivals_10,"64,951,433",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,3;5;16,number of people
+Arrivals_11,"67,825,871",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,3;5;16,number of people
+Arrivals_12,"73,663,903",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,3;5;16,number of people
+Arrivals_13,"74,049,772",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,3;5;16,number of people
+Arrivals_14,"75,269,197",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,3;5;16,number of people
+Arrivals_15,"78,086,081",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,3;5;16,number of people
+Arrivals_16,"79,669,135",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,3;5;16,number of people
+tourism_GDP_05,"$6,078,624,103.82 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_06,"$6,303,728,847.91 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_07,"$6,351,512,974.94 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_08,"$5,894,958,018.09 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_09,"$5,260,889,025.56 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_10,"$5,453,596,171.43 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_11,"$5,848,280,218.27 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_12,"$6,256,115,545.20 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_13,"$6,566,590,723.52 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_14,"$6,725,741,370.14 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_15,"$7,167,820,752.45 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,11;13;17;18;19,Year 2017 US Dollars
+tourism_GDP_16,.,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,11;13;17;18;19,Year 2017 US Dollars
+tourism_emp_05,"95,164",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,11;13;17;18;19,number of people
+tourism_emp_06,"97,029",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,11;13;17;18;19,number of people
+tourism_emp_07,"98,871",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,11;13;17;18;19,number of people
+tourism_emp_08,"96,449",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,11;13;17;18;19,number of people
+tourism_emp_09,"90,955",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,11;13;17;18;19,number of people
+tourism_emp_10,"90,777",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,11;13;17;18;19,number of people
+tourism_emp_11,"93,206",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,11;13;17;18;19,number of people
+tourism_emp_12,"96,508",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,11;13;17;18;19,number of people
+tourism_emp_13,"99,989",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,11;13;17;18;19,number of people
+tourism_emp_14,"101,922",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,11;13;17;18;19,number of people
+tourism_emp_15,"103,512",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,11;13;17;18;19,number of people
+tourism_emp_16,"110,729",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,11;13;17;18;19,number of people
+tourism_estbl_05,"3,435",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,11;13;17,number of businesses
+tourism_estbl_06,"3,499",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,11;13;17,number of businesses
+tourism_estbl_07,"3,592",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,11;13;17,number of businesses
+tourism_estbl_08,"3,623",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,11;13;17,number of businesses
+tourism_estbl_09,"3,624",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,11;13;17,number of businesses
+tourism_estbl_10,"3,682",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,11;13;17,number of businesses
+tourism_estbl_11,"3,653",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,11;13;17,number of businesses
+tourism_estbl_12,"3,723",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,11;13;17,number of businesses
+tourism_estbl_13,"3,746",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,11;13;17,number of businesses
+tourism_estbl_14,"3,773",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,11;13;17,number of businesses
+tourism_estbl_15,"3,893",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,11;13;17,number of businesses
+tourism_estbl_16,"3,916",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,11;13;17,number of businesses
+tourism_GDP_prop_05,8.40%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_06,8.48%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_07,8.35%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_08,7.72%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_09,7.08%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_10,7.12%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_11,7.59%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_12,7.99%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_13,8.29%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_14,8.39%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_15,8.50%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,11;13;17;18;19;3;12,percent
+tourism_GDP_prop_16,.,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,11;13;17;18;19;3;12,percent
+tourism_emp_prop_05,13.76%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,11;13;14;20,percent
+tourism_emp_prop_06,13.69%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,11;13;14;20,percent
+tourism_emp_prop_07,13.69%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,11;13;14;20,percent
+tourism_emp_prop_08,13.52%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,11;13;14;20,percent
+tourism_emp_prop_09,13.30%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,11;13;14;20,percent
+tourism_emp_prop_10,13.37%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,11;13;14;20,percent
+tourism_emp_prop_11,13.55%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,11;13;14;20,percent
+tourism_emp_prop_12,13.74%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,11;13;14;20,percent
+tourism_emp_prop_13,13.95%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,11;13;14;20,percent
+tourism_emp_prop_14,13.99%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,11;13;14;20,percent
+tourism_emp_prop_15,13.94%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,11;13;14;20,percent
+tourism_emp_prop_16,14.65%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,11;13;14;20,percent
+tourism_estbl_prop_05,9.53%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,11;13;14;20,percent
+tourism_estbl_prop_06,9.55%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,11;13;14;20,percent
+tourism_estbl_prop_07,9.44%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,11;13;14;20,percent
+tourism_estbl_prop_08,9.40%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,11;13;14;20,percent
+tourism_estbl_prop_09,9.33%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,11;13;14;20,percent
+tourism_estbl_prop_10,9.65%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,11;13;14;20,percent
+tourism_estbl_prop_11,9.68%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,11;13;14;20,percent
+tourism_estbl_prop_12,9.82%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,11;13;14;20,percent
+tourism_estbl_prop_13,9.82%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,11;13;14;20,percent
+tourism_estbl_prop_14,9.82%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,11;13;14;20,percent
+tourism_estbl_prop_15,9.96%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,11;13;14;20,percent
+tourism_estbl_prop_16,9.85%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,11;13;14;20,percent
+vis_spending_05,"$14,385,719,922.70 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_06,"$14,673,464,902.73 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_07,"$14,681,112,325.07 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_08,"$12,802,195,242.41 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_09,"$11,128,730,192.78 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_10,"$12,317,241,392.08 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_11,"$13,254,377,091.01 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_12,"$15,320,708,039.60 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_13,"$15,225,957,008.02 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_14,"$15,418,217,750.63 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_15,"$15,388,839,684.87 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,5;16;19;21;22;23,Year 2017 US Dollars
+vis_spending_16,"$16,052,814,059.64 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,5;16;19;21;22;23,Year 2017 US Dollars
+prop_vis_spending_05,28.59%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,5;16;19;21;22;23,percent
+prop_vis_spending_06,27.96%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,5;16;19;21;22;23,percent
+prop_vis_spending_07,27.34%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,5;16;19;21;22;23,percent
+prop_vis_spending_08,23.29%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,5;16;19;21;22;23,percent
+prop_vis_spending_09,20.48%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,5;16;19;21;22;23,percent
+prop_vis_spending_10,22.11%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,5;16;19;21;22;23,percent
+prop_vis_spending_11,23.28%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,5;16;19;21;22;23,percent
+prop_vis_spending_12,26.22%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,5;16;19;21;22;23,percent
+prop_vis_spending_13,25.59%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,5;16;19;21;22;23,percent
+prop_vis_spending_14,25.15%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,5;16;19;21;22;23,percent
+prop_vis_spending_15,24.36%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,5;16;19;21;22;23,percent
+prop_vis_spending_16,24.44%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,5;16;19;21;22;23,percent
+hotel_occ_05,81.10%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/05,5;16;19;21;22;23,percent
+hotel_occ_06,79.50%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/06,16;23;24;25;26,percent
+hotel_occ_07,75.00%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/07,16;23;24;25;26,percent
+hotel_occ_08,70.40%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/08,16;23;24;25;26,percent
+hotel_occ_09,64.80%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/09,16;23;24;25;26,percent
+hotel_occ_10,70.70%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/10,16;23;24;25;26,percent
+hotel_occ_11,73.20%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/11,16;23;24;25;26,percent
+hotel_occ_12,76.90%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,16;23;24;25;26,percent
+hotel_occ_13,76.50%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,16;23;24;25;26,percent
+hotel_occ_14,77.00%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,16;23;24;25;26,percent
+hotel_occ_15,78.70%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,16;23;24;25;26,percent
+hotel_occ_16,79.00%,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,16;23;24;25;26,percent
+NPS_total_val_12,"$267,711,040.00 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,27,Year 2017 US Dollars
+NPS_total_val_13,"$260,972,021.03 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,27,Year 2017 US Dollars
+NPS_total_val_14,"$282,155,748.46 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,27,Year 2017 US Dollars
+NPS_total_val_15,"$297,712,278.96 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,27,Year 2017 US Dollars
+NPS_total_val_16,"$318,947,694.34 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,27,Year 2017 US Dollars
+NPS_coral_val_12,"$35,622,840.00 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,27,Year 2017 US Dollars
+NPS_coral_val_13,"$33,841,493.78 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,27,Year 2017 US Dollars
+NPS_coral_val_14,"$34,774,915.12 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,27,Year 2017 US Dollars
+NPS_coral_val_15,"$37,703,354.36 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,27,Year 2017 US Dollars
+NPS_coral_val_16,"$38,110,682.97 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,27,Year 2017 US Dollars
+NPS_spending_12,"$340,036,200.00 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,27,Year 2017 US Dollars
+NPS_spending_13,"$330,988,904.72 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,27,Year 2017 US Dollars
+NPS_spending_14,"$355,037,307.10 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,27,Year 2017 US Dollars
+NPS_spending_15,"$376,003,397.30 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,27,Year 2017 US Dollars
+NPS_spending_16,"$401,486,874.03 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,27,Year 2017 US Dollars
+NPS_coral_spending_12,"$45,877,900.00 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,27,Year 2017 US Dollars
+NPS_coral_spending_13,"$43,707,509.21 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,27,Year 2017 US Dollars
+NPS_coral_spending_14,"$44,249,517.75 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,27,Year 2017 US Dollars
+NPS_coral_spending_15,"$48,107,831.93 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,27,Year 2017 US Dollars
+NPS_coral_spending_16,"$48,606,405.81 ",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,27,Year 2017 US Dollars
+NPS_emp_12,"3,720",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,27,number of people
+NPS_emp_13,"3,670",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,27,number of people
+NPS_emp_14,"4,200",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,27,number of people
+NPS_emp_15,"4,460",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,27,number of people
+NPS_emp_16,"4,790",Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,27,number of people
+NPS_coral_emp_12,508,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/12,27,number of people
+NPS_coral_emp_13,488,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/13,27,number of people
+NPS_coral_emp_14,539,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/14,27,number of people
+NPS_coral_emp_15,591,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/15,27,number of people
+NPS_coral_emp_16,603,Economic impact of dive/snorkel tourism to jurisdiction,7,1/1/16,27,number of people
+pov_2000,8.90%,Community well-being,8,1/1/00,1;2;16;28;26;29;30,percent
+pov_2001,11.40%,Community well-being,8,1/1/01,1;2;16;28;26;29;30,percent
+pov_2002,11.30%,Community well-being,8,1/1/02,1;2;16;28;26;29;30,percent
+pov_2003,9.30%,Community well-being,8,1/1/03,1;2;16;28;26;29;30,percent
+pov_2004,8.60%,Community well-being,8,1/1/04,1;2;16;28;26;29;30,percent
+pov_2005,8.60%,Community well-being,8,1/1/05,1;2;16;28;26;29;30,percent
+pov_2006,9.20%,Community well-being,8,1/1/06,1;2;16;28;26;29;30,percent
+pov_2007,7.50%,Community well-being,8,1/1/07,1;2;16;28;26;29;30,percent
+pov_2008,9.90%,Community well-being,8,1/1/08,1;2;16;28;26;29;30,percent
+pov_2009,12.50%,Community well-being,8,1/1/09,1;2;16;28;26;29;30,percent
+pov_2010,12.40%,Community well-being,8,1/1/10,1;2;16;28;26;29;30,percent
+pov_2011,12.10%,Community well-being,8,1/1/11,1;2;16;28;26;29;30,percent
+pov_2012,13.83%,Community well-being,8,1/1/12,1;2;16;28;26;29;30,percent
+pov_2013,10.60%,Community well-being,8,1/1/13,1;2;16;28;26;29;30,percent
+pov_2014,10.80%,Community well-being,8,1/1/14,1;2;16;28;26;29;30,percent
+pov_2015,10.90%,Community well-being,8,1/1/15,1;2;16;28;26;29;30,percent
+pov_2016,9.30%,Community well-being,8,1/1/16,1;2;16;28;26;29;30,percent
+hhinc_2000,"$71,265.75 ",Community well-being,8,1/1/00,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2001,"$64,180.29 ",Community well-being,8,1/1/01,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2002,"$62,999.85 ",Community well-being,8,1/1/02,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2003,"$67,775.92 ",Community well-being,8,1/1/03,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2004,"$71,611.36 ",Community well-being,8,1/1/04,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2005,"$73,577.17 ",Community well-being,8,1/1/05,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2006,"$72,475.91 ",Community well-being,8,1/1/06,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2007,"$74,725.33 ",Community well-being,8,1/1/07,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2008,"$70,436.11 ",Community well-being,8,1/1/08,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2009,"$63,231.00 ",Community well-being,8,1/1/09,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2010,"$66,871.80 ",Community well-being,8,1/1/10,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2011,"$64,962.65 ",Community well-being,8,1/1/11,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2012,"$60,734.78 ",Community well-being,8,1/1/12,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2013,"$68,144.46 ",Community well-being,8,1/1/13,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2014,"$74,154.90 ",Community well-being,8,1/1/14,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2015,"$66,458.86 ",Community well-being,8,1/1/15,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+hhinc_2016,"$73,503.69 ",Community well-being,8,1/1/16,1;2;16;28;26;29;30;31,Year 2017 US Dollars
+unemp_2000,4.25%,Community well-being,8,1/1/00,16;26;30;32;33;34;23,percent
+unemp_2001,4.51%,Community well-being,8,1/1/01,16;26;30;32;33;34;23,percent
+unemp_2002,4.22%,Community well-being,8,1/1/02,16;26;30;32;33;34;23,percent
+unemp_2003,4.12%,Community well-being,8,1/1/03,16;26;30;32;33;34;23,percent
+unemp_2004,3.38%,Community well-being,8,1/1/04,16;26;30;32;33;34;23,percent
+unemp_2005,2.85%,Community well-being,8,1/1/05,16;26;30;32;33;34;23,percent
+unemp_2006,2.61%,Community well-being,8,1/1/06,16;26;30;32;33;34;23,percent
+unemp_2007,2.79%,Community well-being,8,1/1/07,16;26;30;32;33;34;23,percent
+unemp_2008,4.31%,Community well-being,8,1/1/08,16;26;30;32;33;34;23,percent
+unemp_2009,7.15%,Community well-being,8,1/1/09,16;26;30;32;33;34;23,percent
+unemp_2010,6.94%,Community well-being,8,1/1/10,16;26;30;32;33;34;23,percent
+unemp_2011,6.83%,Community well-being,8,1/1/11,16;26;30;32;33;34;23,percent
+unemp_2012,6.00%,Community well-being,8,1/1/12,16;26;30;32;33;34;23,percent
+unemp_2013,4.90%,Community well-being,8,1/1/13,16;26;30;32;33;34;23,percent
+unemp_2014,4.35%,Community well-being,8,1/1/14,16;26;30;32;33;34;23,percent
+unemp_2015,3.57%,Community well-being,8,1/1/15,16;26;30;32;33;34;23,percent
+unemp_2016,2.95%,Community well-being,8,1/1/16,16;26;30;32;33;34;23,percent
+unemp_2017,.,Community well-being,8,1/1/17,16;26;30;32;33;34;23,percent
+med_home_val_2000,"$359,467.20 ",Community well-being,8,1/1/00,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2001,"$363,862.82 ",Community well-being,8,1/1/01,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2002,"$412,869.27 ",Community well-being,8,1/1/02,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2003,"$470,720.59 ",Community well-being,8,1/1/03,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2004,"$560,239.68 ",Community well-being,8,1/1/04,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2005,"$691,491.52 ",Community well-being,8,1/1/05,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2006,"$718,086.84 ",Community well-being,8,1/1/06,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2007,"$694,473.33 ",Community well-being,8,1/1/07,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2008,"$641,150.55 ",Community well-being,8,1/1/08,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2009,"$565,566.89 ",Community well-being,8,1/1/09,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2010,"$546,978.76 ",Community well-being,8,1/1/10,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2011,"$517,087.18 ",Community well-being,8,1/1/11,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2012,"$539,740.00 ",Community well-being,8,1/1/12,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2013,"$578,169.72 ",Community well-being,8,1/1/13,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2014,"$598,669.95 ",Community well-being,8,1/1/14,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2015,"$618,087.78 ",Community well-being,8,1/1/15,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2016,"$644,518.90 ",Community well-being,8,1/1/16,2;16;26;35;36;29;30,Year 2017 US Dollars
+med_home_val_2017,.,Community well-being,8,1/1/17,2;16;26;35;36;29;30,Year 2017 US Dollars
+HS_2000,84.60%,Community well-being,8,1/1/00,1;2;26;29;30,percent
+HS_2001,89.10%,Community well-being,8,1/1/01,1;2;26;29;30,percent
+HS_2002,87.90%,Community well-being,8,1/1/02,1;2;26;29;30,percent
+HS_2003,88.50%,Community well-being,8,1/1/03,1;2;26;29;30,percent
+HS_2004,88.00%,Community well-being,8,1/1/04,1;2;26;29;30,percent
+HS_2005,88.00%,Community well-being,8,1/1/05,1;2;26;29;30,percent
+HS_2006,89.00%,Community well-being,8,1/1/06,1;2;26;29;30,percent
+HS_2007,89.40%,Community well-being,8,1/1/07,1;2;26;29;30,percent
+HS_2008,90.30%,Community well-being,8,1/1/08,1;2;26;29;30,percent
+HS_2009,90.40%,Community well-being,8,1/1/09,1;2;26;29;30,percent
+HS_2010,89.90%,Community well-being,8,1/1/10,1;2;26;29;30,percent
+HS_2011,90.60%,Community well-being,8,1/1/11,1;2;26;29;30,percent
+HS_2012,90.40%,Community well-being,8,1/1/12,1;2;26;29;30,percent
+HS_2013,91.00%,Community well-being,8,1/1/13,1;2;26;29;30,percent
+HS_2014,91.70%,Community well-being,8,1/1/14,1;2;26;29;30,percent
+HS_2015,90.90%,Community well-being,8,1/1/15,1;2;26;29;30,percent
+HS_2016,92.00%,Community well-being,8,1/1/16,1;2;26;29;30,percent
+HS_2017,.,Community well-being,8,1/1/17,1;2;26;29;30,percent
+bach_2000,26.20%,Community well-being,8,1/1/00,1;2;26;29;30;23,percent
+bach_2001,27.90%,Community well-being,8,1/1/01,1;2;26;29;30;23,percent
+bach_2002,26.80%,Community well-being,8,1/1/02,1;2;26;29;30;23,percent
+bach_2003,27.00%,Community well-being,8,1/1/03,1;2;26;29;30;23,percent
+bach_2004,26.60%,Community well-being,8,1/1/04,1;2;26;29;30;23,percent
+bach_2005,27.90%,Community well-being,8,1/1/05,1;2;26;29;30;23,percent
+bach_2006,29.70%,Community well-being,8,1/1/06,1;2;26;29;30;23,percent
+bach_2007,29.20%,Community well-being,8,1/1/07,1;2;26;29;30;23,percent
+bach_2008,29.10%,Community well-being,8,1/1/08,1;2;26;29;30;23,percent
+bach_2009,29.60%,Community well-being,8,1/1/09,1;2;26;29;30;23,percent
+bach_2010,29.50%,Community well-being,8,1/1/10,1;2;26;29;30;23,percent
+bach_2011,29.10%,Community well-being,8,1/1/11,1;2;26;29;30;23,percent
+bach_2012,30.10%,Community well-being,8,1/1/12,1;2;26;29;30;23,percent
+bach_2013,31.20%,Community well-being,8,1/1/13,1;2;26;29;30;23,percent
+bach_2014,31.00%,Community well-being,8,1/1/14,1;2;26;29;30;23,percent
+bach_2015,31.40%,Community well-being,8,1/1/15,1;2;26;29;30;23,percent
+bach_2016,31.90%,Community well-being,8,1/1/16,1;2;26;29;30;23,percent
+bach_2017,.,Community well-being,8,1/1/17,1;2;26;29;30;23,percent
+k12enroll_2000,87.47%,Community well-being,8,1/1/00,1;2;30,percent
+k12enroll_2001,.,Community well-being,8,1/1/01,1;2;30,percent
+k12enroll_2002,.,Community well-being,8,1/1/02,1;2;30,percent
+k12enroll_2003,.,Community well-being,8,1/1/03,1;2;30,percent
+k12enroll_2004,.,Community well-being,8,1/1/04,1;2;30,percent
+k12enroll_2005,87.33%,Community well-being,8,1/1/05,1;2;30,percent
+k12enroll_2006,86.78%,Community well-being,8,1/1/06,1;2;30,percent
+k12enroll_2007,87.19%,Community well-being,8,1/1/07,1;2;30,percent
+k12enroll_2008,86.28%,Community well-being,8,1/1/08,1;2;30,percent
+k12enroll_2009,87.40%,Community well-being,8,1/1/09,1;2;30,percent
+k12enroll_2010,87.82%,Community well-being,8,1/1/10,1;2;30,percent
+k12enroll_2011,86.70%,Community well-being,8,1/1/11,1;2;30,percent
+k12enroll_2012,86.85%,Community well-being,8,1/1/12,1;2;30,percent
+k12enroll_2013,86.42%,Community well-being,8,1/1/13,1;2;30,percent
+k12enroll_2014,86.97%,Community well-being,8,1/1/14,1;2;30,percent
+k12enroll_2015,85.63%,Community well-being,8,1/1/15,1;2;30,percent
+k12enroll_2016,85.43%,Community well-being,8,1/1/16,1;2;30,percent
+edu_expenditure_2000,"10,466.03",Community well-being,8,1/1/00,37,Year 2017 US Dollars
+edu_expenditure_2001,"10,348.34",Community well-being,8,1/1/01,37,Year 2017 US Dollars
+edu_expenditure_2002,"10,703.97",Community well-being,8,1/1/02,37,Year 2017 US Dollars
+edu_expenditure_2003,"11,792.86",Community well-being,8,1/1/03,37,Year 2017 US Dollars
+edu_expenditure_2004,"12,287.07",Community well-being,8,1/1/04,37,Year 2017 US Dollars
+edu_expenditure_2005,"12,170.25",Community well-being,8,1/1/05,37,Year 2017 US Dollars
+edu_expenditure_2006,"13,283.46",Community well-being,8,1/1/06,37,Year 2017 US Dollars
+edu_expenditure_2007,"14,855.89",Community well-being,8,1/1/07,37,Year 2017 US Dollars
+edu_expenditure_2008,"14,907.90",Community well-being,8,1/1/08,37,Year 2017 US Dollars
+edu_expenditure_2009,"15,343.88",Community well-being,8,1/1/09,37,Year 2017 US Dollars
+edu_expenditure_2010,"14,484.27",Community well-being,8,1/1/10,37,Year 2017 US Dollars
+edu_expenditure_2011,"14,351.92",Community well-being,8,1/1/11,37,Year 2017 US Dollars
+edu_expenditure_2012,"14,365.72",Community well-being,8,1/1/12,37,Year 2017 US Dollars
+edu_expenditure_2013,"13,384.89",Community well-being,8,1/1/13,37,Year 2017 US Dollars
+edu_expenditure_2014,"13,955.78",Community well-being,8,1/1/14,37,Year 2017 US Dollars
+edu_expenditure_2015,"14,239.71",Community well-being,8,1/1/15,37,Year 2017 US Dollars
+soc_assist_capita_2000,"$1,159.97 ",Community well-being,8,1/1/00,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2001,"$1,129.67 ",Community well-being,8,1/1/01,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2002,"$1,194.66 ",Community well-being,8,1/1/02,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2003,"$1,269.64 ",Community well-being,8,1/1/03,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2004,"$1,345.85 ",Community well-being,8,1/1/04,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2005,"$1,350.88 ",Community well-being,8,1/1/05,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2006,"$1,301.62 ",Community well-being,8,1/1/06,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2007,"$1,324.75 ",Community well-being,8,1/1/07,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2008,"$1,377.33 ",Community well-being,8,1/1/08,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2009,"$1,461.21 ",Community well-being,8,1/1/09,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2010,"$1,613.98 ",Community well-being,8,1/1/10,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2011,"$1,665.68 ",Community well-being,8,1/1/11,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2012,"$1,540.42 ",Community well-being,8,1/1/12,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2013,"$1,580.68 ",Community well-being,8,1/1/13,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2014,"$1,898.04 ",Community well-being,8,1/1/14,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2015,"$1,790.39 ",Community well-being,8,1/1/15,23;38;39;40;41;42;43,Year 2017 US Dollars
+soc_assist_capita_2016,"$1,967.69 ",Community well-being,8,1/1/16,23;38;39;40;41;42;43,Year 2017 US Dollars
+%hh_public_assist_2000,7.16%,Community well-being,8,1/1/00,1;2;30,percent
+%hh_public_assist_2005,3.46%,Community well-being,8,1/1/05,1;2;30,percent
+%hh_public_assist_2006,3.52%,Community well-being,8,1/1/06,1;2;30,percent
+%hh_public_assist_2007,2.92%,Community well-being,8,1/1/07,1;2;30,percent
+%hh_public_assist_2008,3.09%,Community well-being,8,1/1/08,1;2;30,percent
+%hh_public_assist_2009,3.69%,Community well-being,8,1/1/09,1;2;30,percent
+%hh_public_assist_2010,3.32%,Community well-being,8,1/1/10,1;2;30,percent
+%hh_public_assist_2011,4.34%,Community well-being,8,1/1/11,1;2;30,percent
+%hh_public_assist_2012,3.36%,Community well-being,8,1/1/12,1;2;30,percent
+%hh_public_assist_2013,3.97%,Community well-being,8,1/1/13,1;2;30,percent
+%hh_public_assist_2014,3.34%,Community well-being,8,1/1/14,1;2;30,percent
+%hh_public_assist_2015,3.03%,Community well-being,8,1/1/15,1;2;30,percent
+%hh_public_assist_2016,3.54%,Community well-being,8,1/1/16,1;2;30,percent
+beds_per_thous_2000,2.5,Community well-being,8,1/1/00,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2001,2.6,Community well-being,8,1/1/01,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2002,2.6,Community well-being,8,1/1/02,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2003,2.5,Community well-being,8,1/1/03,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2004,2.5,Community well-being,8,1/1/04,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2005,2.4,Community well-being,8,1/1/05,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2006,2.3,Community well-being,8,1/1/06,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2007,2.3,Community well-being,8,1/1/07,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2008,2.4,Community well-being,8,1/1/08,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2009,2.3,Community well-being,8,1/1/09,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2010,2.3,Community well-being,8,1/1/10,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2011,1.9,Community well-being,8,1/1/11,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2012,2,Community well-being,8,1/1/12,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2013,2,Community well-being,8,1/1/13,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2014,2,Community well-being,8,1/1/14,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2015,1.9,Community well-being,8,1/1/15,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2016,1.7,Community well-being,8,1/1/16,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+beds_per_thous_2018,.,Community well-being,8,1/1/18,23;44;45;46;47;48;49;50,"number of beds per 1,000 people"
+%tele_2000,97.95%,Community well-being,8,1/1/00,1;2;26;29;30,percent
+%tele_2001,.,Community well-being,8,1/1/01,1;2;26;29;30,percent
+%tele_2002,.,Community well-being,8,1/1/02,1;2;26;29;30,percent
+%tele_2003,.,Community well-being,8,1/1/03,1;2;26;29;30,percent
+%tele_2004,.,Community well-being,8,1/1/04,1;2;26;29;30,percent
+%tele_2005,95.60%,Community well-being,8,1/1/05,1;2;26;29;30,percent
+%tele_2006,95.74%,Community well-being,8,1/1/06,1;2;26;29;30,percent
+%tele_2007,94.85%,Community well-being,8,1/1/07,1;2;26;29;30,percent
+%tele_2008,98.15%,Community well-being,8,1/1/08,1;2;26;29;30,percent
+%tele_2009,97.63%,Community well-being,8,1/1/09,1;2;26;29;30,percent
+%tele_2010,97.50%,Community well-being,8,1/1/10,1;2;26;29;30,percent
+%tele_2011,97.36%,Community well-being,8,1/1/11,1;2;26;29;30,percent
+%tele_2012,97.38%,Community well-being,8,1/1/12,1;2;26;29;30,percent
+%tele_2013,97.74%,Community well-being,8,1/1/13,1;2;26;29;30,percent
+%tele_2014,97.72%,Community well-being,8,1/1/14,1;2;26;29;30,percent
+%tele_2015,98.54%,Community well-being,8,1/1/15,1;2;26;29;30,percent
+%tele_2016,97.00%,Community well-being,8,1/1/16,1;2;26;29;30,percent
+%internet_2004,.,Community well-being,8,1/1/04,1;2;23;26;29;30,percent
+%internet_2005,.,Community well-being,8,1/1/05,1;2;23;26;29;30,percent
+%internet_2006,.,Community well-being,8,1/1/06,1;2;23;26;29;30,percent
+%internet_2007,.,Community well-being,8,1/1/07,1;2;23;26;29;30,percent
+%internet_2008,.,Community well-being,8,1/1/08,1;2;23;26;29;30,percent
+%internet_2009,.,Community well-being,8,1/1/09,1;2;23;26;29;30,percent
+%internet_2010,.,Community well-being,8,1/1/10,1;2;23;26;29;30,percent
+%internet_2011,.,Community well-being,8,1/1/11,1;2;23;26;29;30,percent
+%internet_2012,.,Community well-being,8,1/1/12,1;2;23;26;29;30,percent
+%internet_2013,82.77%,Community well-being,8,1/1/13,1;2;23;26;29;30,percent
+%internet_2014,83.99%,Community well-being,8,1/1/14,1;2;23;26;29;30,percent
+%internet_2015,85.92%,Community well-being,8,1/1/15,1;2;23;26;29;30,percent
+%internet_2016,87.57%,Community well-being,8,1/1/16,1;2;23;26;29;30,percent
+%internet_2017,.,Community well-being,8,1/1/17,1;2;23;26;29;30,percent
+tenure_2000,6,Community well-being,8,1/1/00,1;2;26;29;30,number of years
+tenure_2001,.,Community well-being,8,1/1/01,1;2;26;29;30,number of years
+tenure_2002,.,Community well-being,8,1/1/02,1;2;26;29;30,number of years
+tenure_2003,.,Community well-being,8,1/1/03,1;2;26;29;30,number of years
+tenure_2004,.,Community well-being,8,1/1/04,1;2;26;29;30,number of years
+tenure_2005,6,Community well-being,8,1/1/05,1;2;26;29;30,number of years
+tenure_2006,6,Community well-being,8,1/1/06,1;2;26;29;30,number of years
+tenure_2007,6,Community well-being,8,1/1/07,1;2;26;29;30,number of years
+tenure_2008,6,Community well-being,8,1/1/08,1;2;26;29;30,number of years
+tenure_2009,6,Community well-being,8,1/1/09,1;2;26;29;30,number of years
+tenure_2010,7,Community well-being,8,1/1/10,1;2;26;29;30,number of years
+tenure_2011,7,Community well-being,8,1/1/11,1;2;26;29;30,number of years
+tenure_2012,8,Community well-being,8,1/1/12,1;2;26;29;30,number of years
+tenure_2013,8,Community well-being,8,1/1/13,1;2;26;29;30,number of years
+tenure_2014,8,Community well-being,8,1/1/14,1;2;26;29;30,number of years
+tenure_2015,8,Community well-being,8,1/1/15,1;2;26;29;30,number of years
+tenure_2016,8,Community well-being,8,1/1/16,1;2;26;29;30,number of years
+life_2000,80.5,Community well-being,8,1/1/00,16;51;52;53;28,number of years
+life_2001,.,Community well-being,8,1/1/01,16;51;52;53;28,number of years
+life_2002,.,Community well-being,8,1/1/02,16;51;52;53;28,number of years
+life_2003,.,Community well-being,8,1/1/03,16;51;52;53;28,number of years
+life_2004,.,Community well-being,8,1/1/04,16;51;52;53;28,number of years
+life_2005,80.8,Community well-being,8,1/1/05,16;51;52;53;28,number of years
+life_2006,.,Community well-being,8,1/1/06,16;51;52;53;28,number of years
+life_2007,.,Community well-being,8,1/1/07,16;51;52;53;28,number of years
+life_2008,81.1,Community well-being,8,1/1/08,16;51;52;53;28,number of years
+life_2009,.,Community well-being,8,1/1/09,16;51;52;53;28,number of years
+life_2010,82.4,Community well-being,8,1/1/10,16;51;52;53;28,number of years
+life_2011,.,Community well-being,8,1/1/11,16;51;52;53;28,number of years
+life_2012,.,Community well-being,8,1/1/12,16;51;52;53;28,number of years
+life_2013,81.9,Community well-being,8,1/1/13,16;51;52;53;28,number of years
+life_2014,81.5,Community well-being,8,1/1/14,16;51;52;53;28,number of years
+life_2015,.,Community well-being,8,1/1/15,16;51;52;53;28,number of years
+life_2016,.,Community well-being,8,1/1/16,16;51;52;53;28,number of years
+life_2017,.,Community well-being,8,1/1/17,16;51;52;53;28,number of years
+infant_2000,770,Community well-being,8,1/1/00,52;28;54,"number of deaths per 100,000 live births"
+infant_2001,590,Community well-being,8,1/1/01,52;28;54,"number of deaths per 100,000 live births"
+infant_2002,680,Community well-being,8,1/1/02,52;28;54,"number of deaths per 100,000 live births"
+infant_2003,730,Community well-being,8,1/1/03,52;28;54,"number of deaths per 100,000 live births"
+infant_2004,530,Community well-being,8,1/1/04,52;28;54,"number of deaths per 100,000 live births"
+infant_2005,640,Community well-being,8,1/1/05,52;28;54,"number of deaths per 100,000 live births"
+infant_2006,550,Community well-being,8,1/1/06,52;28;54,"number of deaths per 100,000 live births"
+infant_2007,610,Community well-being,8,1/1/07,52;28;54,"number of deaths per 100,000 live births"
+infant_2008,530,Community well-being,8,1/1/08,52;28;54,"number of deaths per 100,000 live births"
+infant_2009,580,Community well-being,8,1/1/09,52;28;54,"number of deaths per 100,000 live births"
+infant_2010,570,Community well-being,8,1/1/10,52;28;54,"number of deaths per 100,000 live births"
+infant_2011,480,Community well-being,8,1/1/11,52;28;54,"number of deaths per 100,000 live births"
+infant_2012,480,Community well-being,8,1/1/12,52;28;54,"number of deaths per 100,000 live births"
+infant_2013,620,Community well-being,8,1/1/13,52;28;54,"number of deaths per 100,000 live births"
+infant_2014,440,Community well-being,8,1/1/14,52;28;54,"number of deaths per 100,000 live births"
+infant_2015,570,Community well-being,8,1/1/15,52;28;54,"number of deaths per 100,000 live births"
+infant_2016,.,Community well-being,8,1/1/16,52;28;54,"number of deaths per 100,000 live births"
+infant_2017,.,Community well-being,8,1/1/17,52;28;54,"number of deaths per 100,000 live births"
+physicians_per_thous_1995,.,Community well-being,8,1/1/95,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2000,2.51,Community well-being,8,1/1/00,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2001,2.62,Community well-being,8,1/1/01,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2002,2.62,Community well-being,8,1/1/02,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2003,2.69,Community well-being,8,1/1/03,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2004,2.7,Community well-being,8,1/1/04,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2005,2.8,Community well-being,8,1/1/05,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2006,2.81,Community well-being,8,1/1/06,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2007,3.05,Community well-being,8,1/1/07,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2008,3.06,Community well-being,8,1/1/08,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2009,3.14,Community well-being,8,1/1/09,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2010,3.11,Community well-being,8,1/1/10,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2011,3.17,Community well-being,8,1/1/11,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2012,3.21,Community well-being,8,1/1/12,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2013,3.28,Community well-being,8,1/1/13,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2014,3.29,Community well-being,8,1/1/14,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2015,3.37,Community well-being,8,1/1/15,16;54;55;23;56;3,"number of physicians per 1,000 people"
+physicians_per_thous_2016,3.35,Community well-being,8,1/1/16,16;54;55;23;56;3,"number of physicians per 1,000 people"
+death_2000,7.375,Community well-being,8,1/1/00,52;57;54,"number of deaths per 1,000 people"
+death_2001,7.13,Community well-being,8,1/1/01,52;57;54,"number of deaths per 1,000 people"
+death_2002,7.55,Community well-being,8,1/1/02,52;57;54,"number of deaths per 1,000 people"
+death_2003,7.3,Community well-being,8,1/1/03,52;57;54,"number of deaths per 1,000 people"
+death_2004,6.86,Community well-being,8,1/1/04,52;57;54,"number of deaths per 1,000 people"
+death_2005,6.62,Community well-being,8,1/1/05,52;57;54,"number of deaths per 1,000 people"
+death_2006,7.15,Community well-being,8,1/1/06,52;57;54,"number of deaths per 1,000 people"
+death_2007,6.85,Community well-being,8,1/1/07,52;57;54,"number of deaths per 1,000 people"
+death_2008,6.79,Community well-being,8,1/1/08,52;57;54,"number of deaths per 1,000 people"
+death_2009,6.65,Community well-being,8,1/1/09,52;57;54,"number of deaths per 1,000 people"
+death_2010,5.76,Community well-being,8,1/1/10,52;57;54,"number of deaths per 1,000 people"
+death_2011,6.08,Community well-being,8,1/1/11,52;57;54,"number of deaths per 1,000 people"
+death_2012,6.25,Community well-being,8,1/1/12,52;57;54,"number of deaths per 1,000 people"
+death_2013,5.94,Community well-being,8,1/1/13,52;57;54,"number of deaths per 1,000 people"
+death_2014,6.15,Community well-being,8,1/1/14,52;57;54,"number of deaths per 1,000 people"
+death_2015,6.45,Community well-being,8,1/1/15,52;57;54,"number of deaths per 1,000 people"
+death_2016,5.72,Community well-being,8,1/1/16,52;57;54,"number of deaths per 1,000 people"
+insurance_2005,.,Community well-being,8,1/1/05,1;2;26;29;30,percent
+insurance_2006,90.20%,Community well-being,8,1/1/06,1;2;26;29;30,percent
+insurance_2007,91.00%,Community well-being,8,1/1/07,1;2;26;29;30,percent
+insurance_2008,92.30%,Community well-being,8,1/1/08,1;2;26;29;30,percent
+insurance_2009,91.80%,Community well-being,8,1/1/09,1;2;26;29;30,percent
+insurance_2010,91.10%,Community well-being,8,1/1/10,1;2;26;29;30,percent
+insurance_2011,91.90%,Community well-being,8,1/1/11,1;2;26;29;30,percent
+insurance_2012,92.20%,Community well-being,8,1/1/12,1;2;26;29;30,percent
+insurance_2013,92.40%,Community well-being,8,1/1/13,1;2;26;29;30,percent
+insurance_2014,94.00%,Community well-being,8,1/1/14,1;2;26;29;30,percent
+insurance_2015,95.20%,Community well-being,8,1/1/15,1;2;26;29;30,percent
+insurance_2016,95.80%,Community well-being,8,1/1/16,1;2;26;29;30,percent
+insurance_2017,.,Community well-being,8,1/1/17,1;2;26;29;30,percent
+healthy_food_per_thous_2002,0.54,Community well-being,8,1/1/02,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2003,0.53,Community well-being,8,1/1/03,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2004,0.53,Community well-being,8,1/1/04,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2005,0.37,Community well-being,8,1/1/05,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2006,0.37,Community well-being,8,1/1/06,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2007,0.36,Community well-being,8,1/1/07,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2008,0.47,Community well-being,8,1/1/08,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2009,0.32,Community well-being,8,1/1/09,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2010,0.32,Community well-being,8,1/1/10,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2011,0.32,Community well-being,8,1/1/11,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2012,0.31,Community well-being,8,1/1/12,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2013,0.32,Community well-being,8,1/1/13,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2014,0.31,Community well-being,8,1/1/14,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2015,0.31,Community well-being,8,1/1/15,17;20,"number of outlets per 1,000 people"
+healthy_food_per_thous_2016,0.31,Community well-being,8,1/1/16,17;20,"number of outlets per 1,000 people"
+%no_vehicle_2000,10.98%,Community well-being,8,1/1/00,1;2;26;29;30,percent
+%no_vehicle_2001,.,Community well-being,8,1/1/01,1;2;26;29;30,percent
+%no_vehicle_2002,.,Community well-being,8,1/1/02,1;2;26;29;30,percent
+%no_vehicle_2003,.,Community well-being,8,1/1/03,1;2;26;29;30,percent
+%no_vehicle_2004,.,Community well-being,8,1/1/04,1;2;26;29;30,percent
+%no_vehicle_2005,8.68%,Community well-being,8,1/1/05,1;2;26;29;30,percent
+%no_vehicle_2006,8.91%,Community well-being,8,1/1/06,1;2;26;29;30,percent
+%no_vehicle_2007,8.48%,Community well-being,8,1/1/07,1;2;26;29;30,percent
+%no_vehicle_2008,8.41%,Community well-being,8,1/1/08,1;2;26;29;30,percent
+%no_vehicle_2009,8.82%,Community well-being,8,1/1/09,1;2;26;29;30,percent
+%no_vehicle_2010,8.91%,Community well-being,8,1/1/10,1;2;26;29;30,percent
+%no_vehicle_2011,8.95%,Community well-being,8,1/1/11,1;2;26;29;30,percent
+%no_vehicle_2012,8.36%,Community well-being,8,1/1/12,1;2;26;29;30,percent
+%no_vehicle_2013,9.01%,Community well-being,8,1/1/13,1;2;26;29;30,percent
+%no_vehicle_2014,8.18%,Community well-being,8,1/1/14,1;2;26;29;30,percent
+%no_vehicle_2015,8.22%,Community well-being,8,1/1/15,1;2;26;29;30,percent
+%no_vehicle_2016,8.35%,Community well-being,8,1/1/16,1;2;26;29;30,percent
+%imp_cover_2010,.,Community well-being,8,1/1/10,58,percent
+%imp_cover_2011,2.77%,Community well-being,8,1/1/11,58,percent
+%imp_cover_2012,.,Community well-being,8,1/1/12,58,percent
+%imp_cover_2016,.,Community well-being,8,1/1/16,58,percent
+%days_affected_2000,0.10%,Community well-being,8,1/1/00,59,percent
+%days_affected_2001,0.06%,Community well-being,8,1/1/01,59,percent
+%days_affected_2002,0.80%,Community well-being,8,1/1/02,59,percent
+%days_affected_2003,.,Community well-being,8,1/1/03,59,percent
+%days_affected_2004,.,Community well-being,8,1/1/04,59,percent
+%days_affected_2005,.,Community well-being,8,1/1/05,59,percent
+%days_affected_2006,4.29%,Community well-being,8,1/1/06,59,percent
+%days_affected_2007,2.68%,Community well-being,8,1/1/07,59,percent
+%days_affected_2008,2.43%,Community well-being,8,1/1/08,59,percent
+%days_affected_2009,1.73%,Community well-being,8,1/1/09,59,percent
+%days_affected_2010,0.66%,Community well-being,8,1/1/10,59,percent
+%days_affected_2011,5.71%,Community well-being,8,1/1/11,59,percent
+%days_affected_2012,4.39%,Community well-being,8,1/1/12,59,percent
+%days_affected_2013,2.55%,Community well-being,8,1/1/13,59,percent
+%days_affected_2014,10.41%,Community well-being,8,1/1/14,59,percent
+%days_affected_2015,6.19%,Community well-being,8,1/1/15,59,percent
+%days_affected_2016,3.08%,Community well-being,8,1/1/16,59,percent
+%days_affected_2017,.,Community well-being,8,1/1/17,59,percent
+%coast_impaired_2016,67.00%,Community well-being,8,1/1/16,60,percent
+%coast_impaired_2018,.,Community well-being,8,1/1/18,60,percent
+%cult_2010,.,Physical infrastructure,11,1/1/10,58,percent
+%cult_2011,2.97%,Physical infrastructure,11,1/1/11,58,percent
+%cult_2012,.,Physical infrastructure,11,1/1/12,58,percent
+%cult_2016,.,Physical infrastructure,11,1/1/16,58,percent
+%noplumb_2000,0.95%,Physical infrastructure,11,1/1/00,1;2,percent
+%noplumb_2005,0.96%,Physical infrastructure,11,1/1/05,1;2,percent
+%noplumb_2006,0.76%,Physical infrastructure,11,1/1/06,1;2,percent
+%noplumb_2007,0.95%,Physical infrastructure,11,1/1/07,1;2,percent
+%noplumb_2008,1.14%,Physical infrastructure,11,1/1/08,1;2,percent
+%noplumb_2009,1.25%,Physical infrastructure,11,1/1/09,1;2,percent
+%noplumb_2010,0.77%,Physical infrastructure,11,1/1/10,1;2,percent
+%noplumb_2011,1.48%,Physical infrastructure,11,1/1/11,1;2,percent
+%noplumb_2012,1.57%,Physical infrastructure,11,1/1/12,1;2,percent
+%noplumb_2013,1.51%,Physical infrastructure,11,1/1/13,1;2,percent
+%noplumb_2014,1.41%,Physical infrastructure,11,1/1/14,1;2,percent
+%noplumb_2015,1.36%,Physical infrastructure,11,1/1/15,1;2,percent
+%noplumb_2016,1.30%,Physical infrastructure,11,1/1/16,1;2,percent
+%noplumb_2017,1.47%,Physical infrastructure,11,1/1/17,1;2,percent
+bldg_perm_2000,"4,905",Physical infrastructure,11,1/1/00,23;26;40;62,number of permits
+bldg_perm_2001,"4,790",Physical infrastructure,11,1/1/01,23;26;40;62,number of permits
+bldg_perm_2002,"5,902",Physical infrastructure,11,1/1/02,23;26;40;62,number of permits
+bldg_perm_2003,"7,284",Physical infrastructure,11,1/1/03,23;26;40;62,number of permits
+bldg_perm_2004,"9,034",Physical infrastructure,11,1/1/04,23;26;40;62,number of permits
+bldg_perm_2005,"9,828",Physical infrastructure,11,1/1/05,23;26;40;62,number of permits
+bldg_perm_2006,"7,530",Physical infrastructure,11,1/1/06,23;26;40;62,number of permits
+bldg_perm_2007,"6,972",Physical infrastructure,11,1/1/07,23;26;40;62,number of permits
+bldg_perm_2008,"4,115",Physical infrastructure,11,1/1/08,23;26;40;62,number of permits
+bldg_perm_2009,"2,617",Physical infrastructure,11,1/1/09,23;26;40;62,number of permits
+bldg_perm_2010,"3,442",Physical infrastructure,11,1/1/10,23;26;40;62,number of permits
+bldg_perm_2011,"2,743",Physical infrastructure,11,1/1/11,23;26;40;62,number of permits
+bldg_perm_2012,"2,993",Physical infrastructure,11,1/1/12,23;26;40;62,number of permits
+bldg_perm_2013,"3,882",Physical infrastructure,11,1/1/13,23;26;40;62,number of permits
+bldg_perm_2014,"3,066",Physical infrastructure,11,1/1/14,23;26;40;62,number of permits
+bldg_perm_2015,"5,422",Physical infrastructure,11,1/1/15,23;26;40;62,number of permits
+bldg_perm_2016,"3,369",Physical infrastructure,11,1/1/16,23;26;40;62,number of permits
+bldg_perm_2017,"4,035",Physical infrastructure,11,1/1/17,23;26;40;62,number of permits
+NPDES_2000,443,Physical infrastructure,11,1/1/00,61;63,number of permits
+NPDES_2001,507,Physical infrastructure,11,1/1/01,61;63,number of permits
+NPDES_2002,563,Physical infrastructure,11,1/1/02,61;63,number of permits
+NPDES_2003,318,Physical infrastructure,11,1/1/03,61;63,number of permits
+NPDES_2004,718,Physical infrastructure,11,1/1/04,61;63,number of permits
+NPDES_2005,997,Physical infrastructure,11,1/1/05,61;63,number of permits
+NPDES_2006,"1,244",Physical infrastructure,11,1/1/06,61;63,number of permits
+NPDES_2007,"1,406",Physical infrastructure,11,1/1/07,61;63,number of permits
+NPDES_2008,421,Physical infrastructure,11,1/1/08,61;63,number of permits
+NPDES_2009,720,Physical infrastructure,11,1/1/09,61;63,number of permits
+NPDES_2010,912,Physical infrastructure,11,1/1/10,61;63,number of permits
+NPDES_2011,982,Physical infrastructure,11,1/1/11,61;63,number of permits
+NPDES_2012,"1,014",Physical infrastructure,11,1/1/12,61;63,number of permits
+NPDES_2013,908,Physical infrastructure,11,1/1/13,61;63,number of permits
+NPDES_2014,"1,273",Physical infrastructure,11,1/1/14,61;63,number of permits
+NPDES_2015,"1,547",Physical infrastructure,11,1/1/15,61;63,number of permits
+NPDES_2016,"1,844",Physical infrastructure,11,1/1/16,61;63,number of permits
+NPDES_2017,"2,014",Physical infrastructure,11,1/1/17,61;63,number of permits
+releases_2000,"1,273,978.37",Physical infrastructure,11,1/1/00,64,lbs
+releases_2001,"3,380,521.37",Physical infrastructure,11,1/1/01,64,lbs
+releases_2002,"3,695,660.59",Physical infrastructure,11,1/1/02,64,lbs
+releases_2003,"3,167,753.27",Physical infrastructure,11,1/1/03,64,lbs
+releases_2004,"3,170,717.64",Physical infrastructure,11,1/1/04,64,lbs
+releases_2005,"3,105,368.58",Physical infrastructure,11,1/1/05,64,lbs
+releases_2006,"3,021,487.54",Physical infrastructure,11,1/1/06,64,lbs
+releases_2007,"3,015,577.18",Physical infrastructure,11,1/1/07,64,lbs
+releases_2008,"3,245,549.77",Physical infrastructure,11,1/1/08,64,lbs
+releases_2009,"3,230,824.09",Physical infrastructure,11,1/1/09,64,lbs
+releases_2010,"2,777,863.72",Physical infrastructure,11,1/1/10,64,lbs
+releases_2011,"2,871,598.97",Physical infrastructure,11,1/1/11,64,lbs
+releases_2012,"2,957,277.09",Physical infrastructure,11,1/1/12,64,lbs
+releases_2013,"2,843,333.64",Physical infrastructure,11,1/1/13,64,lbs
+releases_2014,"2,926,448.87",Physical infrastructure,11,1/1/14,64,lbs
+releases_2015,"2,817,038.12",Physical infrastructure,11,1/1/15,64,lbs
+releases_2016,"3,215,153.18",Physical infrastructure,11,1/1/16,64,lbs
+releases_2017,"3,061,992.03",Physical infrastructure,11,1/1/17,64,lbs
+landfills_2000,9,Physical infrastructure,11,1/1/00,65,number of landfills
+landfills_2001,9,Physical infrastructure,11,1/1/01,65,number of landfills
+landfills_2002,9,Physical infrastructure,11,1/1/02,65,number of landfills
+landfills_2003,9,Physical infrastructure,11,1/1/03,65,number of landfills
+landfills_2004,9,Physical infrastructure,11,1/1/04,65,number of landfills
+landfills_2005,9,Physical infrastructure,11,1/1/05,65,number of landfills
+landfills_2006,9,Physical infrastructure,11,1/1/06,65,number of landfills
+landfills_2007,9,Physical infrastructure,11,1/1/07,65,number of landfills
+landfills_2008,9,Physical infrastructure,11,1/1/08,65,number of landfills
+landfills_2009,9,Physical infrastructure,11,1/1/09,65,number of landfills
+landfills_2010,9,Physical infrastructure,11,1/1/10,65,number of landfills
+landfills_2011,9,Physical infrastructure,11,1/1/11,65,number of landfills
+landfills_2012,9,Physical infrastructure,11,1/1/12,65,number of landfills
+landfills_2013,9,Physical infrastructure,11,1/1/13,65,number of landfills
+landfills_2014,9,Physical infrastructure,11,1/1/14,65,number of landfills
+landfills_2015,9,Physical infrastructure,11,1/1/15,65,number of landfills
+landfills_2016,9,Physical infrastructure,11,1/1/16,65,number of landfills
+landfills_2017,9,Physical infrastructure,11,1/1/17,65,number of landfills
+DOD_2000,9,Physical infrastructure,11,1/1/00,66,acres
+DOD_2001,243816,Physical infrastructure,11,1/1/01,66,acres
+DOD_2002,245485,Physical infrastructure,11,1/1/02,66,acres
+DOD_2003,236303,Physical infrastructure,11,1/1/03,66,acres
+DOD_2004,211954,Physical infrastructure,11,1/1/04,66,acres
+DOD_2005,204305,Physical infrastructure,11,1/1/05,66,acres
+DOD_2006,233624,Physical infrastructure,11,1/1/06,66,acres
+DOD_2007,232797,Physical infrastructure,11,1/1/07,66,acres
+DOD_2008,238920,Physical infrastructure,11,1/1/08,66,acres
+DOD_2009,230532,Physical infrastructure,11,1/1/09,66,acres
+DOD_2010,230622,Physical infrastructure,11,1/1/10,66,acres
+DOD_2011,230929,Physical infrastructure,11,1/1/11,66,acres
+DOD_2012,230486,Physical infrastructure,11,1/1/12,66,acres
+DOD_2013,230280,Physical infrastructure,11,1/1/13,66,acres
+DOD_2014,224897,Physical infrastructure,11,1/1/14,66,acres
+DOD_2016,59795,Physical infrastructure,11,1/1/16,66,acres
+DOD_2017,228639,Physical infrastructure,11,1/1/17,66,acres
+%DOD_2000,0.00%,Physical infrastructure,11,1/1/00,66,percent
+%DOD_2001,6.03%,Physical infrastructure,11,1/1/01,66,percent
+%DOD_2002,6.07%,Physical infrastructure,11,1/1/02,66,percent
+%DOD_2003,5.85%,Physical infrastructure,11,1/1/03,66,percent
+%DOD_2004,5.24%,Physical infrastructure,11,1/1/04,66,percent
+%DOD_2005,5.05%,Physical infrastructure,11,1/1/05,66,percent
+%DOD_2006,5.78%,Physical infrastructure,11,1/1/06,66,percent
+%DOD_2007,5.76%,Physical infrastructure,11,1/1/07,66,percent
+%DOD_2008,5.91%,Physical infrastructure,11,1/1/08,66,percent
+%DOD_2009,5.70%,Physical infrastructure,11,1/1/09,66,percent
+%DOD_2010,5.70%,Physical infrastructure,11,1/1/10,66,percent
+%DOD_2011,5.71%,Physical infrastructure,11,1/1/11,66,percent
+%DOD_2012,5.70%,Physical infrastructure,11,1/1/12,66,percent
+%DOD_2013,5.70%,Physical infrastructure,11,1/1/13,66,percent
+%DOD_2014,5.56%,Physical infrastructure,11,1/1/14,66,percent
+%DOD_2016,1.48%,Physical infrastructure,11,1/1/16,66,percent
+%DOD_2017,5.66%,Physical infrastructure,11,1/1/17,66,percent
+landarea,"4,042,848.00",Physical infrastructure,11,.,.,acres
+coast,"1,525.03",Physical infrastructure,11,.,.,miles
+bldg_perm_per_coast_2000,.,Physical infrastructure,11,1/1/00,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2001,.,Physical infrastructure,11,1/1/01,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2002,.,Physical infrastructure,11,1/1/02,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2003,.,Physical infrastructure,11,1/1/03,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2004,.,Physical infrastructure,11,1/1/04,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2005,.,Physical infrastructure,11,1/1/05,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2006,.,Physical infrastructure,11,1/1/06,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2007,.,Physical infrastructure,11,1/1/07,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2008,.,Physical infrastructure,11,1/1/08,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2009,.,Physical infrastructure,11,1/1/09,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2010,.,Physical infrastructure,11,1/1/10,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2011,.,Physical infrastructure,11,1/1/11,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2012,.,Physical infrastructure,11,1/1/12,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2013,.,Physical infrastructure,11,1/1/13,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2014,.,Physical infrastructure,11,1/1/14,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2015,.,Physical infrastructure,11,1/1/15,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2016,.,Physical infrastructure,11,1/1/16,23;26;40;62,permits per mile of coastline
+bldg_perm_per_coast_2017,2.65,Physical infrastructure,11,1/1/17,23;26;40;62,permits per mile of coastline
+NPDES_per_coast_2000,0.2905,Physical infrastructure,11,1/1/00,61;63,permits per mile of coastline
+NPDES_per_coast_2001,0.3325,Physical infrastructure,11,1/1/01,61;63,permits per mile of coastline
+NPDES_per_coast_2002,0.3692,Physical infrastructure,11,1/1/02,61;63,permits per mile of coastline
+NPDES_per_coast_2003,0.2085,Physical infrastructure,11,1/1/03,61;63,permits per mile of coastline
+NPDES_per_coast_2004,0.4708,Physical infrastructure,11,1/1/04,61;63,permits per mile of coastline
+NPDES_per_coast_2005,0.6538,Physical infrastructure,11,1/1/05,61;63,permits per mile of coastline
+NPDES_per_coast_2006,0.8157,Physical infrastructure,11,1/1/06,61;63,permits per mile of coastline
+NPDES_per_coast_2007,0.9219,Physical infrastructure,11,1/1/07,61;63,permits per mile of coastline
+NPDES_per_coast_2008,0.2761,Physical infrastructure,11,1/1/08,61;63,permits per mile of coastline
+NPDES_per_coast_2009,0.4721,Physical infrastructure,11,1/1/09,61;63,permits per mile of coastline
+NPDES_per_coast_2010,0.598,Physical infrastructure,11,1/1/10,61;63,permits per mile of coastline
+NPDES_per_coast_2011,0.6439,Physical infrastructure,11,1/1/11,61;63,permits per mile of coastline
+NPDES_per_coast_2012,0.6649,Physical infrastructure,11,1/1/12,61;63,permits per mile of coastline
+NPDES_per_coast_2013,0.5954,Physical infrastructure,11,1/1/13,61;63,permits per mile of coastline
+NPDES_per_coast_2014,0.8347,Physical infrastructure,11,1/1/14,61;63,permits per mile of coastline
+NPDES_per_coast_2015,1.0144,Physical infrastructure,11,1/1/15,61;63,permits per mile of coastline
+NPDES_per_coast_2016,1.2092,Physical infrastructure,11,1/1/16,61;63,permits per mile of coastline
+NPDES_per_coast_2017,1.3206,Physical infrastructure,11,1/1/17,61;63,permits per mile of coastline
+Releases_per_coast_2000,835.38,Physical infrastructure,11,1/1/00,64,permits per mile of coastline
+Releases_per_coast_2001,"2,216.69",Physical infrastructure,11,1/1/01,64,permits per mile of coastline
+Releases_per_coast_2002,"2,423.34",Physical infrastructure,11,1/1/02,64,permits per mile of coastline
+Releases_per_coast_2003,"2,077.17",Physical infrastructure,11,1/1/03,64,permits per mile of coastline
+Releases_per_coast_2004,"2,079.12",Physical infrastructure,11,1/1/04,64,permits per mile of coastline
+Releases_per_coast_2005,"2,036.27",Physical infrastructure,11,1/1/05,64,permits per mile of coastline
+Releases_per_coast_2006,"1,981.26",Physical infrastructure,11,1/1/06,64,permits per mile of coastline
+Releases_per_coast_2007,"1,977.39",Physical infrastructure,11,1/1/07,64,permits per mile of coastline
+Releases_per_coast_2008,"2,128.19",Physical infrastructure,11,1/1/08,64,permits per mile of coastline
+Releases_per_coast_2009,"2,118.53",Physical infrastructure,11,1/1/09,64,permits per mile of coastline
+Releases_per_coast_2010,"1,821.51",Physical infrastructure,11,1/1/10,64,permits per mile of coastline
+Releases_per_coast_2011,"1,882.98",Physical infrastructure,11,1/1/11,64,permits per mile of coastline
+Releases_per_coast_2012,"1,939.16",Physical infrastructure,11,1/1/12,64,permits per mile of coastline
+Releases_per_coast_2013,"1,864.44",Physical infrastructure,11,1/1/13,64,permits per mile of coastline
+Releases_per_coast_2014,"1,918.95",Physical infrastructure,11,1/1/14,64,permits per mile of coastline
+Releases_per_coast_2015,"1,847.20",Physical infrastructure,11,1/1/15,64,permits per mile of coastline
+Releases_per_coast_2016,"2,108.26",Physical infrastructure,11,1/1/16,64,permits per mile of coastline
+Releases_per_coast_2017,"2,007.82",Physical infrastructure,11,1/1/17,64,permits per mile of coastline
+landfills_per_coast_2000,0.0059,Physical infrastructure,11,1/1/00,65,permits per mile of coastline
+landfills_per_coast_2001,0.0059,Physical infrastructure,11,1/1/01,65,permits per mile of coastline
+landfills_per_coast_2002,0.0059,Physical infrastructure,11,1/1/02,65,permits per mile of coastline
+landfills_per_coast_2003,0.0059,Physical infrastructure,11,1/1/03,65,permits per mile of coastline
+landfills_per_coast_2004,0.0059,Physical infrastructure,11,1/1/04,65,permits per mile of coastline
+landfills_per_coast_2005,0.0059,Physical infrastructure,11,1/1/05,65,permits per mile of coastline
+landfills_per_coast_2006,0.0059,Physical infrastructure,11,1/1/06,65,permits per mile of coastline
+landfills_per_coast_2007,0.0059,Physical infrastructure,11,1/1/07,65,permits per mile of coastline
+landfills_per_coast_2008,0.0059,Physical infrastructure,11,1/1/08,65,permits per mile of coastline
+landfills_per_coast_2009,0.0059,Physical infrastructure,11,1/1/09,65,permits per mile of coastline
+landfills_per_coast_2010,0.0059,Physical infrastructure,11,1/1/10,65,permits per mile of coastline
+landfills_per_coast_2011,0.0059,Physical infrastructure,11,1/1/11,65,permits per mile of coastline
+landfills_per_coast_2012,0.0059,Physical infrastructure,11,1/1/12,65,permits per mile of coastline
+landfills_per_coast_2013,0.0059,Physical infrastructure,11,1/1/13,65,permits per mile of coastline
+landfills_per_coast_2014,0.0059,Physical infrastructure,11,1/1/14,65,permits per mile of coastline
+landfills_per_coast_2015,0.0059,Physical infrastructure,11,1/1/15,65,permits per mile of coastline
+landfills_per_coast_2016,0.0059,Physical infrastructure,11,1/1/16,65,permits per mile of coastline
+landfills_per_coast_2017,0.0059,Physical infrastructure,11,1/1/17,65,permits per mile of coastline
+mng_plan_2011,1.5,Governance,13,1/1/11,67,1-3 scale
+ecological_2011,2.25,Governance,13,1/1/11,67,1-3 scale
+governance_2011,3,Governance,13,1/1/11,67,1-3 scale
+onsite_2011,1.75,Governance,13,1/1/11,67,1-3 scale
+enf_2011,2.25,Governance,13,1/1/11,67,1-3 scale
+bound_2011,2.5,Governance,13,1/1/11,67,1-3 scale
+bio_mon_2011,2.5,Governance,13,1/1/11,67,1-3 scale
+scio_mon_2011,1.25,Governance,13,1/1/11,67,1-3 scale
+effectiveness_2011,2.25,Governance,13,1/1/11,67,1-3 scale
+stake_2011,2.5,Governance,13,1/1/11,67,1-3 scale
+finance_2011,1.25,Governance,13,1/1/11,67,1-3 scale
+outreach_2011,2.25,Governance,13,1/1/11,67,1-3 scale
+conflict_2011,2.25,Governance,13,1/1/11,67,1-3 scale
+climate_2011,1.25,Governance,13,1/1/11,67,1-3 scale
+mng_plan_2014,2.25,Governance,13,1/1/14,67,1-3 scale
+ecological_2014,2.5,Governance,13,1/1/14,67,1-3 scale
+governance_2014,3,Governance,13,1/1/14,67,1-3 scale
+onsite_2014,1.75,Governance,13,1/1/14,67,1-3 scale
+enf_2014,2.25,Governance,13,1/1/14,67,1-3 scale
+bound_2014,3,Governance,13,1/1/14,67,1-3 scale
+bio_mon_2014,2.5,Governance,13,1/1/14,67,1-3 scale
+scio_mon_2014,1.5,Governance,13,1/1/14,67,1-3 scale
+effectiveness_2014,2.25,Governance,13,1/1/14,67,1-3 scale
+stake_2014,2.5,Governance,13,1/1/14,67,1-3 scale
+finance_2014,1.5,Governance,13,1/1/14,67,1-3 scale
+outreach_2014,2.75,Governance,13,1/1/14,67,1-3 scale
+conflict_2014,2.5,Governance,13,1/1/14,67,1-3 scale
+climate_2014,1.5,Governance,13,1/1/14,67,1-3 scale
+mng_plan_2017,2.25,Governance,13,1/1/17,67,1-3 scale
+ecological_2017,.,Governance,13,1/1/17,67,1-3 scale
+governance_2017,2.5,Governance,13,1/1/17,67,1-3 scale
+onsite_2017,1.75,Governance,13,1/1/17,67,1-3 scale
+enf_2017,2,Governance,13,1/1/17,67,1-3 scale
+bound_2017,3,Governance,13,1/1/17,67,1-3 scale
+bio_mon_2017,2.5,Governance,13,1/1/17,67,1-3 scale
+scio_mon_2017,1.5,Governance,13,1/1/17,67,1-3 scale
+effectiveness_2017,2.25,Governance,13,1/1/17,67,1-3 scale
+stake_2017,2.25,Governance,13,1/1/17,67,1-3 scale
+finance_2017,1.75,Governance,13,1/1/17,67,1-3 scale
+outreach_2017,2.5,Governance,13,1/1/17,67,1-3 scale
+conflict_2017,.,Governance,13,1/1/17,67,1-3 scale
+climate_2017,2,Governance,13,1/1/17,67,1-3 scale
+mpa_tot_11,58,Governance,13,1/1/11,68,number of MPAs
+mgmt_plan_no_11,7,Governance,13,1/1/11,68,number of MPAs
+notake_11,4,Governance,13,1/1/11,68,number of MPAs
+fish_reg_11,9,Governance,13,1/1/11,68,number of MPAs
+cult_hert_11,4,Governance,13,1/1/11,68,number of MPAs
+nat_hert_11,15,Governance,13,1/1/11,68,number of MPAs
+sus_prod_11,39,Governance,13,1/1/11,68,number of MPAs
+mpa_tot_14,58,Governance,13,1/1/14,68,number of MPAs
+mgmt_plan_no_14,7,Governance,13,1/1/14,68,number of MPAs
+notake_14,4,Governance,13,1/1/14,68,number of MPAs
+fish_reg_14,9,Governance,13,1/1/14,68,number of MPAs
+cult_hert_14,4,Governance,13,1/1/14,68,number of MPAs
+nat_hert_14,15,Governance,13,1/1/14,68,number of MPAs
+sus_prod_14,39,Governance,13,1/1/14,68,number of MPAs
+mpa_tot_17,61,Governance,13,1/1/17,68,number of MPAs
+mgmt_plan_no_17,7,Governance,13,1/1/17,68,number of MPAs
+notake_17,3,Governance,13,1/1/17,68,number of MPAs
+fish_reg_17,10,Governance,13,1/1/17,68,number of MPAs
+cult_hert_17,3,Governance,13,1/1/17,68,number of MPAs
+nat_hert_17,20,Governance,13,1/1/17,68,number of MPAs
+sus_prod_17,38,Governance,13,1/1/17,68,number of MPAs
+coral_area_managed,17.00%,Governance,13,1/1/17,69,percent
