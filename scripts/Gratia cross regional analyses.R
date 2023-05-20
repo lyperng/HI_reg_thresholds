@@ -14,13 +14,13 @@ for (p in PKG) {
 
 ##gratia code from Scott with MRIP, NES, BLS, FOSS, overfished stocks, chlorophyll a Data
 #project already has wd in the HDWG analyses folder, but we want to read everything
-#straight from the 'cross regional data' folder
+#straight from the 'data' folder
 setwd("/Users/lansingperng/Desktop/Research/NOAA/HDWG/HDWG Analyses")
 
 ###############################################################################
 ########################Separate overfished by Region##########################
 ###############################################################################
-overf0<-read.csv(file = 'cross regional data/overfished stocks.csv')
+overf0<-read.csv(file = 'data/overfished stocks.csv')
 overf1<-gather(overf0, "year", 'Stocks', 2:21)
 
 #extract certain characters from Description column to create new columns
@@ -37,14 +37,14 @@ overreglabs<-c('NE','SE', 'GoMex', 'CalCu', 'PI', 'AK/Arctic')
 #for loop separating overfished data by region and writing files
 for(i in 1:length(overregnames)) {
   over<-overf[overf$Region == overreglabs[i],]
-  write.csv(over, paste('cross regional data/', overregnames[i],' overfished.csv', sep = ''), row.names = F)
+  write.csv(over, paste('data/', overregnames[i],' overfished.csv', sep = ''), row.names = F)
 }
 
 
 ###############################################################################
 ############################Separate chl a by Region###########################
 ###############################################################################
-chla<-read.csv(file = 'cross regional data/chlorophyll a.csv')
+chla<-read.csv(file = 'data/chlorophyll a.csv')
 chla<-chla[,c(1,2,5:9)]
 colnames(chla)<-c('Year', 'CC', 'AK', 'GOM','HI','NE','SE')
 
@@ -54,7 +54,7 @@ chlaregnames<-c('1', 'CC/CC', 'AK/AK','GOM/GOM', 'HI/HI', 'NE/NE', 'SE/SE')
 for(i in 2:length(colnames(chla))) {
   chla1<-chla[,c(1,i)]
   colnames(chla1)<-c('Year', 'Chl.a')
-  write.csv(chla1, paste('cross regional data/', chlaregnames[i],' chlorophyll a.csv', sep = ''), row.names = F)
+  write.csv(chla1, paste('data/', chlaregnames[i],' chlorophyll a.csv', sep = ''), row.names = F)
 }
 
 ###############################################################################
@@ -71,11 +71,11 @@ NESinds<- c('Fishing', 'Seaf Markets', 'Seaf Packaging')
 
 for(i in 1:length(Regionslist)) {
   for(j in 1:length(NESinds)) {
-      NESregfiles<- list.files(path = paste('cross regional data/' ,Regionslist[i],'', sep = ''), 
+      NESregfiles<- list.files(path = paste('data/' ,Regionslist[i],'', sep = ''), 
                                pattern = paste('*NES ',NESinds[j],'.csv', sep=''), #sep ='' means no spaces will be inserted--had to manually insert one between industry and ind with " "
                                full.names = T)
       df0 <- ldply(NESregfiles, read.csv) #reads in all files and stacks them into one df
-      write.csv(df0, paste('cross regional data/' ,Regionslist[i],'/',Regionnames[i],' NES ',NESinds[j]," Totals.csv", sep = ''), row.names = F)
+      write.csv(df0, paste('data/' ,Regionslist[i],'/',Regionnames[i],' NES ',NESinds[j]," Totals.csv", sep = ''), row.names = F)
       
   }
 
@@ -89,7 +89,7 @@ NEsubregions<-c('Mid Atlantic', 'New England')
 
 for(i in 1:length(NEsubregions)) {
   for(j in 1:length(NESinds)) {
-    NEfiles<- list.files(path = 'cross regional data/NE', 
+    NEfiles<- list.files(path = 'data/NE', 
                              pattern = paste('*NES ',NESinds[j],'*', sep=''), #sep ='' means no spaces will be inserted--had to manually insert one between industry and ind with " "
                              full.names = T)
     
@@ -104,21 +104,21 @@ empstat<-c('NES','BLS')
 
 for(i in 1:length(empstat)) {
   for(j in 1:length(NESinds)) {
-    NEfiles<- list.files(path = 'cross regional data/NE', 
+    NEfiles<- list.files(path = 'data/NE', 
                          pattern = paste('*',empstat[i],' ',NESinds[j],'*', sep=''), #sep ='' means no spaces will be inserted--had to manually insert one between industry and ind with " "
                          full.names = T)
     df0 <- ldply(NEfiles, read.csv) #reads in all files and stacks them into one df
-    write.csv(df0, paste('cross regional data/NE/NE ',empstat[i],' ',NESinds[j],' Totals.csv', sep = ''), row.names = F)
+    write.csv(df0, paste('data/NE/NE ',empstat[i],' ',NESinds[j],' Totals.csv', sep = ''), row.names = F)
   }
 }
 
 
 ##do BLS Seaf Wholesale separately because there was no Wholesale for NES
-NEfiles<- list.files(path = 'cross regional data/NE', 
+NEfiles<- list.files(path = 'data/NE', 
                      pattern = '*BLS Seaf Wholesale*', #sep ='' means no spaces will be inserted--had to manually insert one between industry and ind with " "
                      full.names = T)
 df0 <- ldply(NEfiles, read.csv) #reads in all files and stacks them into one df
-write.csv(df0, 'cross regional data/NE/NE BLS Seaf Wholesale Totals.csv', row.names = F)
+write.csv(df0, 'data/NE/NE BLS Seaf Wholesale Totals.csv', row.names = F)
 
 #############################################in ##################################
 #########################overfished data by YEAR###############################
@@ -130,7 +130,7 @@ reg.sp<-c(.1,0.01,0.001,0.001,0.001,0.0208)
 
 
 for(i in 1:length(reglabs)) { #i represents the folder name and the region name in the file
-  overf<-read.csv(paste('cross regional data/',reglabs[i],'/',reglabs[i],' overfished.csv', sep='')) 
+  overf<-read.csv(paste('data/',reglabs[i],'/',reglabs[i],' overfished.csv', sep='')) 
   
     #exploratory plot to see if there are obvious weird values
     plot(Stocks~Year, data = overf) 
@@ -153,7 +153,7 @@ for(i in 1:length(reglabs)) { #i represents the folder name and the region name 
 
 
 for(i in 1:length(reglabs)) { #i represents the folder name and the region name in the file
-  overf<-read.csv(paste('cross regional data/',reglabs[i],'/',reglabs[i],' overfished.csv', sep='')) 
+  overf<-read.csv(paste('data/',reglabs[i],'/',reglabs[i],' overfished.csv', sep='')) 
     
   gammod<-gam(Stocks ~ s(Year, k = reg.k[i]), sp = reg.sp[i], 
               data = overf, method = 'REML')
@@ -260,7 +260,7 @@ reg.k<-c(6,9,7,6,6,4)
 reg.sp<-c(.01,0.0001,0.01,0.005,0.1,0.1)
 
 for(i in 1:length(reglabs)) { #i represents the folder name and the region name in the file
-  chla<-read.csv(paste('cross regional data/',reglabs[i],'/',reglabs[i],' chlorophyll a.csv', sep='')) 
+  chla<-read.csv(paste('data/',reglabs[i],'/',reglabs[i],' chlorophyll a.csv', sep='')) 
   
   #exploratory plot to see if there are obvious weird values
   plot(Chl.a~Year, data = chla) 
@@ -381,7 +381,7 @@ for(i in 1:length(reglabs)) { #i represents the folder name and the region name 
 ################################full data################################
 ###cleaned in BODI National Data Cleaning.R
 
-folders<-c('AK','CA','GOM','NE','SE','HI') #CA in the 'cross regional data for DEA' folder, but CC elsewhere
+folders<-c('AK','CA','GOM','NE','SE','HI') #CA in the 'data for DEA' folder, but CC elsewhere
 folders.saveas<-c('AK','CC','GOM','NE','SE','HI') #fix CA/CC discrepancy for saving df1 csvs line 707
 files<-c('AK','Cali Current','Gulf of Mexico','NE','Southeast','HI') #file names, some abbreviated because these are the names the original data files were written under
 regnames<-c('Alaska','California Current','Gulf of Mexico','Northeast','Southeast',"Hawai'i")
@@ -391,7 +391,7 @@ FOSSlabs<-c('Year','Landings (Millions of Pounds)','Revenue (Millions of Dollars
 
 #loop for assumptions
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
-  FOSS<-read.csv(paste('cross regional data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity_deflated.csv', sep='')) 
+  FOSS<-read.csv(paste('data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity_deflated.csv', sep='')) 
   FOSS$Revenue.Millions<- FOSS$Dollars/1000000
   FOSS$Catch.Millions<- FOSS$Tot_Comm/1000000
   FOSS<-FOSS[,c('Year','Catch.Millions', 'Revenue.Millions', 'CommDiv', 'RevDiv')]
@@ -426,7 +426,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
 ##### ORIGINAL GAM AND DERIVATIVE PLOTS ##############
 ############# also includes gamfit calculations
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
-  FOSS<-read.csv(paste('cross regional data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity_deflated.csv', sep='')) 
+  FOSS<-read.csv(paste('data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity_deflated.csv', sep='')) 
   FOSS$Revenue.Millions<- FOSS$Dollars/1000000
   FOSS$Catch.Millions<- FOSS$Tot_Comm/1000000
   FOSS<-FOSS[,c('Year','Catch.Millions', 'Revenue.Millions', 'CommDiv','RevDiv')]
@@ -570,7 +570,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     
     #change column 
     
-    write.csv(df1, file=paste('cross regional data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' gamfit.csv', sep=''), row.names = F)
+    write.csv(df1, file=paste('data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' gamfit.csv', sep=''), row.names = F)
     
      }
 }
@@ -580,7 +580,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
 ##############################################################################
 #################RE RUN WITH NO MENHADENS TO COMPARE DIFFERENCE###############
 ##MH separated out in BODI National Data Cleaning.R
-folders<-c('AK','CA','GOM','NE','SE','HI') #CA in the 'cross regional data for DEA' folder, but CC elsewhere
+folders<-c('AK','CA','GOM','NE','SE','HI') #CA in the 'data for DEA' folder, but CC elsewhere
 folders.saveas<-c('AK','CC','GOM','NE','SE','HI') #fix CA/CC discrepancy for saving df1 csvs line 707
 files<-c('AK','Cali Current','Gulf of Mexico','NE','Southeast','HI') #file names, some abbreviated because these are the names the original data files were written under
 regnames<-c('Alaska','California Current','Gulf of Mexico','Northeast','Southeast',"Hawai'i")
@@ -591,7 +591,7 @@ FOSSlabs<-c('Year','Landings (Millions of Pounds)','Revenue (Millions of Dollars
 
 ####assumptions
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
-  FOSS<-read.csv(paste('cross regional data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity no MH_deflated.csv', sep='')) 
+  FOSS<-read.csv(paste('data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity no MH_deflated.csv', sep='')) 
   FOSS$Revenue.Millions<- FOSS$Dollars/1000000
   FOSS$Catch.Millions<- FOSS$Tot_Comm/1000000
   FOSS<-FOSS[,c('Year','Catch.Millions', 'Revenue.Millions', 'CommDiv', 'RevDiv')]
@@ -609,7 +609,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     summary(gammod)
     k.check(gammod)
 
- #   write.csv(dfsum, file=paste('cross regional data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' no MH_modsum.csv', sep=''))
+ #   write.csv(dfsum, file=paste('data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' no MH_modsum.csv', sep=''))
     
     pdf(paste('figures/cross regional/',files[i],' ',FOSSvar[j],' No MH Assumptions.pdf',sep=''), width =  7, height = 5.5 #w & h in inches
     )
@@ -624,7 +624,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
 
 ########## original plots (one var per plot) and gamfit #########
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
-  FOSS<-read.csv(paste('cross regional data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity no MH_deflated.csv', sep='')) 
+  FOSS<-read.csv(paste('data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity no MH_deflated.csv', sep='')) 
   FOSS$Revenue.Millions<- FOSS$Dollars/1000000
   FOSS$Catch.Millions<- FOSS$Tot_Comm/1000000
   FOSS<-FOSS[,c('Year','Catch.Millions', 'Revenue.Millions', 'CommDiv', 'RevDiv')]
@@ -750,14 +750,14 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     df1$threshold<-ifelse(sdCR$lower>0, df1$fit, ifelse(sdCR$upper<0, df1$fit, NA))
     df1$se.threshold<-ifelse(sdCR$lower>0, df1$se.fit, ifelse(sdCR$upper<0, df1$se.fit, NA))
     
-    write.csv(df1, file=paste('cross regional data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' no MH gamfit.csv', sep=''), row.names = F)
+    write.csv(df1, file=paste('data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' no MH gamfit.csv', sep=''), row.names = F)
     
   }
 }
 
 ###############COMBINE TO MAKE PLOTS THAT SHOW BOTH WITH AND WITHOUT MH###############
-folders<-c('AK','CA','GOM','NE','SE','HI') #CA in the 'cross regional data for DEA' folder, but CC elsewhere
-folders.saveas<-c('AK','CC','GOM','NE','SE','HI') #fixed CA/CC discrepancy in 'cross regional data' folder
+folders<-c('AK','CA','GOM','NE','SE','HI') #CA in the 'data for DEA' folder, but CC elsewhere
+folders.saveas<-c('AK','CC','GOM','NE','SE','HI') #fixed CA/CC discrepancy in 'data' folder
 files<-c('AK','Cali Current','Gulf of Mexico','NE','Southeast','HI') #file names, some abbreviated because these are the names the original data files were written under
 regnames<-c('Alaska','California Current','Gulf of Mexico','Northeast','Southeast',"Hawai'i")
 FOSSvar<-c('Year','Commercial Catch', 'Commercial Revenue', 'Catch Diversity', 'Revenue Diversity')
@@ -765,15 +765,15 @@ FOSSlabs<-c('Year','Landings (Millions of Pounds)','Revenue (Millions of Dollars
 
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
   #read in original data (not gamfit) for plotting points
-  FOSS0<-read.csv(paste('cross regional data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity_deflated.csv', sep='')) 
+  FOSS0<-read.csv(paste('data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity_deflated.csv', sep='')) 
   FOSS0$Revenue.Millions<- FOSS0$Dollars/1000000
   FOSS0$Catch.Millions<- FOSS0$Tot_Comm/1000000
   FOSS0<-FOSS0[,c('Year','Catch.Millions', 'Revenue.Millions', 'CommDiv', 'RevDiv')]
   FOSS0$MH<-'All Species'
   
-  write.csv(FOSS0,paste('cross regional data/FOSS combined regions/',folders.saveas[i],' FOSS data points_raw.csv', sep=''), row.names = F) 
+  write.csv(FOSS0,paste('data/FOSS combined regions/',folders.saveas[i],' FOSS data points_raw.csv', sep=''), row.names = F) 
   
-  FOSS0.n<-read.csv(paste('cross regional data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity no MH_deflated.csv', sep='')) 
+  FOSS0.n<-read.csv(paste('data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity no MH_deflated.csv', sep='')) 
   FOSS0.n$Revenue.Millions<- FOSS0.n$Dollars/1000000
   FOSS0.n$Catch.Millions<- FOSS0.n$Tot_Comm/1000000
   FOSS0.n<-FOSS0.n[,c('Year','Catch.Millions', 'Revenue.Millions', 'CommDiv', 'RevDiv')]
@@ -782,9 +782,9 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   FOSS0<-rbind(FOSS0,FOSS0.n) #final df for points
   
   for(j in 2:5){ #j represents the variable name (FOSSvar),and FOSSlabs (y axis labels)
-    #gamfit dfs saved in 'cross regional data' folder, call 'CC' for cali current (folders.saveas)
-    FOSS.noMH<-read.csv(paste('cross regional data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' no MH gamfit.csv', sep='')) 
-    FOSS<-read.csv(paste('cross regional data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' gamfit.csv', sep='')) 
+    #gamfit dfs saved in 'data' folder, call 'CC' for cali current (folders.saveas)
+    FOSS.noMH<-read.csv(paste('data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' no MH gamfit.csv', sep='')) 
+    FOSS<-read.csv(paste('data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' gamfit.csv', sep='')) 
     
     df1<-rbind(FOSS.noMH, FOSS) #stacks dfs
     df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
@@ -846,8 +846,8 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
 }
 
 ###################### PLOT ALL REGIONS COMBINED--ALL SPECIES ONLY ##################
-folders<-c('AK','CA','GOM','NE','SE','HI') #CA in the 'cross regional data for DEA' folder, but CC elsewhere
-folders.saveas<-c('AK','CC','GOM','NE','SE','HI') #fixed CA/CC discrepancy in 'cross regional data' folder
+folders<-c('AK','CA','GOM','NE','SE','HI') #CA in the 'data for DEA' folder, but CC elsewhere
+folders.saveas<-c('AK','CC','GOM','NE','SE','HI') #fixed CA/CC discrepancy in 'data' folder
 files<-c('AK','Cali Current','Gulf of Mexico','NE','Southeast','HI') #file names, some abbreviated because these are the names the original data files were written under
 regnames<-c('Alaska','California Current','Gulf of Mexico','Northeast','Southeast',"Hawai'i")
 FOSSvar<-c('Year','Commercial Catch', 'Commercial Revenue', 'Catch Diversity', 'Revenue Diversity')
@@ -856,39 +856,39 @@ FOSSlabs<-c('Year','Landings (Millions of Pounds)','Revenue (Millions of Dollars
 #code already in MH splitting section but temporarily re-run here to avoid re-running the whole MH loop
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
   #read in original data (not gamfit) for plotting points
-  FOSS0<-read.csv(paste('cross regional data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity_deflated.csv', sep='')) 
+  FOSS0<-read.csv(paste('data for DEA/FOSS commercial fishery data/species aggregated with diversity/FOSS ',folders[i],' with catch and rev Diversity_deflated.csv', sep='')) 
   FOSS0$Revenue.Millions<- FOSS0$Dollars/1000000
   FOSS0$Catch.Millions<- FOSS0$Tot_Comm/1000000
   FOSS0<-FOSS0[,c('Year','Catch.Millions', 'Revenue.Millions','CommDiv', 'RevDiv')]
   
-  write.csv(FOSS0,paste('cross regional data/FOSS combined regions/',folders.saveas[i],' FOSS data points_raw.csv', sep=''), row.names = F) 
+  write.csv(FOSS0,paste('data/FOSS combined regions/',folders.saveas[i],' FOSS data points_raw.csv', sep=''), row.names = F) 
 }
 
 ###compile all regions 
 #first read in region 1 for base df to compile onto (AK)
 
-FOSS0<-read.csv(paste('cross regional data/FOSS combined regions/',folders.saveas[1],' FOSS data points_raw.csv', sep='')) 
+FOSS0<-read.csv(paste('data/FOSS combined regions/',folders.saveas[1],' FOSS data points_raw.csv', sep='')) 
 FOSS0$Region<-regnames[1]
 
 for(i in 2:length(folders)) { #i represents the folder name and the region name in the file
-  df0<-read.csv(paste('cross regional data/FOSS combined regions/',folders.saveas[i],' FOSS data points_raw.csv', sep='')) 
+  df0<-read.csv(paste('data/FOSS combined regions/',folders.saveas[i],' FOSS data points_raw.csv', sep='')) 
   df0$Region<-regnames[i]
   FOSS0<-bind_rows(FOSS0,df0) #use dplyr::bind_rows because rbind can't handle the non-matching columns
   #bind rows just fills in NAs for a column that doesn't exist in one of this original dfs
 }
-write.csv(FOSS0,'cross regional data/FOSS combined regions/FOSS all regions data points_raw.csv',row.names = F) 
+write.csv(FOSS0,'data/FOSS combined regions/FOSS all regions data points_raw.csv',row.names = F) 
 
 
   for(j in 2:5){ #j represents the variable name (FOSSvar),and FOSSlabs (y axis labels)
-    FOSS<-read.csv(paste('cross regional data/',folders.saveas[1],'/',files[1],' FOSS ' ,FOSSvar[j],' gamfit.csv', sep='')) 
+    FOSS<-read.csv(paste('data/',folders.saveas[1],'/',files[1],' FOSS ' ,FOSSvar[j],' gamfit.csv', sep='')) 
     FOSS$Region<-regnames[1]
     for(i in 2:length(folders)) { #i represents the folder name and the region name in the file
-  df<-read.csv(paste('cross regional data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' gamfit.csv', sep='')) 
+  df<-read.csv(paste('data/',folders.saveas[i],'/',files[i],' FOSS ' ,FOSSvar[j],' gamfit.csv', sep='')) 
   df$Region<-regnames[i]
   FOSS<-bind_rows(FOSS,df)
   
     }
-    write.csv(FOSS,paste('cross regional data/FOSS combined regions/FOSS ',FOSSvar[j],' all regions_gamfit.csv',sep =''),row.names = F) 
+    write.csv(FOSS,paste('data/FOSS combined regions/FOSS ',FOSSvar[j],' all regions_gamfit.csv',sep =''),row.names = F) 
 }
 
 ################ PLOT ONE PER VAR WITH ALL REGIONS COMBINED ########################
@@ -897,7 +897,7 @@ FOSSvar<-c('Year','Commercial Catch', 'Commercial Revenue', 'Catch Diversity', '
 FOSSlabs<-c('Year','Landings (Millions of Pounds)','Revenue (Millions of Dollars)','Effective Number of Species', 'Revenue Diversity\n (Effective Shannon Diversity)')
 FOSStitle<-c('1','Commercial Fishing Landings', 'Commercial Fishing Revenue', 'Catch Diversity', 'Revenue Diversity')
 
-FOSS0<-read.csv('cross regional data/FOSS combined regions/FOSS all regions data points_raw.csv') 
+FOSS0<-read.csv('data/FOSS combined regions/FOSS all regions data points_raw.csv') 
 str(FOSS0) #'Region' is character and not factor
 
 # set Region as factor and reorder according to how i want it to be plotted
@@ -905,7 +905,7 @@ str(FOSS0) #'Region' is character and not factor
 FOSS0$Region <- factor(FOSS0$Region, levels = c("Northeast", "Southeast", 'Gulf of Mexico', 'California Current', "Hawai'i", 'Alaska'))
 
 for(j in 2:5) { #j is FOSS vars, skip 'Year' column
-  df1<-read.csv(paste('cross regional data/FOSS combined regions/FOSS ',FOSSvar[j],' all regions_gamfit.csv',sep ='')) 
+  df1<-read.csv(paste('data/FOSS combined regions/FOSS ',FOSSvar[j],' all regions_gamfit.csv',sep ='')) 
   FOSSvar[j]
   #leave 'Region' and 'Year' alone
   str(df1) 
@@ -977,7 +977,7 @@ FOSSvar<-c('Year','Commercial Catch', 'Commercial Revenue', 'Catch Diversity', '
 FOSSlabs<-c('Year','Landings (Millions of Pounds)','Revenue (Millions of Dollars)','Effective Number of Species', 'Revenue Diversity\n (Effective Shannon Diversity)')
 FOSStitle<-c('1','Commercial Fishing Landings', 'Commercial Fishing Revenue', 'Catch Diversity', 'Revenue Diversity')
 
-FOSS0<-read.csv('cross regional data/FOSS combined regions/FOSS all regions data points_raw.csv') 
+FOSS0<-read.csv('data/FOSS combined regions/FOSS all regions data points_raw.csv') 
 #FOSScut<-FOSS0[FOSS0$Region == 'Southeast' |
  #                 FOSS0$Region == "Hawai'i",]
 FOSScutSE<-FOSS0[FOSS0$Region == 'Southeast' |
@@ -1002,7 +1002,7 @@ str(FOSScut) #'Region' is character and not factor
 #FOSScut$Region <- factor(FOSScut$Region, levels = c( "Southeast", "Hawai'i"))
 
 for(j in 2:3) { #j is FOSS vars, skip 'Year' column
-  df1<-read.csv(paste('cross regional data/FOSS combined regions/FOSS ',FOSSvar[j],' all regions_gamfit.csv',sep ='')) 
+  df1<-read.csv(paste('data/FOSS combined regions/FOSS ',FOSSvar[j],' all regions_gamfit.csv',sep ='')) 
 #  df1cut<-df1[df1$Region == 'Southeast' |
  #               df1$Region == "Hawai'i",]
 #  df1cut<-df1[df1$Region == 'Northeast' |
@@ -1132,18 +1132,18 @@ MRIPlabs<-c('1','Recreational Landings (Thousands of Pounds)', 'Recreational Fis
 dfTrips<-data.frame(matrix(ncol = 4, nrow = 0))
 dfCatch<-data.frame(matrix(ncol = 4, nrow = 0))
 for(i in 2:length(folders)) { #i represents the folder name and the region name in the file
-  MRIP.Trips<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Trips_SE.csv', sep='')) 
+  MRIP.Trips<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Trips_SE.csv', sep='')) 
   colnames(dfTrips)<-colnames(MRIP.Trips)
   dfTrips<-rbind(dfTrips, MRIP.Trips)
   
-  MRIP.Catch<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Catch_SE.csv', sep='')) 
+  MRIP.Catch<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Catch_SE.csv', sep='')) 
   colnames(dfCatch)<-colnames(MRIP.Catch)
   dfCatch<-rbind(dfCatch, MRIP.Catch)
 
 }
 
 #read in AK Trips data
-MRIP.Trips.AK<-read.csv(paste('cross regional data/AK/AK MRIP Trips_SE.csv', sep='')) 
+MRIP.Trips.AK<-read.csv(paste('data/AK/AK MRIP Trips_SE.csv', sep='')) 
 
 dfTrips[dfTrips$SE.Trips == 0,4]<-NA #replace SEs that = 0 with NA->exclude from linear model
 #because 0s would skew the regression model
@@ -1166,10 +1166,10 @@ points(MRIP.Trips.AK$Angler.Trips, MRIP.Trips.AK$SE.Trips, col = 'red')
 #but SE estimates are still conservative, as they are higher than the real observations at the same trip numbers
 View(MRIP.Trips.AK) 
 
-write.csv(MRIP.Trips.AK, paste('cross regional data/AK/AK MRIP Trips_SE_pred.csv', sep=''), row.names = F)
+write.csv(MRIP.Trips.AK, paste('data/AK/AK MRIP Trips_SE_pred.csv', sep=''), row.names = F)
 
 ######same for Catch
-MRIP.Catch.AK<-read.csv(paste('cross regional data/AK/AK MRIP Catch_SE.csv', sep='')) 
+MRIP.Catch.AK<-read.csv(paste('data/AK/AK MRIP Catch_SE.csv', sep='')) 
 
 dfCatch[dfCatch$SE == 0,4]<-NA #replace SEs that = 0 with NA->exclude from linear model
 #because 0s would skew the regression model
@@ -1193,12 +1193,12 @@ points(MRIP.Catch.AK$RCatch, MRIP.Catch.AK$SE, col = 'red')
 #but SE estimates are still conservative, as they are higher than the real observations at the same trip numbers
 View(MRIP.Catch.AK) 
 
-write.csv(MRIP.Catch.AK, paste('cross regional data/AK/AK MRIP Catch_SE_pred.csv', sep=''), row.names = F)
+write.csv(MRIP.Catch.AK, paste('data/AK/AK MRIP Catch_SE_pred.csv', sep=''), row.names = F)
 
 ####################### REST OF THE REGIONS ######################
 for(i in 2:length(folders)) { #i represents the folder name and the region name in the file
-  MRIP.Catch<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Catch_SE.csv', sep='')) 
-  MRIP.Trips<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Trips_SE.csv', sep='')) 
+  MRIP.Catch<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Catch_SE.csv', sep='')) 
+  MRIP.Trips<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Trips_SE.csv', sep='')) 
 
   MRIP.Trips[MRIP.Trips$SE.Trips == 0,4]<-NA #replace SEs that = 0 with NA->exclude from linear model
   #because 0s would skew the regression model
@@ -1238,7 +1238,7 @@ for(i in 2:length(folders)) { #i represents the folder name and the region name 
   #drop 'pred' column
   MRIP.Trips<-MRIP.Trips[,-5]
   
-  write.csv(MRIP.Trips, paste('cross regional data/',folders[i],'/',folders[i],' MRIP Trips_SE_pred.csv', sep=''), row.names = F)
+  write.csv(MRIP.Trips, paste('data/',folders[i],'/',folders[i],' MRIP Trips_SE_pred.csv', sep=''), row.names = F)
 
   #####repeat predict SE values for Catch#####
   MRIP.Catch[MRIP.Catch$SE == 0,4]<-NA #replace SEs that = 0 with NA->exclude from linear model
@@ -1276,18 +1276,18 @@ for(i in 2:length(folders)) { #i represents the folder name and the region name 
   #replaced with predicted SEs
   #drop 'pred' column
   MRIP.Catch<-MRIP.Catch[,-5]
-  write.csv(MRIP.Catch, paste('cross regional data/',folders[i],'/',folders[i],' MRIP Catch_SE_pred.csv', sep=''), row.names = F)  #save csv's with predicted SEs for easier file call if necessary
+  write.csv(MRIP.Catch, paste('data/',folders[i],'/',folders[i],' MRIP Catch_SE_pred.csv', sep=''), row.names = F)  #save csv's with predicted SEs for easier file call if necessary
 }
 
-#NECatch.test<-read.csv('cross regional data/NE/NE MRIP Catch_SE_pred.csv')
+#NECatch.test<-read.csv('data/NE/NE MRIP Catch_SE_pred.csv')
 #plot(RCatch~Year, data = NECatch.test)
 #compared to ecowatch and matches up
  
 ############################################################### 
 ############## GET MC SIM DFs FOR ALL REGIONS #################
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
-  MRIP.Catch<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Catch_SE_pred.csv', sep='')) 
-  MRIP.Trips<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Trips_SE_pred.csv', sep='')) 
+  MRIP.Catch<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Catch_SE_pred.csv', sep='')) 
+  MRIP.Trips<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Trips_SE_pred.csv', sep='')) 
   
   MRIP.Catch<-MRIP.Catch[MRIP.Catch$Year<2021,] #delete 2021 prelim numbers
   MRIP.Trips<-MRIP.Trips[MRIP.Trips$Year<2021,] #delete 2021 prelim numbers
@@ -1310,7 +1310,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     #MRIP.sim[MRIP.sim$Year == Years[j],2]<- runif(1000, MRIP.Catch$RCatch.lowerCI[j], MRIP.Catch$RCatch.upperCI[j])
     #MRIP.sim[MRIP.sim$Year == Years[j],3]<- runif(1000, MRIP.Trips$Trips.lowerCI[j], MRIP.Trips$Trips.upperCI[j])
   }
-  write.csv(MRIP.sim, paste('cross regional data/',folders[i],'/',folders[i],' MRIP Monte Carlo Sim.csv', sep=''), row.names = F)
+  write.csv(MRIP.sim, paste('data/',folders[i],'/',folders[i],' MRIP Monte Carlo Sim.csv', sep=''), row.names = F)
 }
 ############################################################
 #####for loop for getting gamfit dfs with all sims#########
@@ -1375,7 +1375,7 @@ gam_tnt<-function(df, newd.num, gammod, cont.pred,cont.name, cat.pred, cat.name 
 #loop--read in MC sim df for each region
 for(i in 2:2) { #i represents the folder name and the region name in the file
   #AK PSE's are all predicted off of other regions' PSE's
-  MRIP<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Monte Carlo Sim.csv', sep='')) 
+  MRIP<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Monte Carlo Sim.csv', sep='')) 
   simnum<-unique(MRIP$Sim.num)
   MRIP$Catch.Thousands<-MRIP$Catch/1000
   MRIP$Trips.Thousands<-MRIP$Trips/1000
@@ -1461,7 +1461,7 @@ for(i in 2:2) { #i represents the folder name and the region name in the file
   #so i just manually put the means and se's of deviances and p values in a separate excel sheet
   
   df <- df[,colSums(is.na(df))<nrow(df)] #if any trend or threshold columns are all NA, delete
-  write.csv(df, file=paste('cross regional data/MRIP MC sims/',folders[i],' MRIP ',colnames(MRIP[k]),' Monte Carlo Sim gamfit.csv', sep=''), row.names = F)
+  write.csv(df, file=paste('data/MRIP MC sims/',folders[i],' MRIP ',colnames(MRIP[k]),' Monte Carlo Sim gamfit.csv', sep=''), row.names = F)
   
   } 
 
@@ -1483,7 +1483,7 @@ MRIPvar<- c('Catch.Thousands', 'Trips.Thousands', 'CPUE')
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
 
   for(k in 1:length(MRIPvar)){
-  MRIP<-read.csv(paste('cross regional data/MRIP MC sims/',folders[i],' MRIP ',MRIPvar[k],' Monte Carlo Sim gamfit.csv', sep='')) 
+  MRIP<-read.csv(paste('data/MRIP MC sims/',folders[i],' MRIP ',MRIPvar[k],' Monte Carlo Sim gamfit.csv', sep='')) 
   
   MRIP$Region<-regnames[i]
   MRIP.cut<-MRIP[,c('Region','Year','fit','se.fit')] #cut just year, fit & se, to get fit summary vals over all 1000 sims, will do trends/thresholds in loop below
@@ -1567,23 +1567,23 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     }
   
   #save complete file outside of trends/thresh (l) loop--one per var (catch/trips) per region
-  write.csv(df0,file=paste('cross regional data/MRIP MC sims/',folders[i],' MC summary gamfit ',MRIPvar[k],'_MRIP.csv', sep=''), row.names = F)
+  write.csv(df0,file=paste('data/MRIP MC sims/',folders[i],' MC summary gamfit ',MRIPvar[k],'_MRIP.csv', sep=''), row.names = F)
   }
 }
 ########## COMPILE ONE DF PER VAR (CATCH/TRIPS) FOR ALL REGIONS ##########
 for(k in 1:length(MRIPvar)){ #k is Catch Thousands or Trips.Thousands
-  df<-read.csv(paste('cross regional data/MRIP MC sims/',folders[1],' MC summary gamfit ',MRIPvar[k],'_MRIP.csv', sep='')) 
+  df<-read.csv(paste('data/MRIP MC sims/',folders[1],' MC summary gamfit ',MRIPvar[k],'_MRIP.csv', sep='')) 
   MRIPvar[k]
   #read in region 1 (AK) to create base df to bind new dfs from i loop to
   
   for(i in 2:length(folders)) { #i represents the folder name and the region name in the file
     #go through all regions for one var first to compile into one df per var
     
-    df.new<-read.csv(paste('cross regional data/MRIP MC sims/',folders[i],' MC summary gamfit ',MRIPvar[k],'_MRIP.csv', sep='')) 
+    df.new<-read.csv(paste('data/MRIP MC sims/',folders[i],' MC summary gamfit ',MRIPvar[k],'_MRIP.csv', sep='')) 
     df<-bind_rows(df,df.new) #use dplyr::bind_rows because rbind can't handle the non-matching columns
     #bind rows just fills in NAs for a column that doesn't exist in one of this original dfs
   }
-  write.csv(df,file=paste('cross regional data/MRIP MC sims/ MC ',MRIPvar[k],' all regions summary gamfit_MRIP.csv', sep=''), row.names = F)
+  write.csv(df,file=paste('data/MRIP MC sims/ MC ',MRIPvar[k],' all regions summary gamfit_MRIP.csv', sep=''), row.names = F)
 }
 
 ##### also compile original data for plotting points
@@ -1596,21 +1596,21 @@ regnames<-c('Alaska','California Current','Gulf of Mexico','Northeast','Southeas
 
 #add CPUE to raw MRIP dfs
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
-  MRIP.Catch<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Catch_SE.csv', sep='')) 
-  MRIP.Trips<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP Trips_SE.csv', sep=''))
+  MRIP.Catch<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Catch_SE.csv', sep='')) 
+  MRIP.Trips<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP Trips_SE.csv', sep=''))
   MRIP.CPUE<-join(MRIP.Catch,MRIP.Trips, by = 'Year', type = 'full')
   MRIP.CPUE$CPUE<-MRIP.CPUE$RCatch/MRIP.CPUE$Angler.Trips
   MRIP.CPUE<-MRIP.CPUE[,c('Year','Region','CPUE')]
   MRIP.CPUE$Region<-regnames[i]
-  write.csv(MRIP.CPUE, file = paste('cross regional data/',folders[i],'/',folders[i],' MRIP CPUE_SE.csv', sep=''), row.names = F)
+  write.csv(MRIP.CPUE, file = paste('data/',folders[i],'/',folders[i],' MRIP CPUE_SE.csv', sep=''), row.names = F)
 }
 
 for(k in 1:length(MRIPvar)){ #k is Catch Thousands or Trips.Thousands or CPUE
-MRIP0<-read.csv(paste('cross regional data/',folders[1],'/',folders[1],' MRIP ',MRIPvar0[k],'_SE.csv', sep='')) 
+MRIP0<-read.csv(paste('data/',folders[1],'/',folders[1],' MRIP ',MRIPvar0[k],'_SE.csv', sep='')) 
 MRIP0$Region <- regnames[1] #replace with regnames because original data format was all caps--'ALASKA'
 
 for(i in 2:length(folders)) { #i represents the folder name and the region name in the file
-  MRIP<-read.csv(paste('cross regional data/',folders[i],'/',folders[i],' MRIP ',MRIPvar0[k],'_SE.csv', sep='')) 
+  MRIP<-read.csv(paste('data/',folders[i],'/',folders[i],' MRIP ',MRIPvar0[k],'_SE.csv', sep='')) 
   MRIP$Region <- regnames[i] 
   
   MRIP0<-rbind(MRIP0,MRIP) 
@@ -1623,7 +1623,7 @@ upr<-boxplot.stats(MRIP0[,3])$stats[5]
 outs<-which(MRIP0[,3]>upr)
 MRIP0<-MRIP0[-c(outs),]
 
-write.csv(MRIP0, file= paste('cross regional data/MRIP MC sims/MRIP ',MRIPvar[k],'_all regions_raw.csv', sep=''), row.names = F)
+write.csv(MRIP0, file= paste('data/MRIP MC sims/MRIP ',MRIPvar[k],'_all regions_raw.csv', sep=''), row.names = F)
 }
 ############## PLOT ALL REGIONS TOGETHER FOR EACH CATCH/TRIPS ###############
 MRIPvar<- c('Catch.Thousands', 'Trips.Thousands', 'CPUE')
@@ -1634,8 +1634,8 @@ zoom<-c(40,15)
 cut<-c(50,20)
 
 for(k in 1:length(MRIPvar)){ #k is Catch Thousands or Trips.Thousands
-  df1<-read.csv(paste('cross regional data/MRIP MC sims/ MC ',MRIPvar[k],' all regions summary gamfit_MRIP.csv', sep=''))
-  MRIP0<-read.csv(paste('cross regional data/MRIP MC sims/MRIP ',MRIPvar[k],'_all regions_raw.csv', sep=''))
+  df1<-read.csv(paste('data/MRIP MC sims/ MC ',MRIPvar[k],' all regions summary gamfit_MRIP.csv', sep=''))
+  MRIP0<-read.csv(paste('data/MRIP MC sims/MRIP ',MRIPvar[k],'_all regions_raw.csv', sep=''))
   MRIPvar[k]
   
   df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
@@ -1739,7 +1739,7 @@ gam.stats<-data.frame(Region,Sector,Ind,Dev,pval)
 
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
   for(k in 1:length(NESinds)) {
-  NES0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[k],' Totals_deflated.csv', sep='')) 
+  NES0<-read.csv(paste('data/',folders[i],'/',files[i],' NES ',NESinds[k],' Totals_deflated.csv', sep='')) 
   NES0$Receipts.Millions<-NES0$Total.Receipts/1000
 #  NES0$Establishments.Thousands<-NES0$Establishments/1000
   
@@ -1752,7 +1752,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
  #   plot(NES1[,j]~Year, data = NES1) 
     #looks pretty good
     
-    gammod<-gam(NES1[,j] ~ s(Year),
+    gammod<-gam(NES1[,j] ~ s(Year), sp = 0.05,
                 data = NES1, method = 'REML')
     gam.stats[(i*6)-6+(k*2)-2+(j-1),2]<-NESinds[k]
     gam.stats[(i*6)-6+(k*2)-2+(j-1),3]<-NES1var[j]
@@ -1761,9 +1761,9 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     gam.stats[(i*6)-6+(k*2)-2+(j-1),5]<-summary(gammod)$s.table[1,4] #pull p value of current sim to sim.devs df
     
     #run gam_tnt function I wrote to convert raw data df BLS00 to gamfit & trends & thresholds df
-  #  df1<-gam_tnt(NES1, 500,gammod,NES1$Year,'Year',NES1$Sector, 'Sector')
+    df1<-gam_tnt(NES1, 500,gammod,NES1$Year,'Year',NES1$Sector, 'Sector')
 
-    write.csv(df1, file=paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[k],' ',NES1var[j],' gamfit.csv', sep=''), row.names = F)
+    write.csv(df1, file=paste('data/',folders[i],'/',files[i],' NES ',NESinds[k],' ',NES1var[j],' gamfit.csv', sep=''), row.names = F)
     
   }
   }
@@ -1791,9 +1791,9 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   #with predicted values from prior calculation
 
   #read in gamfit dfs for individual sectors  
-  NES.F<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[1],' ',NES1var[j],' gamfit.csv', sep=''))
-  NES.SM<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[2],' ',NES1var[j],' gamfit.csv', sep=''))
-  NES.SP<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[3],' ',NES1var[j],' gamfit.csv', sep=''))
+  NES.F<-read.csv(paste('data/',folders[i],'/',files[i],' NES ',NESinds[1],' ',NES1var[j],' gamfit.csv', sep=''))
+  NES.SM<-read.csv(paste('data/',folders[i],'/',files[i],' NES ',NESinds[2],' ',NES1var[j],' gamfit.csv', sep=''))
+  NES.SP<-read.csv(paste('data/',folders[i],'/',files[i],' NES ',NESinds[3],' ',NES1var[j],' gamfit.csv', sep=''))
 
   NES.com<- bind_rows(NES.F,NES.SM,NES.SP) #combine 3 individual sectors, still need to add a 'combined' sector
   NES.com<-NES.com[,c( "Sector", "Year",  "fit", "se.fit",  "inc.trend","dec.trend", "threshold", "se.threshold")]
@@ -1802,7 +1802,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   
   #read in raw datasets to sum for combined establishment numbers
   
-  NES.F0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[1],' Totals_deflated.csv', sep=''))
+  NES.F0<-read.csv(paste('data/',folders[i],'/',files[i],' NES ',NESinds[1],' Totals_deflated.csv', sep=''))
   NES.F0$Receipts.Millions<-NES.F0$Total.Receipts/1000
 #  NES.F0$Establishments.Thousands<-NES.F0$Establishments/1000
   NES.F0<-NES.F0[,c('Year','Establishments','Receipts.Millions')]  
@@ -1814,7 +1814,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   NES.F00$Sector<- 'Fishing'
 
   
-  NES.SM0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[2],' Totals_deflated.csv', sep=''))
+  NES.SM0<-read.csv(paste('data/',folders[i],'/',files[i],' NES ',NESinds[2],' Totals_deflated.csv', sep=''))
   NES.SM0$Receipts.Millions<-NES.SM0$Total.Receipts/1000
 #  NES.SM0$Establishments.Thousands<-NES.SM0$Establishments/1000
   NES.SM0<-NES.SM0[,c('Year','Establishments','Receipts.Millions')]  
@@ -1825,7 +1825,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   names(NES.SM00)<-c('Year',NES1var[j])
   NES.SM00$Sector<- 'Seafood Markets'
   
-  NES.SP0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[3],' Totals_deflated.csv', sep=''))
+  NES.SP0<-read.csv(paste('data/',folders[i],'/',files[i],' NES ',NESinds[3],' Totals_deflated.csv', sep=''))
   NES.SP0$Receipts.Millions<-NES.SP0$Total.Receipts/1000
 #  NES.SP0$Establishments.Thousands<-NES.SP0$Establishments/1000
   NES.SP0<-NES.SP0[,c('Year','Establishments','Receipts.Millions')]  
@@ -1850,12 +1850,15 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   
   #long df with raw data from all sectors plus combined numbers
   NES0<-rbind(NES.F00, NES.SM00,NES.SP00,NES.com0) #stacks dfs
-  write.csv(NES0, file=paste('cross regional data/',folders[i],'/',files[i],' NES combined ', NES1var[j],'_data points_raw.csv', sep=''), row.names = F)
+  write.csv(NES0, file=paste('data/',folders[i],'/',files[i],' NES combined ', NES1var[j],'_data points_raw.csv', sep=''), row.names = F)
   
   ################### get gamfit for 'combined' sector ################
   #gammod with just 'combined' values
-  gammod<-gam(unlist(NES.com0[2]) ~ s(Year), 
+  gammod<-gam(unlist(NES.com0[2]) ~ s(Year,k=15), sp =0.5, 
               data = NES.com0, method = 'REML')
+
+plot(gammod)
+plot(NES.com0$Year,NES.com0$Receipts)
   
   #run gam_tnt function I wrote to convert raw data df BLS00 to gamfit & trends & thresholds df
   df1<-gam_tnt(NES.com0, 500,gammod,NES.com0$Year,'Year',NES.com0$Sector, 'Sector')
@@ -1867,7 +1870,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   
   df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
   
-  write.csv(df1, file=paste('cross regional data/',folders[i],'/',files[i],' NES combined ', NES1var[j],' gamfit.csv', sep=''), row.names = F)
+  write.csv(df1, file=paste('data/',folders[i],'/',files[i],' NES combined ', NES1var[j],' gamfit.csv', sep=''), row.names = F)
   }
 }
    
@@ -1887,8 +1890,8 @@ mixed<-c('#bf812d', '#dfc27d', '#c7eae5', '#737373')
  for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
     for(j in 2:3){ #j represents the column number in the NES df (skip 1), the variable name(for writing files),and labs (y axis labels)
       #with predicted values from prior calculation
-  df1<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES combined ', NES1var[j],' gamfit.csv', sep=''))
-  NES0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES combined ', NES1var[j],'_data points_raw.csv', sep=''))
+  df1<-read.csv(paste('data/',folders[i],'/',files[i],' NES combined ', NES1var[j],' gamfit.csv', sep=''))
+  NES0<-read.csv(paste('data/',folders[i],'/',files[i],' NES combined ', NES1var[j],'_data points_raw.csv', sep=''))
   
   #reorder MH factor so that 'All Species' layers on top of 'Without Menhadens'
   #All Species is plotted first by default (alphabetically)
@@ -1983,7 +1986,7 @@ gam.stats<-data.frame(Region,Sector,Ind,Dev,pval)
 
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
   for(k in 1:length(BLSinds)) { # which sector
-    BLS0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' Totals_deflated.csv', sep='')) 
+    BLS0<-read.csv(paste('data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' Totals_deflated.csv', sep='')) 
     BLS0$Employment.Thousands<-BLS0$Employment/1000 #might add in later if larger industry totals are too high
     BLS0$Wages.Millions<-BLS0$Wages.Thousands/1000
     BLS00<-BLS0[,c('Year','Establishments','Employment.Thousands','Wages.Millions')] 
@@ -1994,7 +1997,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
       BLS$Sector<-BLSinds[k]
       names(BLS)<-c('Year',BLSvar[j],'Sector')
       
-      write.csv(BLS, file = paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' ',BLSvar[j],' raw points.csv', sep=''),row.names = F)
+      write.csv(BLS, file = paste('data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' ',BLSvar[j],' raw points.csv', sep=''),row.names = F)
       
       plot(BLS[,2]~Year, data = BLS) 
       #looks pretty good
@@ -2017,7 +2020,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
      gam.stats[(i*12)-12+(k*3)-3+(j-1),5]<-summary(gammod)$s.table[1,4] #pull p value of current sim to sim.devs df
      
 
-      write.csv(df1, file=paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' ',BLSvar[j],' gamfit.csv', sep=''), row.names = F)
+      write.csv(df1, file=paste('data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' ',BLSvar[j],' gamfit.csv', sep=''), row.names = F)
       
     }
   }
@@ -2039,10 +2042,10 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   for(j in 2:4){ #j represents the column number in the BLS df (skip 1), BLSvar (for writing files)
     
     #first read in gamfit of first sector to bind rest to
-    BLS.com<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSinds[1],' ',BLSvar[j],' gamfit.csv', sep=''))
+    BLS.com<-read.csv(paste('data/',folders[i],'/',files[i],' BLS ',BLSinds[1],' ',BLSvar[j],' gamfit.csv', sep=''))
     
     for(k in 2:4) { #bind other 3 sectors to first
-      BLS.new<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' ',BLSvar[j],' gamfit.csv', sep=''))
+      BLS.new<-read.csv(paste('data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' ',BLSvar[j],' gamfit.csv', sep=''))
       BLS.com<-if("fit" %in% colnames(BLS.com)) { 
         if( "fit" %in% colnames(BLS.new)) {
           rbind(BLS.com,BLS.new)
@@ -2058,13 +2061,13 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     #compile raw data in both wide (BLS.W) to calculate RowSums 
     #and long formats (BLS.com0) for final df--will still need to tack on combined values
     #first get one then use actively compiling loop
-    BLS.com0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSinds[1],' ',BLSvar[j],' raw points.csv', sep=''))
+    BLS.com0<-read.csv(paste('data/',folders[i],'/',files[i],' BLS ',BLSinds[1],' ',BLSvar[j],' raw points.csv', sep=''))
     BLS.W<-BLS.com0[,c(1:2)]
     names(BLS.W)<-c('Year',BLSinds[1])
     
     for(k in 2:4) {
       #compile raw data points in long format
-      BLS.new0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' ',BLSvar[j],' raw points.csv', sep=''))
+      BLS.new0<-read.csv(paste('data/',folders[i],'/',files[i],' BLS ',BLSinds[k],' ',BLSvar[j],' raw points.csv', sep=''))
       BLS.com0<-if(nrow(BLS.com0)>6) { #only include sector if not too many NAs
         if(nrow(BLS.new0)>6) {
           rbind(BLS.com0,BLS.new0)
@@ -2092,7 +2095,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     BLS0<-rbind(BLS.W,BLS.com0) #stacks dfs
     #to try multi-factorial gam
     
-    write.csv(BLS0, file=paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSvar[j],' combined_points_raw.csv', sep=''), row.names = F)
+    write.csv(BLS0, file=paste('data/',folders[i],'/',files[i],' BLS ',BLSvar[j],' combined_points_raw.csv', sep=''), row.names = F)
     
     #gammod with just 'combined' values
     gammod<-gam(BLS.W[,2] ~ s(Year), 
@@ -2101,7 +2104,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
     dfcom<-gam_tnt(BLS.W, 500,gammod,BLS.W$Year,'Year',BLS.W$Sector, 'Sector')
     df1<-rbind(BLS.com,dfcom)
 
-    write.csv(df1, file=paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSvar[j],' combined gamfit.csv', sep=''), row.names = F)
+    write.csv(df1, file=paste('data/',folders[i],'/',files[i],' BLS ',BLSvar[j],' combined gamfit.csv', sep=''), row.names = F)
   }
 }
 ############# COMPILED GAM PLOT WITH INDIVIDUAL SECTORS PLUS COMBINED ##########
@@ -2128,10 +2131,10 @@ zoom<-c(1,1,0.5,30)
 for(i in 1:length(folders)) { #i represents the folder name and the region name in the file
   for(j in 3:3){ #j represents the column number in the BLS df (skip 1), BLSvar (for writing files),and BLSlabs (y axis labels)
     
-    df1<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSvar[j],' combined gamfit.csv', sep=''))
+    df1<-read.csv(paste('data/',folders[i],'/',files[i],' BLS ',BLSvar[j],' combined gamfit.csv', sep=''))
     df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
     
-    BLS0<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' BLS ',BLSvar[j],' combined_points_raw.csv', sep=''))
+    BLS0<-read.csv(paste('data/',folders[i],'/',files[i],' BLS ',BLSvar[j],' combined_points_raw.csv', sep=''))
     
     #to calculate max y-axis for zoomed plot
     df1.z<-df1[df1$Sector == 'Fishing' |

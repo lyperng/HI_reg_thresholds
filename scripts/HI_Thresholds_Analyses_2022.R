@@ -472,7 +472,7 @@ zoom<-c(1,1,0.5,30)
       {if(BLSvar[j] != 'Establishments') #palette minus 3rd color (-seafood packaging)
         scale_color_manual(labels = BLSlegHI, 
                            values = c(mixedHI[1:3],'black'))} +
-      geom_point(data = BLS0,aes(x = Year, y = BLS0[,2], shape = Sector, fill = Sector), size = 2.7) + # data points
+      geom_point(data = BLS0,aes(x = Year, y = BLS0[,2], shape = Sector, fill = Sector), size = 4.8) + # data points
       {if(BLSvar[j] == 'Establishments') #shapes minus 3rd  (-seafood packaging)
         scale_shape_manual(labels = BLSleg, 
                            values = c(21:25))} +
@@ -498,15 +498,15 @@ zoom<-c(1,1,0.5,30)
 ############################### NES ########################################
 ##prior calculations in 'Gratia cross reigional analyses.R
 ############COMPILED GAM PLOT WITH INDIVIDUAL SECTORS PLUS COMBINED #############
-NES1var<-c('1','Establishments_scaled', 'Receipts') #for manuscript, probably better to focus on receipts
+NES1var<-c('1','Establishments', 'Receipts') #for manuscript, probably better to focus on receipts
 NES1labs<-c('1','Number of Self-Employed Individuals','Non-Employer Receipts\n (Millions of Dollars - 2020 Value)')
 NESleg<-c( "Fishing","Seafood Markets", "Seafood Processing", 'All Sectors')
 
 ## rescale HI employment--was scaled to thousands to compare across regions
 est<-read.csv(paste('data/HI/HI NES combined Establishments gamfit.csv', sep=''))
 NES0est<-read.csv(paste('data/HI/HI NES combined Establishments_data points_raw.csv', sep=''))
-est[,c(3:8)]<-est[,c(3:8)]*1000
-NES0est$Establishments<-NES0est$Establishments*1000
+est[,c(3:8)]<-est[,c(3:8)]/1
+NES0est$Establishments<-NES0est$Establishments/1
 write.csv(est, paste('data/HI/HI NES combined Establishments_scaled gamfit.csv', sep=''),row.names = F)
 write.csv(NES0est, paste('data/HI/HI NES combined Establishments_scaled_data points_raw.csv', sep=''),row.names = F)
 
@@ -547,7 +547,7 @@ mixed<-c('#bf812d', '#dfc27d', '#c7eae5', '#737373')
               legend.title=element_blank(),
               legend.margin = margin(3,12,9,10)) +
       guides(fill = guide_legend(byrow = T))+
-      scale_x_continuous(breaks=seq(1995,2020,1), labels = c("1995",rep("",4),"2000",rep("",4),"2005",rep("",4),'2010',rep("",4),'2015',rep("",4), '2020')) +
+  #    scale_x_continuous(breaks=seq(1995,2020,1), labels = c("1995",rep("",4),"2000",rep("",4),"2005",rep("",4),'2010',rep("",4),'2015',rep("",4), '2020')) +
       scale_y_continuous(limits = c(min(0,round_any(min(df1$fit-(2*df1$se.fit)), 1, f = floor)), round_any(max(df1$fit+(2*df1$se.fit)), 0.1, f = ceiling)))+
   #    scale_y_continuous(limits = c(round_any(min(df1.z$fit-(2*df1.z$se.fit)),0.01, f = floor), round_any(max(df1.z$fit+(2*df1.z$se.fit)), 0.01, f = ceiling)))+
       geom_ribbon(aes(ymin = fit-(2*se.fit), ymax = fit+(2*se.fit), fill = Sector), alpha = 0.7) + #95CI = (2*SE) for gam function
@@ -559,7 +559,7 @@ mixed<-c('#bf812d', '#dfc27d', '#c7eae5', '#737373')
       geom_line(size = 0.6, aes(color = Sector), alpha = 1) + #full gam function
       scale_color_manual(labels = NESleg, 
                          values = c(mixed[1:3],'black')) +
-      geom_point(data = NES0,aes(x = Year, y = unlist(NES0[2]), shape = Sector, fill = NES0$Sector),color = 'gray20', size = 2.7)  + # data points
+      geom_point(data = NES0,aes(x = Year, y = unlist(NES0[2]), shape = Sector, fill = NES0$Sector),color = 'gray20', size = 4.8)  + # data points
       scale_shape_manual(labels = NESleg, 
                          values = c(21:23,25)) +
       {if("inc.trend" %in% colnames(df1)) 
