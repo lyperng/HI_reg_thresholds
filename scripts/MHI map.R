@@ -1,7 +1,7 @@
 # make color coded MHI map
 
 # install and load libraries
-PKG <- c("ggplot2",'mapdata', 'ggrepel', 'marmap', 'sf','rnaturalearth', 'rnaturalearthdata')
+PKG <- c("ggplot2",'ggspatial','mapdata', 'ggrepel', 'marmap', 'sf','rnaturalearth', 'rnaturalearthdata')
 
 #c("ggplot2", 'ggmap', 'maps','usmap', 'ggsn', 'usmap', "RColorBrewer")
 # 'marmap' for visualizing marine data, including bathymetric contours
