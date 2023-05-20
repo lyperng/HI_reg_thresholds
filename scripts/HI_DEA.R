@@ -90,7 +90,7 @@ df_summary<-df_long %>%
 
 df_summary<-df_summary[df_summary$County!='Kalawao County',]
 
-write.csv(df_summary, file="outputs/HI region specific BODI/CSVI over time by County_se_long.csv", row.names = F)
+write.csv(df_summary, file="outputs/CSVI over time by County_se_long.csv", row.names = F)
 
 ###################### plot by County with mean & se ###################### 
 pd <- position_dodge(0.2) # move them .02 to the left and right
@@ -99,7 +99,7 @@ countypal4<-c('#e78ac3','#8da0cb','#66c2a5','#fc8d62')
 #reorder by counties in geographic order using dplyr
 counordered <- c("Kaua‘i County", "Honolulu County", "Maui County", 'Hawai‘i County')
 
-df_summary<-read.csv("outputs/HI region specific BODI/CSVI over time by County_se_long.csv")
+df_summary<-read.csv("outputs/CSVI over time by County_se_long.csv")
 df_summary$Indicator <- factor(df_summary$Indicator, 
                                levels = c("Pounds.Thousands1000", "Dollars.Thousands1000", "Dealers1000", "CommPermits1000", "RecFshTrps1000",
                                           'PopDensity.Thousands',"PCTWaterCover"), 

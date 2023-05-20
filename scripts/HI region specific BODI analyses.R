@@ -261,7 +261,7 @@ temp.soc0<-aggregate(.~Year+County, data = temp.soc, FUN = mean)
 ggplot(temp.soc0, aes(x = Year, y = RecFshTrps1000, colour = County)) +
   geom_line()
 
-write.csv(temp.soc0, file="outputs/HI region specific BODI/CSVI over time by County_raw.csv", row.names = F)
+write.csv(temp.soc0, file="outputs/CSVI over time by County_raw.csv", row.names = F)
 
 #divide each value by column mean (which is mean of each type of landing across all years and regions)
 soc$BoatLaunches1000=soc$BoatLaunches1000/mean(soc$BoatLaunches1000)
@@ -323,7 +323,7 @@ temp.final<-join(final, coun, by = 'Community', type = 'inner')
 
 temp.final<-temp.final[,-c(2,12)]
 temp.final0<-aggregate(.~Year+County, data = temp.final, FUN = mean) 
-write.csv(temp.final0, file="outputs/HI region specific BODI/CSVI over time by County.csv", row.names = F)
+write.csv(temp.final0, file="outputs/CSVI over time by County.csv", row.names = F)
 
 Y=final[,c( #"BoatLaunches1000",  #removed boat launches because it turns out these are infrastructure numbers
            "Pounds1000","Value1000",

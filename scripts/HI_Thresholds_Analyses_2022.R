@@ -127,7 +127,7 @@ ggplot(FOSS.ann0, aes(Year, Pounds)) +
         panel.grid.minor = element_blank() #delete minor grid lines
   )
 
-#ggsave('figures/HI region specific/FOSS compiled species groups/FOSS top species Catch.png', 
+#ggsave('figures/FOSS compiled species groups/FOSS top species Catch.png', 
  #      width =  12, height = 9, units = 'in', #w & h in inches
   #     dpi = 300, bg = 'transparent')
 
@@ -314,7 +314,7 @@ for(k in 2:3){ #k is FOSS vars
     scale_shape_manual(labels = groups2,
                        values = c(4,2,1,0,5,6,8))
   
-  ggsave(paste('figures/HI region specific/FOSS compiled species groups/',FOSSvar[k],' GAM_ggplot.png',sep=''), 
+  ggsave(paste('figures/FOSS compiled species groups/',FOSSvar[k],' GAM_ggplot.png',sep=''), 
          width =  9.2, height = 6, units = 'in', #w & h in inches
           dpi = 300, bg = 'transparent')
   
@@ -381,7 +381,7 @@ for(k in 2:3){ #k is FOSS vars
     scale_shape_manual(labels = groups1[4:6],
                        values = c(1,0,5,8))
   
-  ggsave(paste('figures/HI region specific/FOSS compiled species groups/',FOSSvar[k],' GAM_zoom.png',sep=''), 
+  ggsave(paste('figures/FOSS compiled species groups/',FOSSvar[k],' GAM_zoom.png',sep=''), 
          width =  9.2, height = 3.7, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
 
@@ -485,11 +485,11 @@ zoom<-c(1,1,0.5,30)
         geom_line(aes(x=Year, y = dec.trend, group = Sector),size = 1.3, color = "#D55E00", alpha = 0.5) }  +
       labs(y = BLSlabs[j], x = "Year", title = "Hawai‘i")   
     
-    ggsave(paste('figures/HI region specific/Employment/BLS ',BLSvar[j],' GAM_ggplot.png',sep=''), 
+    ggsave(paste('figures/Employment/BLS ',BLSvar[j],' GAM_ggplot.png',sep=''), 
            width =  11, height = 10, units = 'in', #w & h in inches
            dpi = 300, bg = 'transparent')
 
-    #   ggsave(paste('figures/HI region specific/Employment/BLS ',BLSvar[j],' GAM_ggplot_zoom.png',sep=''), 
+    #   ggsave(paste('figures/Employment/BLS ',BLSvar[j],' GAM_ggplot_zoom.png',sep=''), 
     #         width =  10.5, height = 4.8, units = 'in', #w & h in inches
     #        dpi = 300, bg = 'transparent')
   }
@@ -568,11 +568,11 @@ mixed<-c('#bf812d', '#dfc27d', '#c7eae5', '#737373')
         geom_line(aes(x=Year, y = dec.trend, group = Sector),size = 2, color = "#D55E00", alpha = 0.6) } +
       labs(y = NES1labs[j], x = "Year", title = "Hawai‘i")   
     
-    ggsave(paste('figures/HI region specific/Employment/NES ',NES1var[j],' GAM.png',sep=''), 
+    ggsave(paste('figures/Employment/NES ',NES1var[j],' GAM.png',sep=''), 
            width =  11.3, height = 9.5, units = 'in', #w & h in inches
            dpi = 300, bg = 'transparent')
     
-#    ggsave(paste('figures/HI region specific/Employment/NES ',NES1var[j],' GAM_zoom.png',sep=''), 
+#    ggsave(paste('figures/Employment/NES ',NES1var[j],' GAM_zoom.png',sep=''), 
  #         width =  11, height = 6.5, units = 'in', #w & h in inches
   #        dpi = 300, bg = 'transparent')
   }
@@ -695,7 +695,7 @@ for(k in 1:length(NCRMPvar)) { # NCRMP scaled variables are columns 6:7
       geom_line(aes(x=Year, y = dec.trend),size = 1.2, color = "#D55E00", alpha = 0.6) } +
     labs(y = NCRMPlabs[k], x = "Year",sep='')   
   
-  ggsave(paste('figures/HI region specific/NCRMP grouped/',NCRMPvar[k],' GAM_ggplot.png',sep=''), 
+  ggsave(paste('figures/NCRMP grouped/',NCRMPvar[k],' GAM_ggplot.png',sep=''), 
          width =  12, height = 3.7, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent') 
 }
@@ -827,7 +827,7 @@ scale_color_manual(values = cbbPalette[c(8,5,6,3,4)]) +
            panel.grid.minor = element_blank() #delete minor grid lines
   )
 
-ggsave('figures/HI region specific/MRIP/MRIP top species Catch.png', 
+ggsave('figures/MRIP/MRIP top species Catch.png', 
        width =  12, height = 9, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -984,7 +984,7 @@ for(k in 2:3){ #k is MRIP vars
     scale_shape_manual(labels = groups1,
                        values = c(4,2,1,0,5,18))
   
-  ggsave(paste('figures/HI region specific/MRIP/',MRIPvar[k],' GAM_ggplot.png',sep=''), 
+  ggsave(paste('figures/MRIP/',MRIPvar[k],' GAM_ggplot.png',sep=''), 
          width =  9.2, height = 6.6, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
   
@@ -1044,7 +1044,7 @@ for(k in 2:3){ #k is MRIP vars
     scale_shape_manual(labels = groups1[c(2,4:6)],
                        values = c(2,0,5,18))
   
-  ggsave(paste('figures/HI region specific/MRIP/',MRIPvar[k],' GAM_zoom.png',sep=''), 
+  ggsave(paste('figures/MRIP/',MRIPvar[k],' GAM_zoom.png',sep=''), 
          width =  9.2, height = 4.2, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
 }
@@ -1088,7 +1088,7 @@ for(k in 2:3){ #k is MRIP vars
       geom_line(aes(x=Year, y = dec.trend, group = Region),size = 2, color = "#D55E00", alpha = 0.6) } +
     labs(y = 'Recreational Trips (Millions)', x = "Year", title = 'Recreational Effort')   
   
-  ggsave(paste('figures/HI region specific/MRIP/Trips GAM_ggplot.png',sep=''), 
+  ggsave(paste('figures/MRIP/Trips GAM_ggplot.png',sep=''), 
          width =  9.2, height = 5.8, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
 
