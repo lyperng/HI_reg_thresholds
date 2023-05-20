@@ -1,8 +1,7 @@
 # make color coded MHI map
 
 # install and load libraries
-PKG <- c("ggplot2",'ggspatial','mapdata', 'ggrepel', 'marmap', 'sf','rnaturalearth', 'rnaturalearthdata')
-
+PKG <- c('tidyverse','ggspatial','mapdata', 'ggrepel', 'marmap', 'sf','rnaturalearth', 'rnaturalearthdata')
 #c("ggplot2", 'ggmap', 'maps','usmap', 'ggsn', 'usmap', "RColorBrewer")
 # 'marmap' for visualizing marine data, including bathymetric contours
 
@@ -37,6 +36,32 @@ HIpoly$county <- factor(HIpoly$county, levels = c("Kaua'i", "Honolulu", 'Maui', 
 bathy <- getNOAA.bathy(-160.5, -154.5, 18.5, 22.5, res = 1, keep = TRUE)
 ggbathy <- fortify(bathy)
 
+##################################################
+# everything above and below this works together to create a nice map
+# in this block, I am essentially plotting the same map, but with the CCD outlines
+
+# read in census data from tiger/line shapefiles
+tracts <- st_read("data/tracts/tl_rd22_15_tract.shp")
+head(tracts)
+tracts_wgs<-st_transform(tracts,"+proj=longlat +datum=WGS84")
+head(tracts_wgs)
+
+ccd<-st_read("data/ccd/tl_2010_15_cousub10.shp")
+head(ccd)
+ccd_wgs<-st_transform(ccd,"+proj=longlat +datum=WGS84")
+head(ccd_wgs)
+
+# assign county names for nicer plotting
+ccd_wgs <- ccd_wgs %>% mutate(County = case_when(
+  COUNTYFP10 == '001' ~ "Hawai'i",
+  COUNTYFP10 == '003' ~ "Honolulu",
+  COUNTYFP10 == '005' ~ NA,
+  COUNTYFP10 == '007' ~ "Kaua'i",
+  COUNTYFP10 == '009' ~ 'Maui'
+))
+
+##################################################
+
 ###### below is in progress of trying to plot the MHI and bathy data together
 # so far, the MHI data alone works fine using geom_polygon, but cant add the contours because they are on diff projections
 
@@ -44,9 +69,10 @@ ggbathy <- fortify(bathy)
 map_cont<- ggplot() +
   theme_bw() +
   geom_contour(
-    data = ggbathy, aes(x = x, y = y, z = z),
-    binwidth = 40, color = "grey90",linewidth = 0.3
-  ) +
+    data = ggbathy, aes(x = x, y = y, z = z), # plot the bathy data with long, lat, depth
+    binwidth = 40, color = "grey90",linewidth = 0.3 #binwidth determines how far apart the contour lines are
+    # 40 has really close lines, essentially works to shade darker closer to land
+    ) +
 #  geom_contour(
  #   data = ggbathy, aes(x = x, y = y, z = z),
   #  binwidth = 200, color = "grey80",linewidth = 0.3
@@ -54,16 +80,18 @@ map_cont<- ggplot() +
   geom_contour(
     data = ggbathy, aes(x = x, y = y, z = z),
     binwidth = 800, color = "grey65", linewidth = 0.4
-  ) +
-   coord_sf(xlim = c(-160.5, -154.5), ylim = c(18.5, 22.5), expand = FALSE)   # coord_equal() +
+    # give some darker outlines for layering
+  )
+   # set the map edge limits, expand F means nothing can go past these limits
   
 map_cont
 
 map1<-map_cont +
-#   geom_sf() +
-   geom_sf(data = HIpoly, aes(group = Group.1, fill = county), color = "black") +    
+   geom_sf(data = ccd_wgs, aes(fill = County)) + # plot the ccd data
+#   geom_sf(data = HIpoly, aes(group = Group.1, fill = county), color = "black") + # plot simple island outlines   
   coord_sf(xlim = c(-160.5, -154.6), ylim = c(18.7, 22.4), expand = FALSE) +
-  scale_fill_manual(values = c("Kaua'i" = alpha("#E78AC3",0.6), "Honolulu" = alpha("#8DA0CB",0.6), "Maui" = alpha("#66C2A5",0.6), "Hawai'i" = alpha("#FC8D62",0.6))) +
+  # set the map edge limits, expand F means nothing can go past these limits
+  scale_fill_manual(values = c("Kaua'i" = alpha("#E78AC3",0.7), "Honolulu" = alpha("#8DA0CB",0.7), "Maui" = alpha("#66C2A5",0.7), "Hawai'i" = alpha("#FC8D62",0.7))) +
 #  scale_fill_manual(values = c("Kaua'i" = alpha("#77AADD",0.6), "Honolulu" = "#99DDFF", "Maui" = "#44BB99", "Hawai'i" = "#EEDD88")) +
 #  scale_fill_manual(values = c("Kaua'i" = alpha("#BBCCEE",0.8), "Honolulu" = "#CCEEFF", "Maui" = "#CCDDAA", "Hawai'i" = "#EEEEBB")) +
   labs(title = "Main Hawaiian Islands", fill = "County",
@@ -75,12 +103,13 @@ map2<-map1 +
         axis.title=element_text(size=22,face="plain"), #adjust size of axis titles
         axis.text=element_text(size=16, color = 'black'), #adjust font size of axis tick labels
         legend.position = c(0.16, 0.27),  # manually adjust legend position
-        legend.background = element_blank(),
+        legend.background = element_blank(), # need to set this otherwise it is opaque
         legend.box.background = element_rect(color = 'black', fill=alpha("white", 0.5)),
-        legend.key = element_rect(fill = "transparent", colour = NA),
-        legend.key.size = unit(0.8, 'cm'),
-        legend.spacing.y = unit(0.12, 'cm'),
-        legend.text=element_text(size=16),
+        # set legend border, fill, transparency
+        legend.key = element_rect(fill = "transparent", colour = NA),# if not set, 
+        legend.key.size = unit(0.8, 'cm'), # adjust size of ea fill box
+        legend.spacing.y = unit(0.12, 'cm'), # space between fill boxes, need guides()
+        legend.text=element_text(size=16), 
         legend.title=element_text(hjust = 0.5, size = 17),
         legend.margin = margin(5,12,8,10)) +
   guides(fill=guide_legend(byrow = T))
