@@ -409,10 +409,10 @@ zoom<-c(1,1,0.5,30)
 #adjust label sizes and whatnot for manuscript 
   for(j in 2:4){ #j represents the column number in the BLS df (skip 1), BLSvar (for writing files),and BLSlabs (y axis labels)
     
-    df1<-read.csv(paste('cross regional data/HI/HI BLS ',BLSvar[j],' combined gamfit.csv', sep=''))
+    df1<-read.csv(paste('data/HI/HI BLS ',BLSvar[j],' combined gamfit.csv', sep=''))
     df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
     
-    BLS0<-read.csv(paste('cross regional data/HI/HI BLS ',BLSvar[j],' combined_points_raw.csv', sep=''))
+    BLS0<-read.csv(paste('data/HI/HI BLS ',BLSvar[j],' combined_points_raw.csv', sep=''))
     
     #to calculate max y-axis for zoomed plot
     df1.z<-df1[df1$Sector == 'Fishing' |
@@ -428,7 +428,9 @@ zoom<-c(1,1,0.5,30)
     BLSlegHI<-c(unique(df1.z$Sector),'Combined')
     
     
-    ##plot gam
+    ##### plot gam ######
+    # BLS employment and wages will have weird legends because they are missing seaf packaging
+    
     ggplot(df1,
            aes(x = Year, y = fit)) +
       theme(  plot.title=element_text(hjust=0.5, size = 30),
@@ -494,27 +496,27 @@ zoom<-c(1,1,0.5,30)
 
     
 ############################### NES ########################################
-##prior calculations in 'Gratia corss reigional analyses.R
+##prior calculations in 'Gratia cross reigional analyses.R
 ############COMPILED GAM PLOT WITH INDIVIDUAL SECTORS PLUS COMBINED #############
 NES1var<-c('1','Establishments_scaled', 'Receipts') #for manuscript, probably better to focus on receipts
 NES1labs<-c('1','Number of Self-Employed Individuals','Non-Employer Receipts\n (Millions of Dollars - 2020 Value)')
 NESleg<-c( "Fishing","Seafood Markets", "Seafood Processing", 'All Sectors')
 
 ## rescale HI employment--was scaled to thousands to compare across regions
-est<-read.csv(paste('cross regional data/HI/HI NES combined Establishments gamfit.csv', sep=''))
-NES0est<-read.csv(paste('cross regional data/HI/HI NES combined Establishments_data points_raw.csv', sep=''))
+est<-read.csv(paste('data/HI/HI NES combined Establishments gamfit.csv', sep=''))
+NES0est<-read.csv(paste('data/HI/HI NES combined Establishments_data points_raw.csv', sep=''))
 est[,c(3:8)]<-est[,c(3:8)]*1000
 NES0est$Establishments<-NES0est$Establishments*1000
-write.csv(est, paste('cross regional data/HI/HI NES combined Establishments_scaled gamfit.csv', sep=''),row.names = F)
-write.csv(NES0est, paste('cross regional data/HI/HI NES combined Establishments_scaled_data points_raw.csv', sep=''),row.names = F)
+write.csv(est, paste('data/HI/HI NES combined Establishments_scaled gamfit.csv', sep=''),row.names = F)
+write.csv(NES0est, paste('data/HI/HI NES combined Establishments_scaled_data points_raw.csv', sep=''),row.names = F)
 
 # colorblind friendly
 mixed<-c('#bf812d', '#dfc27d', '#c7eae5', '#737373')
 
   for(j in 2:3){ #j represents the column number in the NES df (skip 1), the variable name(for writing files),and labs (y axis labels)
     #with predicted values from prior calculation
-    df1<-read.csv(paste('cross regional data/HI/HI NES combined ', NES1var[j],' gamfit.csv', sep=''))
-    NES0<-read.csv(paste('cross regional data/HI/HI NES combined ', NES1var[j],'_data points_raw.csv', sep=''))
+    df1<-read.csv(paste('data/HI/HI NES combined ', NES1var[j],' gamfit.csv', sep=''))
+    NES0<-read.csv(paste('data/HI/HI NES combined ', NES1var[j],'_data points_raw.csv', sep=''))
     
     #reorder factor so that 'All Species' layers on top of 'Without Menhadens'
     #All Species is plotted first by default (alphabetically)
@@ -752,9 +754,9 @@ ggplot(df1,
 ############################### MRIP #####################################
 ########################### load and clean data ##########################
 # assign habitat and species groups
-catch<-read.csv('cross regional data/HI/HI MRIP Catch_SE.csv')
-trips<-read.csv('cross regional data/HI/HI MRIP Trips_SE.csv')
-MRIP.spec<-read.csv('cross regional data for DEA/MRIP Rec Data/MRIP HI Catch annual.csv')
+catch<-read.csv('data/HI/HI MRIP Catch_SE.csv')
+trips<-read.csv('data/HI/HI MRIP Trips_SE.csv')
+MRIP.spec<-read.csv('data for DEA/MRIP Rec Data/MRIP HI Catch annual.csv')
 MRIP.spec[MRIP.spec$Species == 'GLASSEYE',2]<-'GLASSEYE SNAPPER'
 MRIP.spec[MRIP.spec$Species == 'SCALLOPED HAMMERHEAD',2]<-'SCALLOPED HAMMERHEAD SHARK'
 write.csv(MRIP.spec,'data/HCC cleaned/MRIP Catch_by species.csv', row.names = F)
@@ -779,7 +781,7 @@ MRIPgrouped<-join(MRIP.spec, spec.hab, by = 'Species', type = 'full')
 MRIP.others<-MRIPgrouped[which(is.na(MRIPgrouped$Habitat) == 'TRUE'),] #no NAs! every species is accounted for
 write.csv(MRIPgrouped,'data/HCC cleaned/MRIP Catch_grouped.csv', row.names = F)
 
-############## simple catch by species group plot ##############
+############## simple catch by species time series plot ##############
 #read in final mrip catch df with species and habitat groups assigned
 MRIPgrouped<-read.csv('data/HCC cleaned/MRIP Catch_grouped.csv')
 MRIPgrouped$Habitat<-as.factor(MRIPgrouped$Habitat)
@@ -1049,8 +1051,8 @@ for(k in 2:3){ #k is MRIP vars
 
 ############## SEPARATE MRIP PLOT FOR TRIPS--NO SPECIES DISAGG DATA ###############
 
-  df1<-read.csv(paste('cross regional data/MRIP MC sims/ MC Trips.Thousands all regions summary gamfit_MRIP.csv', sep=''))
-  MRIP0<-read.csv(paste('cross regional data/MRIP MC sims/MRIP Trips.Thousands_all regions_raw.csv', sep=''))
+  df1<-read.csv(paste('data/MRIP MC sims/ MC Trips.Thousands all regions summary gamfit_MRIP.csv', sep=''))
+  MRIP0<-read.csv(paste('data/MRIP MC sims/MRIP Trips.Thousands_all regions_raw.csv', sep=''))
   df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
   df1<-df1[df1$Region == "Hawai'i",]
   MRIP0<-MRIP0[MRIP0$Region == "Hawai'i",]

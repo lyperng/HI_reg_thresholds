@@ -1794,7 +1794,7 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   NES.F<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[1],' ',NES1var[j],' gamfit.csv', sep=''))
   NES.SM<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[2],' ',NES1var[j],' gamfit.csv', sep=''))
   NES.SP<-read.csv(paste('cross regional data/',folders[i],'/',files[i],' NES ',NESinds[3],' ',NES1var[j],' gamfit.csv', sep=''))
-  
+
   NES.com<- bind_rows(NES.F,NES.SM,NES.SP) #combine 3 individual sectors, still need to add a 'combined' sector
   NES.com<-NES.com[,c( "Sector", "Year",  "fit", "se.fit",  "inc.trend","dec.trend", "threshold", "se.threshold")]
   #reorder columns for consistency
@@ -1963,7 +1963,6 @@ BLSinds<-c('Fishing', 'Seaf Markets', 'Seaf Packaging', 'Seaf Wholesale')
 BLSmain<-c('Fishing', 'Seafood Markets', 'Seafood Packaging', 'Seafood Wholesale')
 BLSabbr<-c('Fsh','SM','SP','SW')
 
-##?? mess with this code to add in employment stats other than establishments
 #Employment is probably better, but only 3 yr values for HI
 
 ############# GET GAMFIT DF WITH TRENDS AND THRESHOLDS MARKED PER SECTOR #############
@@ -2174,6 +2173,10 @@ for(i in 1:length(folders)) { #i represents the folder name and the region name 
   #    scale_y_continuous(limits = c(0,zoom[j])) +
       #      scale_y_continuous(limits = c(round_any(min(df1.z$fit-(2*df1.z$se.fit)), 10, f = floor), round_any(max(df1.z$fit+(2*df1.z$se.fit)), 10, f = ceiling)), position = 'left')+
       geom_ribbon(aes(ymin = fit-(2*se.fit), ymax = fit+(2*se.fit), fill = Sector), alpha = 0.7) + #95CI = (2*SE) for gam function
+      
+      # the following code adjusts palette within the loop
+      # HI doesn't have seafood processing for employment or wages
+      # need palette needs to skip processing for HI, apply diff palette with 4 colors
       {if(folders[i]!='HI' | (folders[i]=='HI' && BLSvar[j] == 'Establishments')) #palette with 5 colors if not HI or HI Establishments
       scale_fill_manual(labels = BLSleg,
                         values = mixed)} + #color combined CI, individual sectors are gray
