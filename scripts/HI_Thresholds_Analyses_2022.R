@@ -94,7 +94,7 @@ FOSS.ann0$Species<-gsub("JOBFISH, GREEN /UKU","GREEN JOBFISH",FOSS.ann0$Species,
 FOSS.ann0$Species<-gsub("**","",FOSS.ann0$Species, fixed = T) #relabel in legend
 
 FOSS.ann0$Species<-sub("(\\w+),\\s(\\w+)","\\2 \\1", FOSS.ann0$Species) #switches order of names with comma eg. TUNA, BIGEYE->BIGEYE TUNA
-
+FOSS.ann0$Species<-str_to_title(FOSS.ann0$Species)
 FOSS.ann0<-arrange(FOSS.ann0, desc(Pounds.tot)) #arrange in descending order of total catch
 unique(FOSS.ann0$Species) #make sure they are in the right order
 FOSS.ann0$Species<-factor(FOSS.ann0$Species, levels = unique(FOSS.ann0$Species)) #convert from chr to factor
@@ -111,30 +111,36 @@ ggplot(FOSS.ann0, aes(Year, Pounds)) +
   facet_wrap(~Species,scales = "free_y",ncol=5) +
   geom_line(aes(color = Habitat))+
   scale_color_manual(labels = groups2,
-               #      values = cbbPalette[c(3:5,7,8)]) +
-                      values = cbbPalette1[c(3:5,7,8)]) +
+                     values = cbbPalette[c(3:5,7,8)]) +
+               #       values = cbbPalette1[c(3:5,7,8)]) + # diff palette for combo presentation
+                      # so that HI color palette not the same as cross regional
   
   labs(x="Year", y="Landings (Millions of Pounds)")+
   theme_bw() +
   theme(axis.title.x = element_blank(), # vjust adjusts vertical space between plot & axis title
         axis.title.y = element_text(size = 21),
         axis.text = element_text(size = 11.5),
-        strip.text = element_text(size = 12),
+        strip.text = element_text(size = 15),
         legend.position = 'bottom',
-        legend.text=element_text(size=17),
+        legend.text=element_text(size=19),
         legend.title=element_blank(),
+        legend.key.size = unit(0.8, 'cm'),
+        legend.spacing.x = unit(0.1, 'cm'),
+        legend.margin = margin(t = -5),
         panel.grid.major = element_blank(), #delete major grid lines
         panel.grid.minor = element_blank() #delete minor grid lines
-  )
-
-#ggsave('figures/FOSS compiled species groups/FOSS top species Catch.png', 
- #      width =  12, height = 9, units = 'in', #w & h in inches
-  #     dpi = 300, bg = 'transparent')
+  ) +
+  guides(color=guide_legend(byrow=TRUE)) #so the legend is ordered by rows not columns
 
 
-ggsave(paste('figs for slides/top species Catch.png',sep=''), 
+ggsave('figures/FOSS compiled species groups/FOSS top species Catch.png', 
        width =  12, height = 9, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
+
+
+#ggsave(paste('figs for slides/top species Catch.png',sep=''), 
+ #      width =  12, height = 9, units = 'in', #w & h in inches
+  #     dpi = 300, bg = 'transparent')
 
 ##############################################################################
 
@@ -395,11 +401,22 @@ for(k in 2:3){ #k is FOSS vars
 ################################## EMPLOYMENT #################################
 ##### BLS
 ############# COMPILED GAM PLOT WITH INDIVIDUAL SECTORS PLUS COMBINED ##########
-BLSvar<-c('1','Establishments', 'Employment','Wages') # 
-BLSlabs<-c('1','Number of Marine-Related Establishments','Total Employment (Thousands of Individuals)', 'Total Wages (Millions of Dollars - 2020 Value)') 
+BLSvar<-c('1','Establishments', 'Employment_scaled','Wages') # 
+BLSlabs<-c('1','Number of Marine-Related Establishments','Total Employment (Number of Individuals)', 'Total Wages (Millions of Dollars - 2020 Value)') 
 BLSleg<-c("Fishing", "Seafood Markets", 'Seafood Processing','Seafood Wholesale' ,'All Sectors')#colors
 # colorblind friendly palette with black:
 #cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+# employment was scaled to thousands in the cross regional comp
+# scale back to individuals for comparison with NES
+emp<-read.csv('data/HI/HI BLS Employment combined gamfit.csv')
+emp[,c(3:8)]<-emp[,c(3:8)]*1000
+write.csv(emp, 'data/HI/HI BLS Employment_scaled combined gamfit.csv', row.names = F)
+
+emp_points<-read.csv('data/HI/HI BLS Employment combined_points_raw.csv')
+emp_points[,2]<-emp_points[,2]*1000
+write.csv(emp_points, 'data/HI/HI BLS Employment_scaled combined_points_raw.csv', row.names = F)
+
 
 # colorblind friendly 
 mixed<-c('#bf812d', '#dfc27d', '#c7eae5','#35978f', '#737373')
@@ -787,15 +804,19 @@ MRIPgrouped<-read.csv('data/HCC cleaned/MRIP Catch_grouped.csv')
 MRIPgrouped$Habitat<-as.factor(MRIPgrouped$Habitat)
 MRIPgrouped$Group<-as.factor(MRIPgrouped$Group)
 
-MRIP.ann<-aggregate(RCatch~Group+Year, data= MRIPgrouped, FUN = sum)
+# summarize total catch
+MRIP.ann<-aggregate(RCatch~Group+Year, data= MRIPgrouped, FUN = sum) # aggregate catch by group and year
 str(MRIP.ann)
-MRIP.agg<-aggregate(.~Group, data= MRIP.ann, FUN = sum)
-top<-top_n(MRIP.agg, 25, RCatch) 
-top<-top[,c('Group','RCatch')]
-names(top)<-c('Group','RCatch.tot')
+MRIP.agg<-aggregate(.~Group, data= MRIP.ann, FUN = sum) # aggregate total catch by species
+top<-top_n(MRIP.agg, 25, RCatch) # list of top 25 catch volumes
+top<-top[,c('Group','RCatch')] # get rid of year column
+names(top)<-c('Group','RCatch.tot') # rename columns
 write.csv(top,'data/HCC cleaned/MRIP Catch_top 25.csv')
 
+###### rearrange levels
+
 MRIP.ann0<-join(MRIP.ann,top, by = 'Group', type = 'inner') #keep only Group that are only in top 25 catch
+MRIP.ann0$Group<-str_to_title(MRIP.ann0$Group) # change Group labels to capitalized (will hopefully fit better in facet labels)
 MRIP.ann0<-arrange(MRIP.ann0, desc(RCatch.tot)) #arrange in descending order of total catch
 unique(MRIP.ann0$Group) #make sure they are in the right order
 MRIP.ann0$Group<-factor(MRIP.ann0$Group, levels = unique(MRIP.ann0$Group)) #convert from chr to factor
@@ -805,6 +826,7 @@ MRIP.ann0$RCatch<-MRIP.ann0$RCatch/1000
 #join habitats to annual catch by species
 spec.hab<-read.csv('data/HCC cleaned/MRIP species_habitat.csv')
 spec.hab<-spec.hab[,c('Group', 'Habitat')]
+spec.hab$Group<-str_to_title(spec.hab$Group)
 MRIP.ann0<-join(MRIP.ann0,spec.hab, type ='inner')
 
 #same colorblind friendly palette used in FOSS plots so colors match
@@ -813,21 +835,26 @@ cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 ggplot(MRIP.ann0, aes(Year, RCatch)) +
   facet_wrap(~Group,scales = "free_y",ncol=5) +
   geom_line(aes(color = Habitat))+
-scale_color_manual(values = cbbPalette[c(8,5,6,3,4)]) +
+  scale_color_manual(values = cbbPalette[c(8,5,6,3,4)]) +
   labs(x="Year", y="Recreational Catch (Thousands of Fish)")+
   theme_bw() +
   theme(axis.title.x = element_blank(), # vjust adjusts vertical space between plot & axis title
            axis.title.y = element_text(size = 21),
-        axis.text = element_text(size = 11.5),
-           strip.text = element_text(size = 12.5),
+           axis.text = element_text(size = 11.5),
+           strip.text = element_text(size = 13.3),
            legend.position = 'bottom',
-           legend.text=element_text(size=17),
+           legend.text=element_text(size=19),
            legend.title=element_blank(),
+           legend.key.size = unit(0.8, 'cm'),
+           legend.spacing.x = unit(0.1, 'cm'),
+           legend.margin = margin(t = -5),
            panel.grid.major = element_blank(), #delete major grid lines
            panel.grid.minor = element_blank() #delete minor grid lines
-  )
+      ) +
+  guides(color=guide_legend(byrow=TRUE)) #so the legend is ordered by rows not columns
+  
 
-ggsave('figures/MRIP/MRIP top species Catch.png', 
+  ggsave('figures/MRIP/MRIP top species Catch.png', 
        width =  12, height = 9, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -893,8 +920,13 @@ for(k in 2:3) { # 2 MRIP variables are columns 3:4
     if(nrow(unique(df0[k]))>1) { #need to put if there are multiple unique values in target column
       #because CommDiv of Jawed Verts and NWHI is only one because theres only 1 specified species--no GAM model can be calculated
       # so this if() calculates GAMs if current df is NOT CommDiv or JV or NWHI
-      gammod<-gam(unlist(df0[k]) ~ s(Year), 
+      gammod<-gam(unlist(df0[k]) ~ s(Year), sp = 1, 
                   data = df0, method = 'REML')
+      
+  #  some checking when initially fitting model    
+  #    plot(gammod)
+  #    gammod$sp
+  #    gam.check(gammod)
       
       df.new<-gam_tnt(df0, 500,gammod,df0$Year,'Year',df0$Species.Type, 'Species.Type')
       df<-rbind(df.new,df)
@@ -960,7 +992,7 @@ for(k in 2:3){ #k is MRIP vars
             legend.title=element_blank(),
             legend.margin = margin(3,12,9,10)) +
     guides(fill = guide_legend(byrow = T
-                               #, ncol =2 #just put in for the 2 column legend
+                             #  , ncol =2 #just put in for the 2 column legend
                                )) + #need this line for legend.spacing.y to work
     scale_x_continuous(breaks=seq(2000,2020,5)) + #so that a tick appears every year--default ticks only where breaks are assigned
     scale_y_continuous(limits = c(min(0,round_any(min(df1$fit-2*df1$se.fit),1, f = floor)), round_any(max(df1$fit+2*df1$se.fit),1, f = ceiling))) + #0 to max point (points go further than CI band)
@@ -987,6 +1019,10 @@ for(k in 2:3){ #k is MRIP vars
   ggsave(paste('figures/MRIP/',MRIPvar[k],' GAM_ggplot.png',sep=''), 
          width =  9.2, height = 6.6, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
+  
+#  ggsave(paste('figures/MRIP/',MRIPvar[k],' GAM_ggplot_2col leg.png',sep=''), 
+ #        width =  9.2, height = 6.6, units = 'in', #w & h in inches
+  #       dpi = 300, bg = 'transparent')
   
   ########################### ZOOMED PLOT #############################
   df1cut<-df1[df1$Species.Type == 'Pelagic' |

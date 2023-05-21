@@ -15,7 +15,7 @@
 #lpSolveApI and readr
 ##############################################################################
 rm(list=ls())
-PKG <- c("lpSolveAPI", "readr", "Rglpk", "Benchmarking","ggplot2", "reshape2", 
+PKG <- c("lpSolveAPI", "readr", "Rglpk", "Benchmarking","ggplot2", "reshape2", 'psych',
          "data.table", "plyr", "dplyr","Compind", "tidyr","doBy","stringr", "Rmisc", "RColorBrewer")
 
 for (p in PKG) {
@@ -113,10 +113,13 @@ ggplot(df_summary, aes(Year, val.mean)) +
              strip.position = 'left') +
  # geom_errorbar(aes(ymin=val.mean-val.se, ymax=val.mean+val.se,color = County), width=.1, position=pd) +
   #commented out variation for visual clarity
-  geom_line(aes(color = County)) + #plots lines for each community color coded by county
+  geom_line(aes(color = County), size = 1) + #plots lines for each community color coded by county
   scale_color_manual(labels=counordered,
                      values =countypal4) +
-  geom_point(aes(color = County), pch = 21) +
+
+  geom_point(aes(color = County, shape = County), size = 2.5) +
+  scale_shape_manual(labels=counordered,
+                     values =c(21:24)) +  
   scale_x_continuous(breaks=seq(2010,2018,4)) + #so that a tick appears every year--default ticks only where breaks are assigned
   theme_bw() +
   theme(plot.title = element_text(size = 17, hjust =0.5),
@@ -139,12 +142,12 @@ ggplot(df_summary, aes(Year, val.mean)) +
         strip.placement = "outside") +
   guides(color=guide_legend(nrow=2),byrow=T) + #so the legend is ordered by rows not columns
   ggtitle('Indicator Values per Thousand Population')
-#ggsave(paste('figures/HI region specific/DEA/Indicators over time by County_se.png',sep=''), 
+#ggsave(paste('figures/DEA/Indicators over time by County_se.png',sep=''), 
  #      width =  12, height = 3.3, units = 'in', #w & h in inches
   #     dpi = 300, bg = 'transparent')
 
 #plot with no error
-ggsave(paste('figures/HI region specific/DEA/Indicators over time by County_means.png',sep=''), 
+ggsave(paste('figures/DEA/Indicators over time by County_means.png',sep=''), 
        width =  11.5, height = 3.7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -316,7 +319,7 @@ write_csv(resfinal, 'data/DEA_indices.csv')
 #####################################################################################
 ######################################Figures########################################
 #####################################################################################
-library(psych)
+# using package 'psych'
 
 #reorganize data so plots are arranged the way i want
 ### reorder df so plots are arranged correctly (by community within county)
@@ -379,7 +382,7 @@ temp2<-ggplot(resfinal, aes(x=Community, y=EQI)) +
 
 temp2
 
-ggsave('figures/HI region specific/DEA/EQI by Community.png', 
+ggsave('figures/DEA/EQI by Community.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -408,7 +411,7 @@ temp2.1<-ggplot(resfinal, aes(x=County, y=EQI)) +
 
 temp2.1
 
-ggsave('figures/HI region specific/DEA/EQI by County.png', 
+ggsave('figures/DEA/EQI by County.png', 
        width =  9, height = 4.8, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -438,7 +441,7 @@ temp2qi<-ggplot(resfinal, aes(x=Community, y=EI))+
 
 temp2qi
 
-ggsave('figures/HI region specific/DEA/EI by Community.png', 
+ggsave('figures/DEA/EI by Community.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -465,7 +468,7 @@ temp2qi1<-ggplot(resfinal, aes(x=County, y=EI)) +
 
 temp2qi1
 
-ggsave('figures/HI region specific/DEA/EI by County.png', 
+ggsave('figures/DEA/EI by County.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -494,7 +497,7 @@ temp2zi<-ggplot(resfinal, aes(x=Community, y=ZI, fill = Community))+
   labs(x="Fishing Community", y="Environmental Input Index" , title="Environmental Input by Fishing Community")
 
 temp2zi
-ggsave('figures/HI region specific/DEA/ZI by Community.png', 
+ggsave('figures/DEA/ZI by Community.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -521,7 +524,7 @@ temp2zi1<-ggplot(resfinal, aes(x=County, y=ZI)) +
 
 temp2zi1
 
-ggsave('figures/HI region specific/DEA/ZI by County.png', 
+ggsave('figures/DEA/ZI by County.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -561,7 +564,7 @@ ei1<-ggplot(resfinal, aes(x=Year, y=EI))+
   )
 
 ei1
-ggsave('figures/HI region specific/DEA/EI Over Time by Community.png', 
+ggsave('figures/DEA/EI Over Time by Community.png', 
        width =  9, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -594,7 +597,7 @@ ei2<-ggplot(resfinal, aes(x=Year, y=EI))+
   )
 
 ei2
-ggsave('figures/HI region specific/DEA/EI Over Time by County.png', 
+ggsave('figures/DEA/EI Over Time by County.png', 
        width =  11.5, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -619,7 +622,7 @@ zi1<-ggplot(resfinal, aes(x=Year, y=ZI))+
   )
 
 zi1
-ggsave('figures/HI region specific/DEA/ZI Over Time by Community.png', 
+ggsave('figures/DEA/ZI Over Time by Community.png', 
        width =  9, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -652,7 +655,7 @@ zi2<-ggplot(resfinal, aes(x=Year, y=ZI))+
   )
 
 zi2
-ggsave('figures/HI region specific/DEA/ZI Over Time by County.png', 
+ggsave('figures/DEA/ZI Over Time by County.png', 
        width =  9, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -660,7 +663,7 @@ ggsave('figures/HI region specific/DEA/ZI Over Time by County.png',
 eqi1<-ggplot(resfinal, aes(x=Year, y=EQI))+
   facet_wrap(~Community)+
   labs(x="Year", y="Social-Ecological Index",title="Social-Ecological Productivity by Fishing Community 2010-2018" )+
-  geom_line(aes(color = County)) + #plots lines for each community color coded by county
+  geom_line(aes(color = County), size = 0.9) + #plots lines for each community color coded by county
   scale_x_continuous(breaks = seq(2012,2018,3)) +
   scale_color_manual(values =countypal4)+
   theme_bw() +
@@ -677,7 +680,7 @@ eqi1<-ggplot(resfinal, aes(x=Year, y=EQI))+
   )
 
 eqi1
-ggsave('figures/HI region specific/DEA/EQI Over Time by Community.png', 
+ggsave('figures/DEA/EQI Over Time by Community.png', 
        width =  10, height = 8, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -710,7 +713,7 @@ eqi2<-ggplot(resfinal, aes(x=Year, y=EQI))+
   )
 
 eqi2
-ggsave('figures/HI region specific/DEA/EQI Over Time by County.png', 
+ggsave('figures/DEA/EQI Over Time by County.png', 
        width =  9, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -946,14 +949,14 @@ resfinal$Indicator<-factor(resfinal$Indicator, levels=c('Composite','Secondary C
 ##productivity
 temp4<-ggplot(resfinal, aes(x=Year, y=Value))+
   facet_wrap(~Index) +
-  geom_line(aes(color=Indicator,linetype=Indicator))+
+  geom_line(aes(color=Indicator,linetype=Indicator), size = 0.9)+
   scale_color_manual(values=deapal)+
   scale_linetype_manual(values = c('solid',rep('longdash',9)))+
   labs(x="Year", y="Index Score"
        #, title = "Productivity Index Over Time"
   )+
   theme(plot.title=element_text(hjust=0.5, size = 21),
-        axis.text = element_text(size = 14.5),
+        axis.text = element_text(size = 17),
         #    axis.text.x = element_blank(),
         #    axis.title.x = element_text(size = 17, vjust = -1), # vjust adjusts vertical space between plot & axis title
         #     axis.title.x = element_blank(), # vjust adjusts vertical space between plot & axis title
@@ -965,28 +968,28 @@ temp4<-ggplot(resfinal, aes(x=Year, y=Value))+
         panel.background = element_rect(fill = "transparent",colour = 'black', size = 1),
         #panel.spacing = unit(0.7, "lines"),
         plot.background = element_rect(fill = "transparent",colour = NA),
-        plot.margin = unit(c(0.1,0.5,0.3,0.3), "cm"),
+        plot.margin = unit(c(0.1,1,0.3,0.3), "cm"),
         legend.position = 'top',
         legend.background = element_rect(fill="transparent"),
         legend.key = element_rect(fill = "transparent", colour = NA),
-        legend.key.size = unit(0.8, 'cm'),
+        legend.key.size = unit(1, 'cm'),
         legend.spacing.x = unit(0.1, 'cm'),
-        legend.text=element_text(size=14),
+        legend.text=element_text(size=12),
         legend.title=element_blank(),
         legend.margin = margin(b = -10)
   ) +
-  guides(color=guide_legend(nrow=2, byrow=TRUE)) + #so the legend is ordered by rows not columns
+  guides(color=guide_legend(nrow=2, byrow=TRUE, legend.box.just = "center")) + #so the legend is ordered by rows not columns
   #4 columns so that legend can be separated by env then soc, will bring extra soc key to side in ppt
   scale_x_continuous(breaks=seq(2005,2015,5)
                      #, labels = c('2000',rep('',4),'2005',rep('',4),'2010',rep('',4),'2015',rep('',2))
   )
 
 temp4
-#ggsave('figures/HI region specific/DEA/Facetted Indices Over Time.png', 
+#ggsave('figures/DEA/Facetted Indices Over Time.png', 
  #      width =  11, height = 4.3, units = 'in', #w & h in inches
   #     dpi = 300, bg = 'transparent')
 
-ggsave('figures/HI region specific/DEA/Facetted Indices Over Time_seccons.png', 
-       width =  11.5, height = 4.4, units = 'in', #w & h in inches
+ggsave('figures/DEA/Facetted Indices Over Time_seccons.png', 
+       width =  12, height = 4.4, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 #########################################################################################
