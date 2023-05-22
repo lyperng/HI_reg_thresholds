@@ -2,7 +2,8 @@
 
 ##################################################
 # install and load libraries
-PKG <- c('tidyverse','ggspatial','mapdata', 'marmap', 'sf','tigris','rnaturalearth','rnaturalearthdata')
+PKG <- c('tidyverse','ggspatial', 'ggrepel','mapdata', 'marmap', 'sf','tigris',
+         'rnaturalearth','rnaturalearthdata', 'scales', 'raster')
 #c("ggplot2", 'ggmap', 'maps','usmap', 'ggsn', 'usmap', "RColorBrewer")
 # 'marmap' for visualizing marine data, including bathymetric contours
 # 'ggrepel' could be useful for making sure labels don't run into each other
@@ -15,10 +16,20 @@ for (p in PKG) {
     require(p,character.only = TRUE)}
 }
 
+install.packages("inlmisc", dependencies = TRUE)
+
 ##################################################
 # Get bathymetry data
 bathy <- getNOAA.bathy(-160.5, -154.5, 18.5, 22.5, res = 1, keep = TRUE)
-ggbathy <- fortify(bathy)
+# Creates an object of class raster
+r1 <- marmap::as.raster(bathy)
+# Defines the target projection
+wgsproj <- "+proj=longlat +datum=WGS84"
+# Creates a new projected raster object
+r2 <- projectRaster(r1, crs = wgsproj)
+# Switches back to a bathy object
+bathy.projected <- as.bathy(r2)
+ggbathy <- fortify(bathy.projected)
 
 ##################################################
 # get tiger shapefiles with the fishing community (CCD) outlines
@@ -53,6 +64,59 @@ HIccd_land <- HIccd_land %>% mutate(County = case_when(
 counordered <- c("Kaua'i", "Honolulu", "Maui", "Hawai'i")
 HIccd_land$County<-factor(HIccd_land$County, levels = counordered)
 
+####### section loading and organizing HI map data for index map
+# unused in first MHI map
+
+# get counties outlines
+state<-counties(state = 'HI')
+state_wgs<-st_transform(state,"+proj=longlat +datum=WGS84")
+
+## outline of maui county looks weird since in goes inland to avoid kalawao
+
+# merge maui and kalawao for a single outline, then layer kalawao on top as a cutout
+# Select the two counties: Maui and Kalawao
+target_counties <- state_wgs[state_wgs$NAME %in% c("Maui", "Kalawao"), ]
+
+# Merge the selected counties into a single feature named "Maui"
+maui_merged <- st_union(target_counties)
+
+# Convert maui_merged to an "sf" object
+maui_merged_sf <- st_sf(geometry = maui_merged, crs = st_crs(state_wgs))
+
+#pull out kalawao in its own sf object
+kalawao<-target_counties[!(target_counties$NAME %in% 'Maui'),] # remove maui
+
+# insert the merged geometry in place of maui's original geometry
+state_merged <- state_wgs
+state_merged<-state_merged[!(state_merged$NAME %in% 'Kalawao'),] # remove maui
+state_merged$geometry[4]<- maui_merged_sf$geometry[1]
+
+# assign county names for nicer plotting in index map
+state_fin <- state_merged %>% mutate(County = case_when(
+  COUNTYFP == '001' ~ "Hawai'i",
+  COUNTYFP == '003' ~ "Honolulu",
+  COUNTYFP == '005' ~ NA,
+  COUNTYFP == '007' ~ "Kaua'i",
+  COUNTYFP == '009' ~ 'Maui'
+))
+
+# assign county names for nicer plotting in index map
+HIccd_wgs <- HIccd_wgs %>% mutate(County = case_when(
+  COUNTYFP == '001' ~ "Hawai'i",
+  COUNTYFP == '003' ~ "Honolulu",
+  COUNTYFP == '005' ~ NA,
+  COUNTYFP == '007' ~ "Kaua'i",
+  COUNTYFP == '009' ~ 'Maui'
+))
+
+counordered <- c("Kaua'i", "Honolulu", "Maui", "Hawai'i")
+state_wgs$County<-factor(state_wgs$County, levels = counordered)
+HIccd_wgs$County<-factor(HIccd_wgs$County, levels = counordered)
+
+#################################################
+
+
+
 ##################################################
 
 ######## plot MHI map with fishing comms (CCDs) marked and bathy contours #######
@@ -82,7 +146,10 @@ inset<-ggplot() +
   theme(axis.line = element_blank(),
         axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.title = element_blank())
+        axis.title = element_blank(),
+        panel.grid.major = element_line(color = 'grey90'),
+        panel.grid.minor = element_line(color = 'grey90'),
+        plot.margin = unit(c(-0.2,-0.2,-0.2,-0.2), "cm"),)
 inset
 
 ######## plot MHI map ########
@@ -188,39 +255,146 @@ ggsave('MHI map.png',
        width =  10, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
   
-##########################################################################
-#####################################
-# old code using usmap because i thought mapdata didnt contain hawaii
-# usmap moves hawaii so that it can be displayed next to contiguous us--wrong lat/long
+#########################################################################
+############### plot MHI map with soc-eco prod index scores #############
+#########################################################################
 
-# get hawaii map data with county boundaries from usmap package
-hawaii_data<-us_map(regions = 'counties', include = 'Hawaii')
+### read in calculated indices over time
+resfinal<-read_csv('data/DEA_indices.csv')
 
-# filter for MHI (Kauai, Oahu, Maui, Hawaii)
-county_data <- hawaii_data[hawaii_data$county %in% c("Kauai County", "Honolulu County", "Maui County", "Hawaii County"),]
-unique(county_data$county)
-usmap_crs()
+# aggregate by community means for plotting
+temp.resfinal<-resfinal[,-c(1,3)] # delete County column--cannot apply arithmetic functions (aggregating by mean) to strings
+inds_mean<-aggregate(.~Community, data = temp.resfinal, FUN = mean)
 
-# Transform data points into geographic objects
-county_data1 <- county_data %>%
-  st_as_sf(coords = c("x", "y"), crs = usmap_crs())
+# read in community and matching diacriticals file
+diacrit<-read.csv('data/diacriticals.csv', encoding = 'UTF-8')
+names(diacrit)<-c('NAME','Community') # rename columns so they match with indices df
+# name simple (non-diacriticals) comm names 'NAME', same as in HIccd spatial files
 
-# Convert the Hawaii map data to the WGS 84 coordinate system
-hawaii_wgs84 <- st_transform(county_data1, crs = 4326)
-# this works, but the resulting lat long are off, they should be the same as the bathymetry lat long limits set below
+comm_inds<-join(inds_mean, diacrit, by='Community', type= 'left') # left join means use all rows in left df
+map_inds<-comm_inds[,-1] # delete diacritical comm names column
 
-# colnames gave issues so renamed
-county_df<-county_data[,c(1,2,6,10)]
-names(county_df)<-c('long','lat', 'group','county')
+#join to map data
+HI_inds<-left_join(HIccd_land,map_inds, by = 'NAME')
+class(HI_inds)
 
-map<-
-    plot_usmap(regions = 'counties', include = 'Hawaii') +
-  #geom_polygon(data = county_df, aes(x = long, y = lat, group = group, fill = county), color = "black") +
-  # geom_sf() +
-  # geom_sf(data = hawaii_wgs84, aes(group = group, fill = county), color = "black") +
-  # coord_equal() +
-  theme_void() +
-  scale_fill_manual(values = c("Kauai County" = "#E78AC3", "Honolulu County" = "#8DA0CB", "Maui County" = "#66C2A5", "Hawaii County" = "#FC8D62")) +
-  labs(title = "Hawaii Islands", fill = "County") +
-  theme(plot.title = element_text(hjust = 0.5, size = 18)) 
-map
+
+grad <- colorRampPalette(brewer.pal(11, "RdYlBu"))(41)
+
+########## map the index values onto earlier MHI map
+### add hawaii ccd and water layers
+map_eqi<-map_cont +
+  geom_sf(data = HI_inds, aes(fill = EQI)) + # plot the indices data (color gradient)
+  geom_sf(data = water, fill = alpha('#A6CEE3',0.5), color = 'transparent') + # plot the water data
+  geom_sf(data=HIccd_wgs, color = 'grey25', fill = 'transparent', linewidth = 0.3) + # add ccd outlines on the water too
+  geom_sf(data=state_fin, aes(color = County), linewidth= 0.7, fill = 'transparent') + # add color coded county outlines
+ # geom_sf(data=kalawao, color = 'grey25', fill = alpha('grey75', 0), linewidth = 0.4) + # layer kalawao cutout on top 
+  coord_sf(xlim = c(-160.4, -154.6), ylim = c(18.7, 22.4), expand = FALSE) +
+  # set the map edge limits, expand F means nothing can go past these limits
+  scale_color_manual(values = c("Kaua'i" = alpha("#E78AC3",1), "Honolulu" = alpha("#8DA0CB",1), "Maui" = alpha("#66C2A5",1), "Hawai'i" = alpha("#FC8D62",1))) +
+  scale_fill_gradientn(colours = rev(brewer.pal(9, 'YlOrRd')), # gradientn allows assigning a palette instead of high and low color
+                       guide = guide_colorbar(frame.colour = "black", frame.linewidth = 0.4)) + # put a border line around the colorbar
+  labs(title = "Social-Ecological Indices of Hawaiian Fishing Communities", fill = "Social-Ecological Index",
+       x='Longitude', y='Latitude') +
+  
+  # label communities with highest indices--top 6
+  # 1 Spreckelsville
+  # 2 Hana 
+  # 3 N Kona
+  # 4 Lihue
+  # 5 Honolulu
+  # 6 S Kona
+  
+  # Honolulu, South Kona, North Kona, Hana, Spreckelsville, Lihue (order listed in HI_inds)
+  geom_sf_label(data = subset(HI_inds, rank(-EQI) <= 6), # label top 6
+                aes(label = NAME),# by ccd NAME
+                nudge_x = c(0.03, -0.1,-0.05,0.1, 0.05,0.12), # scoot the labels horizontally so they are not overlapping important features
+                nudge_y = c(-0.135, 0,0,-0.02, 0.15,0), # scoot vertically
+                size = 3, color = "black", fill = alpha('white',0.4), 
+                fontface = "bold") +
+
+  geom_sf_label(data = state_fin,
+                aes(label = NAMELSAD),
+                size = 5, color = "black", 
+                fill =  alpha(c("#8DA0CB","#E78AC3", "#66C2A5", "#FC8D62"),0.5), # labels are in order listed in state_fin
+                # so fill is in order of Honolulu, Kauai, Maui, Hawaii
+      #          color =  alpha(c("#8DA0CB","#E78AC3", "#66C2A5", "#FC8D62"),0.8), # labels are in order listed in state_fin
+                nudge_x = c(0.03,-0.17,-0.18,0.16),
+                nudge_y = c(0.45,-0.5,0.65,0.85),
+                label.padding = unit(0.4, "lines"), # Adjust padding around the label
+                label.r = unit(0.1, "lines"), # adjust roundness of box, lower is less round
+                fontface = "bold") 
+map_eqi
+
+### adjust layout and aesthetics
+map_eqi2<-map_eqi +
+  theme(plot.title = element_text(hjust = 0.5, size = 24),              
+        axis.title=element_text(size=22,face="plain"), #adjust size of axis titles
+        axis.text=element_text(size=16, color = 'black'), #adjust font size of axis tick labels
+     #   panel.background = element_rect(fill = "transparent", colour = 'black', size = 1.3),
+        plot.background = element_rect(fill = "transparent",colour = NA),
+        legend.position = c(0.355, 0.19),  # manually adjust legend position
+        legend.background = element_blank(), # need to set this otherwise it is opaque
+      #  legend.box.background = element_rect( fill=alpha("white", 0)),
+        # set legend border, fill, transparency
+        legend.key = element_rect( colour = 'black'),# if not set, 
+  #      legend.key.size = unit(0.8, 'cm'), # adjust size of ea fill box
+   #     legend.spacing.y = unit(0.12, 'cm'), # space between fill boxes, need guides()
+        legend.text=element_text(size=17), 
+        legend.title=element_blank(),
+    #    legend.margin = margin(5,12,8,10)
+  ) +
+  guides( color = "none")
+map_eqi2
+
+### add scalebar and north arrow
+map_scale <-map_eqi2 +
+  ggspatial::annotation_scale(
+    style = 'ticks',
+    height = unit(-0.25, "cm"),
+    tick_height = 0.6,
+    line_width = 1,
+    location = "tr",
+    pad_x = unit(0.56, "in"), pad_y = unit(0.38, "in"),
+    width_hint = 0.17,
+    text_pad = unit(-1.82, "in"),
+    line_col = "grey30"
+  ) +
+  ggspatial::annotation_scale(
+    style = 'ticks',
+    unit_category = 'imperial',
+    height = unit(0.25, "cm"),
+    tick_height = 0.6,
+    line_width = 1,
+    location = "tr",
+    pad_x = unit(0.61, "in"), pad_y = unit(0.15, "in"),
+    width_hint = 0.17,
+    text_pad = unit(-1.82, "in"),
+    line_col = "grey30"
+  ) +
+  ggspatial::annotation_north_arrow(
+    location = "tr", which_north = "true",
+    pad_x = unit(1, "in"), pad_y = unit(0.46, "in"),
+    style = ggspatial::north_arrow_fancy_orienteering(
+      line_col = "grey20",
+      fill = c("white", "grey40"),
+      text_size = 15
+    )
+#    style = ggspatial::north_arrow_nautical(
+ #     fill = c("grey40", "white"),
+  #    line_col = "grey20"
+   # )
+  )  +
+  annotation_custom(
+    grob = ggplotGrob(inset),
+    xmin = -160.1,
+    xmax = -158.7,
+    ymin = 18.88,
+    ymax = 19.88
+  )
+
+map_scale
+
+ggsave('figures/DEA/MHI soc_eco_prod map.png', 
+       width =  10, height = 7, units = 'in', #w & h in inches
+       dpi = 300, bg = 'transparent')

@@ -346,6 +346,8 @@ comm.order<-unique(resfinal$Community)
 resfinal<-resfinal %>%
   mutate(Community =  factor(Community, levels = comm.order)) %>%
   arrange(Community) 
+# cannot save reordered df as csv because levels info is lost
+# when reading in, defaults to alphabetical order when plotting
 
 #####some hyp testing to compare values by county
 kruskal.test(ZI~County,data=resfinal) #(input)
@@ -933,7 +935,6 @@ env$Index<-'Ecological\n Input'
 
 inds<-rbind(soc,env)
 #using RColorBrewer
-library(RColorBrewer)
 set3<-brewer.pal(9,'Set3')
 deapal<-c('black','peru',set3[c(1,3:9)]) #skipped 2 which was yellow--too hard to see
 #indpal<-c(blues4[c(4,5,6)],'black')
@@ -946,7 +947,7 @@ resfinal$Indicator<-factor(resfinal$Indicator, levels=c('Composite','Secondary C
                                                         'Commercial Revenue','Revenue Diversity','Fishing Employment',
                                                         'Recreational Catch',"Tourism Employment"))
 
-##productivity
+##productivitye
 temp4<-ggplot(resfinal, aes(x=Year, y=Value))+
   facet_wrap(~Index) +
   geom_line(aes(color=Indicator,linetype=Indicator), size = 0.9)+
