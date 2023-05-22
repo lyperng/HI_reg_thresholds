@@ -3,7 +3,7 @@
 ##################################################
 # install and load libraries
 PKG <- c('tidyverse','ggspatial', 'ggrepel','mapdata', 'marmap', 'sf','tigris',
-         'rnaturalearth','rnaturalearthdata', 'scales', 'raster')
+         'rnaturalearth','rnaturalearthdata', 'scales', 'raster','RColorBrewer')
 #c("ggplot2", 'ggmap', 'maps','usmap', 'ggsn', 'usmap', "RColorBrewer")
 # 'marmap' for visualizing marine data, including bathymetric contours
 # 'ggrepel' could be useful for making sure labels don't run into each other
@@ -16,7 +16,6 @@ for (p in PKG) {
     require(p,character.only = TRUE)}
 }
 
-install.packages("inlmisc", dependencies = TRUE)
 
 ##################################################
 # Get bathymetry data
@@ -61,8 +60,8 @@ HIccd_land <- HIccd_land %>% mutate(County = case_when(
   COUNTYFP == '009' ~ 'Maui'
 ))
 
-counordered <- c("Kaua'i", "Honolulu", "Maui", "Hawai'i")
-HIccd_land$County<-factor(HIccd_land$County, levels = counordered)
+#counordered <- c("Kaua'i", "Honolulu", "Maui", "Hawai'i")
+#HIccd_land$County<-factor(HIccd_land$County, levels = counordered)
 
 ####### section loading and organizing HI map data for index map
 # unused in first MHI map
@@ -88,14 +87,13 @@ kalawao<-target_counties[!(target_counties$NAME %in% 'Maui'),] # remove maui
 
 # insert the merged geometry in place of maui's original geometry
 state_merged <- state_wgs
-state_merged<-state_merged[!(state_merged$NAME %in% 'Kalawao'),] # remove maui
-state_merged$geometry[4]<- maui_merged_sf$geometry[1]
+state_merged<-state_merged[!(state_merged$NAME %in% 'Kalawao'),] # remove kalawao from original df, or it gets plotted weird
+state_merged$geometry[3]<- maui_merged_sf$geometry[1]
 
 # assign county names for nicer plotting in index map
 state_fin <- state_merged %>% mutate(County = case_when(
   COUNTYFP == '001' ~ "Hawai'i",
   COUNTYFP == '003' ~ "Honolulu",
-  COUNTYFP == '005' ~ NA,
   COUNTYFP == '007' ~ "Kaua'i",
   COUNTYFP == '009' ~ 'Maui'
 ))
@@ -108,10 +106,6 @@ HIccd_wgs <- HIccd_wgs %>% mutate(County = case_when(
   COUNTYFP == '007' ~ "Kaua'i",
   COUNTYFP == '009' ~ 'Maui'
 ))
-
-counordered <- c("Kaua'i", "Honolulu", "Maui", "Hawai'i")
-state_wgs$County<-factor(state_wgs$County, levels = counordered)
-HIccd_wgs$County<-factor(HIccd_wgs$County, levels = counordered)
 
 #################################################
 
@@ -271,15 +265,12 @@ diacrit<-read.csv('data/diacriticals.csv', encoding = 'UTF-8')
 names(diacrit)<-c('NAME','Community') # rename columns so they match with indices df
 # name simple (non-diacriticals) comm names 'NAME', same as in HIccd spatial files
 
-comm_inds<-join(inds_mean, diacrit, by='Community', type= 'left') # left join means use all rows in left df
+comm_inds<-plyr::join(inds_mean, diacrit, by='Community', type= 'left') # left join means use all rows in left df
 map_inds<-comm_inds[,-1] # delete diacritical comm names column
 
 #join to map data
 HI_inds<-left_join(HIccd_land,map_inds, by = 'NAME')
 class(HI_inds)
-
-
-grad <- colorRampPalette(brewer.pal(11, "RdYlBu"))(41)
 
 ########## map the index values onto earlier MHI map
 ### add hawaii ccd and water layers
@@ -294,7 +285,7 @@ map_eqi<-map_cont +
   scale_color_manual(values = c("Kaua'i" = alpha("#E78AC3",1), "Honolulu" = alpha("#8DA0CB",1), "Maui" = alpha("#66C2A5",1), "Hawai'i" = alpha("#FC8D62",1))) +
   scale_fill_gradientn(colours = rev(brewer.pal(9, 'YlOrRd')), # gradientn allows assigning a palette instead of high and low color
                        guide = guide_colorbar(frame.colour = "black", frame.linewidth = 0.4)) + # put a border line around the colorbar
-  labs(title = "Social-Ecological Indices of Hawaiian Fishing Communities", fill = "Social-Ecological Index",
+  labs(title = "Social-Ecological Index Values of Hawaiian Fishing Communities", # fill = "Social-Ecological Index",
        x='Longitude', y='Latitude') +
   
   # label communities with highest indices--top 6
@@ -328,7 +319,7 @@ map_eqi
 
 ### adjust layout and aesthetics
 map_eqi2<-map_eqi +
-  theme(plot.title = element_text(hjust = 0.5, size = 24),              
+  theme(plot.title = element_text(hjust = 0.5, size = 22),              
         axis.title=element_text(size=22,face="plain"), #adjust size of axis titles
         axis.text=element_text(size=16, color = 'black'), #adjust font size of axis tick labels
      #   panel.background = element_rect(fill = "transparent", colour = 'black', size = 1.3),
