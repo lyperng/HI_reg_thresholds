@@ -34,10 +34,12 @@ ggbathy <- fortify(bathy.projected)
 # get tiger shapefiles with the fishing community (CCD) outlines
 
 # read in census data from downloaded tiger/line shapefiles
-ccd<-st_read("data/ccd/tl_2010_15_cousub00.shp") # read in from download
-head(ccd)
-ccd_wgs<-st_transform(ccd,"+proj=longlat +datum=WGS84")
-head(ccd_wgs)
+#ccd<-st_read("data/ccd/tl_2010_15_cousub00.shp") # read in from download
+#head(ccd)
+#ccd_wgs<-st_transform(ccd,"+proj=longlat +datum=WGS84")
+#head(ccd_wgs)
+
+options(tigris_use_cache = TRUE)
 
 # or get directly using  'tigris' package
 HIccd<-county_subdivisions('HI')
@@ -49,7 +51,8 @@ HIccd_land<-erase_water(HIccd_wgs) # erase the portion of ccd that is water 'tig
 
 # read in water data
 counties<-unique(HIccd_land$COUNTYFP) # what are the diff county codes?
-water<-area_water('HI',counties) # get water area for all counties
+water<-area_water(state = 'HI', county =counties, refresh = TRUE) # get water area for all counties
+water_wgs<-st_transform(water,"+proj=longlat +datum=WGS84")
 
 # assign county names for nicer plotting
 HIccd_land <- HIccd_land %>% mutate(County = case_when(
@@ -119,7 +122,7 @@ HIccd_wgs <- HIccd_wgs %>% mutate(County = case_when(
 world <- ne_countries(scale='medium',returnclass = 'sf') # using rnaturalearthdata
 class(world)
 st_crs(world)
-  
+
 # Set the CRS to the Lambert azimuthal equal-area projection centered on 120 longitude
 crs <- "+proj=laea +lat_0=52 +lon_0=-1200000 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs"
 world <- st_transform(world, crs)
@@ -155,9 +158,9 @@ map_cont<- ggplot() +
     data = ggbathy, aes(x = x, y = y, z = z), # plot the bathy data with long, lat, depth
     binwidth = 40, color = "grey90",linewidth = 0.3 #binwidth determines how far apart the contour lines are
     # 40 has really close lines, essentially works to shade darker closer to land
-    ) +
-#  geom_contour(
- #   data = ggbathy, aes(x = x, y = y, z = z),
+  ) +
+  #  geom_contour(
+  #   data = ggbathy, aes(x = x, y = y, z = z),
   #  binwidth = 200, color = "grey80",linewidth = 0.3
   #) +
   geom_contour(
@@ -165,21 +168,21 @@ map_cont<- ggplot() +
     binwidth = 800, color = "grey65", linewidth = 0.4
     # give some darker outlines for layering
   )
-   # set the map edge limits, expand F means nothing can go past these limits
-  
+# set the map edge limits, expand F means nothing can go past these limits
+
 map_cont
 
 ### add hawaii ccd and water layers
 map1<-map_cont +
-   geom_sf(data = HIccd_land, aes(fill = County)) + # plot the ccd data
-   geom_sf(data = water, fill = alpha('#A6CEE3',0.3)) + # plot the water data
-   geom_sf(data=HIccd_wgs, fill=alpha('grey',0)) + # add ccd outlines on the water too
-#   geom_sf(data = HIpoly, aes(group = Group.1, fill = county), color = "black") + # plot simple island outlines   
+  geom_sf(data = HIccd_land, aes(fill = County)) + # plot the ccd data
+  geom_sf(data = water, fill = alpha('#A6CEE3',0.3)) + # plot the water data
+  geom_sf(data=HIccd_wgs, fill=alpha('grey',0)) + # add ccd outlines on the water too
+  #   geom_sf(data = HIpoly, aes(group = Group.1, fill = county), color = "black") + # plot simple island outlines   
   coord_sf(xlim = c(-160.5, -154.6), ylim = c(18.7, 22.4), expand = FALSE) +
   # set the map edge limits, expand F means nothing can go past these limits
   scale_fill_manual(values = c("Kaua'i" = alpha("#E78AC3",0.7), "Honolulu" = alpha("#8DA0CB",0.7), "Maui" = alpha("#66C2A5",0.7), "Hawai'i" = alpha("#FC8D62",0.7))) +
-#  scale_fill_manual(values = c("Kaua'i" = alpha("#77AADD",0.6), "Honolulu" = "#99DDFF", "Maui" = "#44BB99", "Hawai'i" = "#EEDD88")) +
-#  scale_fill_manual(values = c("Kaua'i" = alpha("#BBCCEE",0.8), "Honolulu" = "#CCEEFF", "Maui" = "#CCDDAA", "Hawai'i" = "#EEEEBB")) +
+  #  scale_fill_manual(values = c("Kaua'i" = alpha("#77AADD",0.6), "Honolulu" = "#99DDFF", "Maui" = "#44BB99", "Hawai'i" = "#EEDD88")) +
+  #  scale_fill_manual(values = c("Kaua'i" = alpha("#BBCCEE",0.8), "Honolulu" = "#CCEEFF", "Maui" = "#CCDDAA", "Hawai'i" = "#EEEEBB")) +
   labs(title = "Main Hawaiian Islands", fill = "County",
        x='Longitude', y='Latitude')
 map1
@@ -248,7 +251,7 @@ map_scale
 ggsave('MHI map.png', 
        width =  10, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
-  
+
 #########################################################################
 ############### plot MHI map with soc-eco prod index scores #############
 #########################################################################
@@ -279,7 +282,7 @@ map_eqi<-map_cont +
   geom_sf(data = water, fill = alpha('#A6CEE3',0.5), color = 'transparent') + # plot the water data
   geom_sf(data=HIccd_wgs, color = 'grey25', fill = 'transparent', linewidth = 0.3) + # add ccd outlines on the water too
   geom_sf(data=state_fin, aes(color = County), linewidth= 0.7, fill = 'transparent') + # add color coded county outlines
- # geom_sf(data=kalawao, color = 'grey25', fill = alpha('grey75', 0), linewidth = 0.4) + # layer kalawao cutout on top 
+  # geom_sf(data=kalawao, color = 'grey25', fill = alpha('grey75', 0), linewidth = 0.4) + # layer kalawao cutout on top 
   coord_sf(xlim = c(-160.4, -154.6), ylim = c(18.7, 22.4), expand = FALSE) +
   # set the map edge limits, expand F means nothing can go past these limits
   scale_color_manual(values = c("Kaua'i" = alpha("#E78AC3",1), "Honolulu" = alpha("#8DA0CB",1), "Maui" = alpha("#66C2A5",1), "Hawai'i" = alpha("#FC8D62",1))) +
@@ -303,13 +306,13 @@ map_eqi<-map_cont +
                 nudge_y = c(-0.135, 0,0,-0.02, 0.15,0), # scoot vertically
                 size = 3, color = "black", fill = alpha('white',0.4), 
                 fontface = "bold") +
-
+  
   geom_sf_label(data = state_fin,
                 aes(label = NAMELSAD),
                 size = 5, color = "black", 
                 fill =  alpha(c("#8DA0CB","#E78AC3", "#66C2A5", "#FC8D62"),0.5), # labels are in order listed in state_fin
                 # so fill is in order of Honolulu, Kauai, Maui, Hawaii
-      #          color =  alpha(c("#8DA0CB","#E78AC3", "#66C2A5", "#FC8D62"),0.8), # labels are in order listed in state_fin
+                #          color =  alpha(c("#8DA0CB","#E78AC3", "#66C2A5", "#FC8D62"),0.8), # labels are in order listed in state_fin
                 nudge_x = c(0.03,-0.17,-0.18,0.16),
                 nudge_y = c(0.45,-0.5,0.65,0.85),
                 label.padding = unit(0.4, "lines"), # Adjust padding around the label
@@ -322,18 +325,18 @@ map_eqi2<-map_eqi +
   theme(plot.title = element_text(hjust = 0.5, size = 22),              
         axis.title=element_text(size=22,face="plain"), #adjust size of axis titles
         axis.text=element_text(size=16, color = 'black'), #adjust font size of axis tick labels
-     #   panel.background = element_rect(fill = "transparent", colour = 'black', size = 1.3),
+        #   panel.background = element_rect(fill = "transparent", colour = 'black', size = 1.3),
         plot.background = element_rect(fill = "transparent",colour = NA),
         legend.position = c(0.355, 0.19),  # manually adjust legend position
         legend.background = element_blank(), # need to set this otherwise it is opaque
-      #  legend.box.background = element_rect( fill=alpha("white", 0)),
+        #  legend.box.background = element_rect( fill=alpha("white", 0)),
         # set legend border, fill, transparency
         legend.key = element_rect( colour = 'black'),# if not set, 
-  #      legend.key.size = unit(0.8, 'cm'), # adjust size of ea fill box
-   #     legend.spacing.y = unit(0.12, 'cm'), # space between fill boxes, need guides()
+        #      legend.key.size = unit(0.8, 'cm'), # adjust size of ea fill box
+        #     legend.spacing.y = unit(0.12, 'cm'), # space between fill boxes, need guides()
         legend.text=element_text(size=17), 
         legend.title=element_blank(),
-    #    legend.margin = margin(5,12,8,10)
+        #    legend.margin = margin(5,12,8,10)
   ) +
   guides( color = "none")
 map_eqi2
@@ -371,10 +374,10 @@ map_scale <-map_eqi2 +
       fill = c("white", "grey40"),
       text_size = 15
     )
-#    style = ggspatial::north_arrow_nautical(
- #     fill = c("grey40", "white"),
-  #    line_col = "grey20"
-   # )
+    #    style = ggspatial::north_arrow_nautical(
+    #     fill = c("grey40", "white"),
+    #    line_col = "grey20"
+    # )
   )  +
   annotation_custom(
     grob = ggplotGrob(inset),
