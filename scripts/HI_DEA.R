@@ -15,14 +15,14 @@
 #lpSolveApI and readr
 ##############################################################################
 rm(list=ls())
-PKG <- c("lpSolveAPI", "readr", "Rglpk", "Benchmarking","ggplot2", "reshape2", 'psych',
+PKG <- c("lpSolveAPI", "readr", "Rglpk", "Benchmarking","ggplot2", "reshape2", 'psych', 'tigris',
          "data.table", "plyr", "dplyr","Compind", "tidyr","doBy","stringr", "Rmisc", "RColorBrewer")
 
 for (p in PKG) {
   
-  if(!require(p,character.only = TRUE)) {  
-    install.packages(p)
-    require(p,character.only = TRUE)}
+  if(!require(p,character.only = TRUE)) {  # if the package is not installed (require returns FALSE)
+    install.packages(p)                    # then install it
+    require(p,character.only = TRUE)}      # otherwise, load it (require loads like library()), and also returns a logical
 }
 
 #################################################################################
@@ -33,7 +33,7 @@ for (p in PKG) {
 ############################## load and clean data ##############################
 #this is where I was working with the HI soc data (original data from HDWG google drive)
 HIsoc0<-read.csv('data/HI_Soc_TS.csv')
-HIsoc<-HIsoc0[,c('Year','Community','County','PopDensity',"PCTWaterCover",
+HIsoc<-HIsoc0[,c('Year','Community','County','TotPopulation','PopDensity',"PCTWaterCover",
                  "Pounds1000", "Value1000", "Dealers1000", "CommPermits1000", "RecFshTrps1000")]
 
 ## deflate value
@@ -50,9 +50,21 @@ write.csv(REVENUEFILE,'data/HI_Soc_TS_deflated.csv', row.names = F)
 # i looked into the jepson et al. reference for the csvi data collection methods
 # source does not mention deflation
 
+########## REPLACE PCT WATER COVER WITH ABSOLUTE ###############
 HIsoc0<-read.csv('data/HI_Soc_TS_deflated.csv')
 
-#fix diacriticals
+# get water areas using tigris package
+HIccd<-county_subdivisions('HI', year = 2010) # get CCD data for year 2010
+water <- st_drop_geometry(HIccd[, c('NAME10','AWATER10')]) # subset water area
+names(water) <- c('Community','AWATER10') # rename column key for joining
+HIsoc0 <- join(HIsoc0, water) # join water area data to HIsoc0 by community
+
+# replace original water column (column order is important in DEA later)
+HIsoc0$PCTWaterCover <- HIsoc0$AWATER10
+HIsoc0 <- HIsoc0[,-which(names(HIsoc0) =='AWATER10')]
+names(HIsoc0)[names(HIsoc0) == "PCTWaterCover"] <- "WaterArea"
+
+##### fix diacriticals
 HIsoc0$County<-gsub("Hawaii County","Hawai‘i County",HIsoc0$County) #fix the okina
 HIsoc0$County<-gsub("Kauai County","Kaua‘i County",HIsoc0$County) #fix the okina
 diacrit<-read.csv('data/diacriticals.csv', encoding = 'UTF-8')
@@ -60,7 +72,7 @@ diacrit<-read.csv('data/diacriticals.csv', encoding = 'UTF-8')
 HIsoc0<-join(HIsoc0,diacrit)
 HIsoc0$Community<-HIsoc0$Diacritical
 
-HIsoc<-HIsoc0[,c('Year','Community','County','PopDensity',"PCTWaterCover",
+HIsoc<-HIsoc0[,c('Year','Community','County','PopDensity',"WaterArea",
                  "Pounds1000", "Dollars1000", "Dealers1000", "CommPermits1000", "RecFshTrps1000")]
 
 #rescale so raw ind plots have similar scales
@@ -75,7 +87,7 @@ soc$Community<-as.factor(soc$Community)
 
 ##### visualize data summarized by Community and by County #####
 #convert to long format to plot all dependent vars as facets
-df_long<-pivot_longer(HIsoc,c(5,8:13), 'Indicator','value')
+df_long<-pivot_longer(HIsoc,c(5,8:13), names_to = 'Indicator', values_to = 'value')
 unique(df_long$Indicator) #check if all inds are there
 
 #df_long<-df_long[df_long$County== 'Maui County',] #just to check spreckelsville
@@ -102,10 +114,10 @@ counordered <- c("Kaua‘i County", "Honolulu County", "Maui County", 'Hawai‘i
 df_summary<-read.csv("outputs/CSVI over time by County_se_long.csv")
 df_summary$Indicator <- factor(df_summary$Indicator, 
                                levels = c("Pounds.Thousands1000", "Dollars.Thousands1000", "Dealers1000", "CommPermits1000", "RecFshTrps1000",
-                                          'PopDensity.Thousands',"PCTWaterCover"), 
-                               labels = c("Pounds\n (Thousands)", "Dollars\n (Thousands)", "Dealers", 
-                                          "Commercial\n Permits", "Recreational\n Trips",
-                                         'Population\n per sq km',"Percent\n Water Cover"))
+                                          'PopDensity.Thousands',"WaterArea"), 
+                               labels = c("Pounds\n(Thousands)", "Dollars\n(Thousands)", "Dealers", 
+                                          "Commercial\nPermits", "Recreational\nTrips",
+                                         'Population\nper sq km',"Water Cover\n(Area) "))
 df_summary$County<-factor(df_summary$County, levels = counordered)
 
 ggplot(df_summary, aes(Year, val.mean)) +
@@ -159,7 +171,6 @@ soc$Dollars1000=soc$Dollars1000/mean(soc$Dollars1000)
 soc$Dealers1000=soc$Dealers1000/mean(soc$Dealers1000)
 soc$CommPermits1000=soc$CommPermits1000/mean(soc$CommPermits1000)
 soc$RecFshTrps1000=soc$RecFshTrps1000/mean(soc$RecFshTrps1000)
-
 #####inputs
 
 #pop density
@@ -173,17 +184,25 @@ pop2<-as.data.frame(pop1[,c("Year","Community","Popdens.norm")])
 pop2<-droplevels(pop2)
 #final pop density index as Popdens.norm in df pop2
 
-#same for PCT water cover
-pwc<-HIsoc[,c(1,2,5)]
-pwc<-pwc[!is.na(pwc$PCTWaterCover),]
-#  pwc$Community<-as.factor(pwc$Community)
-#  pwc$PCTWaterCover<-as.numeric(pwc$PCTWaterCover)
-pwc_region<-aggregate(PCTWaterCover~Community, data = pwc, FUN = mean) #average indicator values by Year
+# new normalization for water cover--normalizing to state mean
+# so these indices represent water cover, relative to other communities
+pwc<-HIsoc0[,c('Year','Community','TotPopulation','WaterArea')]
+pwc1<-pwc[!is.na(pwc$TotPopulation),]
+pwc1$Waterperpop <- pwc1$WaterArea/pwc1$TotPopulation
+#pwc1$WaterArea.norm=pwc1$Waterperpop/mean(pwc1$Waterperpop)
+#pwc2 <- pwc1[,c('Year','Community', 'WaterArea.norm')]
+
+pwc_region <- pwc1[,c('Community','Waterperpop')]
+pwc_region<-aggregate(.~Community , data = pwc_region, FUN = mean) #average indicator values by Year
 colnames(pwc_region)<-c('Community','pwcRegAvg')
-pwc1<-join(pwc,pwc_region,by="Community",type="inner")
-pwc1$PWC.norm=pwc1$PCTWaterCover/pwc1$pwcRegAvg #PWC.norm is SXI (from formula) divided by regional avg SXI
+pwc1<-join(pwc1,pwc_region,by="Community",type="inner")
+pwc1$PWC.norm=pwc1$Waterperpop/pwc1$pwcRegAvg #PWC.norm is SXI (from formula) divided by regional avg SXI
 pwc2<-as.data.frame(pwc1[,c("Year","Community","PWC.norm")])
 pwc2<-droplevels(pwc2)
+pwc2$PWC.norm[which(pwc2$PWC.norm == 'NaN')] <- 1
+# Some communities with no water area produced NaN for the 0/0 calculation
+# for our purposes, the normalized water cover index from year to year is still 1 since there is no change
+##########################################################
 
 inputs<-join(pop2, pwc2, by=c("Year","Community"), type="inner")
 
