@@ -115,7 +115,7 @@ df_summary<-read.csv("outputs/CSVI over time by County_se_long.csv")
 df_summary$Indicator <- factor(df_summary$Indicator, 
                                levels = c("Pounds.Thousands1000", "Dollars.Thousands1000", "Dealers1000", "CommPermits1000", "RecFshTrps1000",
                                           'PopDensity.Thousands',"WaterArea"), 
-                               labels = c("Pounds\n(Thousands)", "Dollars\n(Thousands)", "Dealers", 
+                               labels = c("Landings\n(1000 lbs)", "Revenue\n(1000 Dollars)", "Dealers", 
                                           "Commercial\nPermits", "Recreational\nTrips",
                                          'Population\nper sq km',"Water Cover\n(Area) "))
 df_summary$County<-factor(df_summary$County, levels = counordered)
@@ -138,7 +138,7 @@ ggplot(df_summary, aes(Year, val.mean)) +
         axis.title.x = element_text(size = 16), # vjust adjusts vertical space between plot & axis title
         axis.title.y = element_blank(),
         axis.text = element_text(size = 10),
-        strip.text = element_text(size = 14, vjust = -0.14),
+        strip.text = element_text(size = 13.1, vjust = -0.14),
         legend.text=element_text(size=17),
         legend.title=element_blank(),
         legend.key.size = unit(1, 'cm'),
@@ -787,13 +787,31 @@ points(final0$Year, final0$chlorA*10, col = 'purple') #barely changes
 #final0<-final0[,-2] #drop chlorA since cross reg paper determined it wasn't a good predictor for hawaii
 
 env<-dry[,c('Year','Herbivores','Ratio','SecConsumers')]
-final<-na.omit(join(env,final0, type = 'inner'))
+final1<-na.omit(join(env,final0, type = 'inner'))
 
+# adding ENSO data in for more env inds related to pelagic fishery
+
+# read in ENSO df from ncei
+ENSO0 <- read_csv('data/ENSO_noaa_ncei_ersst_v5.csv')
+ENSO <- ENSO0[,c('YR','ANOM...10','NINO3.4')] # cut off month because we want yearly averages
+# also flipped anom and sst order because we dont want to normalize anom to mean later due to different signs
+
+ENSO_ann <- aggregate(. ~ YR, mean, data = ENSO)
+names(ENSO_ann) <- c('Year', 'ENSOanom', 'SST3.4')
+
+#ENSO0 <- read_csv('data/SOI_noaa_ncei_ersst_v5.csv')
+#ENSO0$SOI <- rowMeans(ENSO0[,c(2:13)])
+
+
+final<-na.omit(join(ENSO_ann,final1, type = 'inner'))
+#final$SST <- final$SST3.4-mean(final$SST3.4)
 #normalize to mean
-for(i in 2:14) {
+for(i in 3:length(names(final))) {
   #final[i]=final[i]-round_any(min(final[,i]),10, f = floor) #subtract min rounded down to nearest 10
-  final[i]=final[i]/mean(final[,i]) #then normalize to mean
+  final[i]=final[i]/mean(abs(final[,i])) #then normalize to mean
 }
+
+final$ENSOanom <- final$ENSOanom+1.35 # make everything positive
 
 write_csv(final, 'data/DEA final_inds set.csv')
 
@@ -813,7 +831,7 @@ points(final$Year, final$Visitors_Dollars.Millions, col = 'brown')
 Y<-final[,c("CommRev.Mil", "RevDiv", "Catch.Millions","NES.Emp.Thousands","Tourism_Individuals.Thousands")] 
 
 #env inputs
-X<-as.matrix(final[,c('Herbivores','Ratio','chlorA','SecConsumers')])
+X<-as.matrix(final[,c('Ratio','chlorA','SecConsumers','ENSOanom')])
 YMED<-as.matrix(Y[1,]) #just using first value
 XMED<-X[1,] #just using first value
 #############################################################################################
@@ -947,31 +965,31 @@ colnames(soc)<-c('Year','Commercial Revenue','Revenue Diversity','Recreational C
 soc<-gather(soc, 'Indicator','Value',2:6)
 soc$Index<-'Social\n Output'
 
-env<-final[,c('Year', "Herbivores", "Ratio",'chlorA','SecConsumers')] 
-colnames(env)<-c('Year', "Herbivores", "Coral-Fleshy Algae Ratio",'Chlorophyll a', 'Secondary Consumers')
+env<-final[,c('Year', "Ratio",'chlorA','SecConsumers', 'ENSOanom')] 
+colnames(env)<-c('Year', "Coral-Fleshy Algae Ratio",'Chlorophyll a', 'Secondary Consumers', 'ENSO Anomaly')
 env<-gather(env, 'Indicator','Value',2:5)
 env$Index<-'Ecological\n Input'
 
 inds<-rbind(soc,env)
 #using RColorBrewer
 set3<-brewer.pal(9,'Set3')
-deapal<-c('black','peru',set3[c(1,3:9)]) #skipped 2 which was yellow--too hard to see
+deapal<-c('black','peru',set3[c(1, 3:9)]) #skipped 2 which was yellow--too hard to see
 #indpal<-c(blues4[c(4,5,6)],'black')
 
 resfinal$Index<-factor(resfinal$Index, levels=c('ZI','QI','EQI'), labels = c('Ecological\n Input','Social\n Output','Social-Ecological\n Productivity'))
 resfinal$Indicator<-'Composite'
 resfinal<-resfinal[,c('Year','Indicator','Value','Index')]
 resfinal<-rbind(resfinal,inds)
-resfinal$Indicator<-factor(resfinal$Indicator, levels=c('Composite','Secondary Consumers',"Herbivores",'Coral-Fleshy Algae Ratio','Chlorophyll a',
+resfinal$Indicator<-factor(resfinal$Indicator, levels=c('Composite', 'ENSO Anomaly','Secondary Consumers','Coral-Fleshy Algae Ratio','Chlorophyll a',
                                                         'Commercial Revenue','Revenue Diversity','Fishing Employment',
                                                         'Recreational Catch',"Tourism Employment"))
 
-##productivitye
+##productivity
 temp4<-ggplot(resfinal, aes(x=Year, y=Value))+
   facet_wrap(~Index) +
   geom_line(aes(color=Indicator,linetype=Indicator), size = 0.9)+
   scale_color_manual(values=deapal)+
-  scale_linetype_manual(values = c('solid',rep('longdash',9)))+
+  scale_linetype_manual(values = c('solid',rep('longdash',10)))+
   labs(x="Year", y="Index Score"
        #, title = "Productivity Index Over Time"
   )+
@@ -1009,7 +1027,7 @@ temp4
  #      width =  11, height = 4.3, units = 'in', #w & h in inches
   #     dpi = 300, bg = 'transparent')
 
-ggsave('figures/DEA/Facetted Indices Over Time_seccons.png', 
+ggsave('figures/DEA/Facetted Indices Over Time_ENSO.png', 
        width =  12, height = 4.4, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 #########################################################################################

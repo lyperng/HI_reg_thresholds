@@ -16,6 +16,7 @@ for (p in PKG) {
     require(p,character.only = TRUE)}
 }
 
+alpha <- scales::alpha
 
 ##################################################
 # Get bathymetry data
@@ -58,10 +59,12 @@ water_wgs<-st_transform(water,"+proj=longlat +datum=WGS84")
 HIccd_land <- HIccd_land %>% mutate(County = case_when(
   COUNTYFP == '001' ~ "Hawai'i",
   COUNTYFP == '003' ~ "Honolulu",
-  COUNTYFP == '005' ~ NA,
+  COUNTYFP == '005' ~ 'NA',
   COUNTYFP == '007' ~ "Kaua'i",
   COUNTYFP == '009' ~ 'Maui'
 ))
+
+HIccd_land$County[which(HIccd_land$County == 'NA')] <- NA
 
 #counordered <- c("Kaua'i", "Honolulu", "Maui", "Hawai'i")
 #HIccd_land$County<-factor(HIccd_land$County, levels = counordered)
@@ -105,10 +108,12 @@ state_fin <- state_merged %>% mutate(County = case_when(
 HIccd_wgs <- HIccd_wgs %>% mutate(County = case_when(
   COUNTYFP == '001' ~ "Hawai'i",
   COUNTYFP == '003' ~ "Honolulu",
-  COUNTYFP == '005' ~ NA,
+  COUNTYFP == '005' ~ 'NA',
   COUNTYFP == '007' ~ "Kaua'i",
   COUNTYFP == '009' ~ 'Maui'
 ))
+
+HIccd_wgs$County[which(HIccd_wgs$County == 'NA')] <- NA
 
 #################################################
 
@@ -205,7 +210,7 @@ map2<-map1 +
   guides(fill=guide_legend(byrow = T))
 map2
 
-### add scalebar and north arrow
+  ### add scalebar and north arrow
 map_scale <-map2 +
   ggspatial::annotation_scale(
     style = 'ticks',
