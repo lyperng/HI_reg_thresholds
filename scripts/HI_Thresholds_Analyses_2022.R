@@ -1,8 +1,6 @@
 ####### Dec 2020####
 ###code by Lansing Perng
 
-rm(list=ls())
-
 #for gam
 PKG <- c("gratia", "mgcv", "tidyr", "dplyr","plyr",'stringr', "ggplot2", 'scales','RColorBrewer')
 for (p in PKG) {
@@ -47,7 +45,7 @@ FOSS<-FOSS[,-5]
 ##entered 5 habitat types on excel sheet: Pelagic, Reef, Deep, Freshwater, Offshore
 #and saved as csv (species_habitat.csv) --read in
 # may redo in R so code is all inclusive
-spec.hab<-read.csv('data/HCC cleaned/species_habitat.csv') 
+spec.hab<-read.csv('data/species_habitat.csv') 
 names(FOSS)<-c('Year', 'Species', 'Pounds', 'Dollars')
 FOSS.spec<-join(FOSS,spec.hab, type = 'full')
 
@@ -60,11 +58,11 @@ FOSS.spec$Habitat<-factor(FOSS.spec$Habitat,
                           levels = c('Pelagic','Reef', 'Deep', 'Fishpond', 'Jawed Vertebrates', 'NWHI'))
 
 #label them jawed vertebrates for final stacked plot
-write.csv(FOSS.spec, 'data/HCC cleaned/FOSS species and groups for plotting.csv', row.names = F)
+write.csv(FOSS.spec, 'data/FOSS species and groups for plotting.csv', row.names = F)
 
 ############## first do simple catch by species group plot ##############
 #read in final FOSS catch df with species and habitat groups assigned
-FOSSgrouped<-read.csv('data/HCC cleaned/FOSS species and groups for plotting.csv')
+FOSSgrouped<-read.csv('data/FOSS species and groups for plotting.csv')
 groups2<-c('Pelagic','Reef', 'Deep', 'Jawed Vertebrates', 'Lobsters (NWHI)'  )
 
 FOSSgrouped$Habitat<-factor(FOSSgrouped$Habitat, 
@@ -77,7 +75,7 @@ FOSS.agg<-aggregate(.~Species, data= FOSS.ann, FUN = sum)
 top<-top_n(FOSS.agg, 25, Pounds) 
 top<-top[,c('Species','Pounds')]
 names(top)<-c('Species','Pounds.tot')
-write.csv(top,'data/HCC cleaned/FOSS Catch_top 25.csv', row.names = F)
+write.csv(top,'data/FOSS Catch_top 25.csv', row.names = F)
 
 #join top 25 species to catch
 FOSS.ann0<-join(FOSS.ann,top, by = 'Species', type = 'inner') # 'inner' keeps only Species that are only in top 25 catch
@@ -133,7 +131,7 @@ ggplot(FOSS.ann0, aes(Year, Pounds)) +
   guides(color=guide_legend(byrow=TRUE)) #so the legend is ordered by rows not columns
 
 
-ggsave('figures/FOSS compiled species groups/FOSS top species Catch.png', 
+ggsave('figures/FOSS top species Catch.png', 
        width =  12, height = 9, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -149,13 +147,13 @@ FOSS.all<-FOSS.spec
 FOSS.all$Habitat<-'All Species'
 
 FOSS.spec<-rbind(FOSS.all,FOSS.spec)
-write.csv(FOSS.spec, paste('data/HCC cleaned/FOSS species and groups.csv', sep =''), row.names = F)
+write.csv(FOSS.spec, paste('data/FOSS species and groups.csv', sep =''), row.names = F)
 
 #code later will sum everything into an annual all species value, so no need to do it now
 #will also have to fix up the all species code that reads in from 'FOSS with Millions'
 
 ########### split groups and add diversity ##############
-FOSS.spec<-read.csv(paste('data/HCC cleaned/FOSS species and groups.csv', sep =''))
+FOSS.spec<-read.csv(paste('data/FOSS species and groups.csv', sep =''))
 groups<-(unique(FOSS.spec$Habitat))
 
 for(i in 1:length(unique(FOSS.spec$Habitat))) {
@@ -190,14 +188,14 @@ for(i in 1:length(unique(FOSS.spec$Habitat))) {
   FOSS.group$Revenue.Millions<-FOSS.group$Dollars/1000000
   FOSS.fin<-FOSS.group[,c('Year', 'Catch.Millions','Revenue.Millions','CommDiv','RevDiv')]
   
-  write.csv(FOSS.fin, paste('data/HCC cleaned/FOSS ',groups[i],' fish Pounds and Diversity.csv', sep =''), row.names = F)
+  write.csv(FOSS.fin, paste('data/FOSS ',groups[i],' fish Pounds and Diversity.csv', sep =''), row.names = F)
 }
 
 ################# GAMFIT TNT FUNCTION FOR EACH GROUP AND STACK DFS #############
 ####stack dfs into one with species separated and a group for all species
 #first load in all species to stack dfs for ind groups onto
-FOSS<-read.csv('data/HCC cleaned/FOSS All Species fish Pounds and Diversity.csv')
-FOSS.spec<-read.csv(paste('data/HCC cleaned/FOSS species and groups.csv', sep =''))
+FOSS<-read.csv('data/FOSS All Species fish Pounds and Diversity.csv')
+FOSS.spec<-read.csv(paste('data/FOSS species and groups.csv', sep =''))
 
 #vectors used
 FOSSvar<-colnames(FOSS)
@@ -215,7 +213,7 @@ for(k in 2:5) { # 4 FOSS variables are columns 2:5
   
   #run rest of species groups in a loop and rbind each to df-->overwrites with compiled df as the loop runs
   for(i in 1:length(groups)) {
-    df0<-read.csv(paste('data/HCC cleaned/FOSS ',groups[i],' fish Pounds and Diversity.csv', sep =''))
+    df0<-read.csv(paste('data/FOSS ',groups[i],' fish Pounds and Diversity.csv', sep =''))
     df0$Species.Type<-groups[i]
     if(nrow(unique(df0[k]))>1) { #need to put if there are multiple unique values in target column
       #because CommDiv of Jawed Verts and NWHI is only one because theres only 1 specified species--no GAM model can be calculated
@@ -237,8 +235,8 @@ for(k in 2:5) { # 4 FOSS variables are columns 2:5
     FOSS0<-rbind(df0,FOSS0)
   }
 
-  write.csv(df, paste('data/HCC cleaned/FOSS species compiled ',FOSSvar[k],'_gamfit.csv', sep =''), row.names = F)
-  write.csv(FOSS0, 'data/HCC cleaned/FOSS species compiled data points_raw.csv', row.names = F)  
+  write.csv(df, paste('data/FOSS species compiled ',FOSSvar[k],'_gamfit.csv', sep =''), row.names = F)
+  write.csv(FOSS0, 'data/FOSS species compiled data points_raw.csv', row.names = F)  
   }
 
 ############## PLOT ALL SPECIES GROUPS TOGETHER FOR EACH FOSS VAR ###############
@@ -250,7 +248,7 @@ FOSSlabs<-c('1','Pounds (Millions)', 'Millions of Dollars (2020 value)', 'Effect
 FOSStitle<-c('1','Commercial Landings', 'Commercial Revenue', 'Catch Diversity','Revenue Diversity')
 
 #read in raw data--includes all vars so read in outside of loop
-FOSS0<-read.csv('data/HCC cleaned/FOSS species compiled data points_raw.csv') #for plotting original data points
+FOSS0<-read.csv('data/FOSS species compiled data points_raw.csv') #for plotting original data points
 FOSSvar<-colnames(FOSS0)
 
 str(FOSS0)
@@ -261,8 +259,8 @@ FOSS0cut<-FOSS0[FOSS0$Species.Type == 'Reef' |
                 FOSS0$Species.Type == "Deep"|
                 FOSS0$Species.Type == "Fishpond"|
                 FOSS0$Species.Type == "NWHI",]
-for(k in 2:3){ #k is FOSS vars
-  df1<-read.csv(paste('data/HCC cleaned/FOSS species compiled ',FOSSvar[k],'_gamfit.csv', sep =''))
+for(k in 2:5){ #k is FOSS vars
+  df1<-read.csv(paste('data/FOSS species compiled ',FOSSvar[k],'_gamfit.csv', sep =''))
   #df1<-df1[df1$Species.Type != 'Freshwater',] #remove freshwater group from final plot
   
   # set Species.Type as factor and reorder according to how i want it to be plotted
@@ -274,7 +272,7 @@ for(k in 2:3){ #k is FOSS vars
   #value 4 and 7 are green and red used for increasing and decreasing trends
 
   #make colors diff for presentation slides
-  cbbPalette1 <- c("#000000", "#661100", "#332288", "#DDCC77", "#117733", "#999933", "#88CCEE", "#AA4499")
+#  cbbPalette1 <- c("#000000", "#661100", "#332288", "#DDCC77", "#117733", "#999933", "#88CCEE", "#AA4499")
   
   ############### plot gam ##################
   ggplot(df1, #switch between df1 or df1cut for zoomed plot
@@ -320,7 +318,7 @@ for(k in 2:3){ #k is FOSS vars
     scale_shape_manual(labels = groups2,
                        values = c(4,2,1,0,5,6,8))
   
-  ggsave(paste('figures/FOSS compiled species groups/',FOSSvar[k],' GAM_ggplot.png',sep=''), 
+  ggsave(paste('figures/',FOSSvar[k],' GAM_ggplot.png',sep=''), 
          width =  9.2, height = 6, units = 'in', #w & h in inches
           dpi = 300, bg = 'transparent')
   
@@ -339,7 +337,7 @@ for(k in 2:3){ #k is FOSS vars
   #value 4 and 7 are green and red used for increasing and decreasing trends
   
   #make colors diff for presentation slides
-  cbbPalette1 <- c("#000000", "#661100", "#332288", "#DDCC77", "#117733", "#999933", "#88CCEE", "#AA4499")
+#  cbbPalette1 <- c("#000000", "#661100", "#332288", "#DDCC77", "#117733", "#999933", "#88CCEE", "#AA4499")
   
   zoom <-c(1,8,10,3,3)
   zoombreak<-c(1,1,5,1,1)
@@ -387,7 +385,7 @@ for(k in 2:3){ #k is FOSS vars
     scale_shape_manual(labels = groups1[4:6],
                        values = c(1,0,5,8))
   
-  ggsave(paste('figures/FOSS compiled species groups/',FOSSvar[k],' GAM_zoom.png',sep=''), 
+  ggsave(paste('figures/',FOSSvar[k],' GAM_zoom.png',sep=''), 
          width =  9.2, height = 3.7, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
 
@@ -409,13 +407,13 @@ BLSleg<-c("Fishing", "Seafood Markets", 'Seafood Processing','Seafood Wholesale'
 
 # employment was scaled to thousands in the cross regional comp
 # scale back to individuals for comparison with NES
-emp<-read.csv('data/HI/HI BLS Employment combined gamfit.csv')
+emp<-read.csv('data/HI BLS Employment combined gamfit.csv')
 emp[,c(3:8)]<-emp[,c(3:8)]*1000
-write.csv(emp, 'data/HI/HI BLS Employment_scaled combined gamfit.csv', row.names = F)
+write.csv(emp, 'data/HI BLS Employment_scaled combined gamfit.csv', row.names = F)
 
-emp_points<-read.csv('data/HI/HI BLS Employment combined_points_raw.csv')
+emp_points<-read.csv('data/HI BLS Employment combined_points_raw.csv')
 emp_points[,2]<-emp_points[,2]*1000
-write.csv(emp_points, 'data/HI/HI BLS Employment_scaled combined_points_raw.csv', row.names = F)
+write.csv(emp_points, 'data/HI BLS Employment_scaled combined_points_raw.csv', row.names = F)
 
 
 # colorblind friendly 
@@ -426,10 +424,10 @@ zoom<-c(1,1,0.5,30)
 #adjust label sizes and whatnot for manuscript 
   for(j in 2:4){ #j represents the column number in the BLS df (skip 1), BLSvar (for writing files),and BLSlabs (y axis labels)
     
-    df1<-read.csv(paste('data/HI/HI BLS ',BLSvar[j],' combined gamfit.csv', sep=''))
+    df1<-read.csv(paste('data/HI BLS ',BLSvar[j],' combined gamfit.csv', sep=''))
     df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
     
-    BLS0<-read.csv(paste('data/HI/HI BLS ',BLSvar[j],' combined_points_raw.csv', sep=''))
+    BLS0<-read.csv(paste('data/HI BLS ',BLSvar[j],' combined_points_raw.csv', sep=''))
     
     #to calculate max y-axis for zoomed plot
     df1.z<-df1[df1$Sector == 'Fishing' |
@@ -502,7 +500,7 @@ zoom<-c(1,1,0.5,30)
         geom_line(aes(x=Year, y = dec.trend, group = Sector),size = 1.3, color = "#D55E00", alpha = 0.5) }  +
       labs(y = BLSlabs[j], x = "Year", title = "Hawai‘i")   
     
-    ggsave(paste('figures/Employment/BLS ',BLSvar[j],' GAM_ggplot.png',sep=''), 
+    ggsave(paste('figures/BLS ',BLSvar[j],' GAM_ggplot.png',sep=''), 
            width =  11, height = 10, units = 'in', #w & h in inches
            dpi = 300, bg = 'transparent')
 
@@ -513,27 +511,27 @@ zoom<-c(1,1,0.5,30)
 
     
 ############################### NES ########################################
-##prior calculations in 'Gratia cross reigional analyses.R
+##prior NES data organization calculations in 'Gratia cross regional analyses.R'
 ############COMPILED GAM PLOT WITH INDIVIDUAL SECTORS PLUS COMBINED #############
 NES1var<-c('1','Establishments', 'Receipts') #for manuscript, probably better to focus on receipts
 NES1labs<-c('1','Number of Self-Employed Individuals','Non-Employer Receipts\n (Millions of Dollars - 2020 Value)')
 NESleg<-c( "Fishing","Seafood Markets", "Seafood Processing", 'All Sectors')
 
 ## rescale HI employment--was scaled to thousands to compare across regions
-est<-read.csv(paste('data/HI/HI NES combined Establishments gamfit.csv', sep=''))
-NES0est<-read.csv(paste('data/HI/HI NES combined Establishments_data points_raw.csv', sep=''))
-est[,c(3:8)]<-est[,c(3:8)]/1
-NES0est$Establishments<-NES0est$Establishments/1
-write.csv(est, paste('data/HI/HI NES combined Establishments_scaled gamfit.csv', sep=''),row.names = F)
-write.csv(NES0est, paste('data/HI/HI NES combined Establishments_scaled_data points_raw.csv', sep=''),row.names = F)
+est<-read.csv(paste('data/HI NES combined Establishments gamfit.csv', sep=''))
+NES0est<-read.csv(paste('data/HI NES combined Establishments_data points_raw.csv', sep=''))
+#est[,c(3:length(names(est)))]<-est[,c(3:length(names(est)))]/1
+#NES0est$Establishments<-NES0est$Establishments/1
+write.csv(est, paste('data/HI NES combined Establishments_scaled gamfit.csv', sep=''),row.names = F)
+write.csv(NES0est, paste('data/HI NES combined Establishments_scaled_data points_raw.csv', sep=''),row.names = F)
 
 # colorblind friendly
 mixed<-c('#bf812d', '#dfc27d', '#c7eae5', '#737373')
 
   for(j in 2:3){ #j represents the column number in the NES df (skip 1), the variable name(for writing files),and labs (y axis labels)
     #with predicted values from prior calculation
-    df1<-read.csv(paste('data/HI/HI NES combined ', NES1var[j],' gamfit.csv', sep=''))
-    NES0<-read.csv(paste('data/HI/HI NES combined ', NES1var[j],'_data points_raw.csv', sep=''))
+    df1<-read.csv(paste('data/HI NES combined ', NES1var[j],' gamfit.csv', sep=''))
+    NES0<-read.csv(paste('data/HI NES combined ', NES1var[j],'_data points_raw.csv', sep=''))
     
     #reorder factor so that 'All Species' layers on top of 'Without Menhadens'
     #All Species is plotted first by default (alphabetically)
@@ -585,7 +583,7 @@ mixed<-c('#bf812d', '#dfc27d', '#c7eae5', '#737373')
         geom_line(aes(x=Year, y = dec.trend, group = Sector),size = 2, color = "#D55E00", alpha = 0.6) } +
       labs(y = NES1labs[j], x = "Year", title = "Hawai‘i")   
     
-    ggsave(paste('figures/Employment/NES ',NES1var[j],' GAM.png',sep=''), 
+    ggsave(paste('figures/NES ',NES1var[j],' GAM.png',sep=''), 
            width =  11.3, height = 9.5, units = 'in', #w & h in inches
            dpi = 300, bg = 'transparent')
     
@@ -599,7 +597,7 @@ mixed<-c('#bf812d', '#dfc27d', '#c7eae5', '#737373')
 ###############################################################################
 
 #######################load and organize data cleaned from raw########
-#raw is HCC cleaned/NCRMP_socio_secondarydata_Hawaii_ERDDAP.csv
+#raw is NCRMP_socio_secondarydata_Hawaii_ERDDAP.csv
 NCRMP<-read.csv('data/NCRMP HI region specific soc indicators.csv')
 tour<-NCRMP[,c('Year','Tourism_Emp','Tourism_GDP')]
 colnames(tour)[c(2,3)]<-c('Count','Dollars')
@@ -712,71 +710,21 @@ for(k in 1:length(NCRMPvar)) { # NCRMP scaled variables are columns 6:7
       geom_line(aes(x=Year, y = dec.trend),size = 1.2, color = "#D55E00", alpha = 0.6) } +
     labs(y = NCRMPlabs[k], x = "Year",sep='')   
   
-  ggsave(paste('figures/NCRMP grouped/',NCRMPvar[k],' GAM_ggplot.png',sep=''), 
+  ggsave(paste('figures/',NCRMPvar[k],' GAM_ggplot.png',sep=''), 
          width =  12, height = 3.7, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent') 
-}
-
-###############################################################################
-##################################### ECO DATA ###################################
-###############################################################################
-#tried a few diff relationships in both datasets, so far no patterns observed
-
-#################### IVOR FG Data for previous Atlantis run ###################
-FG<-read.csv('data/old data/FG_2010_2016.csv')
-FG$ANALYSIS_YEAR<-as.numeric(FG$ANALYSIS_YEAR)
-FG$OBS_YEAR<-as.numeric(FG$OBS_YEAR)
-
-#FG$Herbivores<-rowSums(FG[,c('Browsers','Grazers','Scrapers')])
-#FG$Fleshy<-rowSums(FG[,c('Macro','Turf')])
-FG$Coralline<-rowSums(FG[,c('HARD_CORAL','CCA')])
-#FG$CFRatio<-FG$Coralline/FG$Fleshy
-
-#explore data with ggplot below
-ggplot(FG, aes(OBS_YEAR, HARD_CORAL)) +
-  facet_wrap(~ISLAND) +
-#  geom_line() +
-  geom_boxplot(aes(group = OBS_YEAR)) #+
- # geom_point() 
-
-######################## dryad ########################
-regimes<-read.csv('data/Hawaii_regimes.csv')
-regimes$Herbivores<-rowSums(regimes[,c('Browsers','Grazers','Scrapers')])
-regimes$Fleshy<-rowSums(regimes[,c('Macro','Turf')])
-regimes$Coralline<-rowSums(regimes[,c('Coral','CCA')])
-regimes$CFRatio<-regimes$Coralline/regimes$Fleshy
-
-#explore data with ggplot below
-ggplot(regimes, aes(Turf, Herbivores)) +
-  facet_wrap(~Island) +
-  geom_point(aes(color = Exposure)) 
-
-
-#########################################################################
-for(k in 1:length(CSVIvar)) { # CSVI scaled variables are columns 6:7
-  df1<-read.csv(paste('data/CSVI ',CSVIvar[k],'_gamfit.csv', sep =''))
-  str(df1)
-  
-  # set County as factor and reorder according to how i want it to be plotted
-  df1$County<-factor(df1$County)
-  df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
-ggplot(df1,
-       aes(x = Year, y =  fit)) +
-  facet_wrap(~County, nrow = 1) +
-  geom_line(data = CSVI0, aes(x = Year, y = unlist(CSVI0[,k+3]),color=Community, linetype=Community), size = 0.5)+  # data points
-  scale_linetype_manual(values = c(rep(1:10,5)))
 }
 
 
 ############################### MRIP #####################################
 ########################### load and clean data ##########################
 # assign habitat and species groups
-catch<-read.csv('data/HI/HI MRIP Catch_SE.csv')
-trips<-read.csv('data/HI/HI MRIP Trips_SE.csv')
-MRIP.spec<-read.csv('data for DEA/MRIP Rec Data/MRIP HI Catch annual.csv')
+catch<-read.csv('data/HI MRIP Catch_SE.csv')
+trips<-read.csv('data/HI MRIP Trips_SE.csv')
+MRIP.spec<-read.csv('data/MRIP HI Catch annual.csv')
 MRIP.spec[MRIP.spec$Species == 'GLASSEYE',2]<-'GLASSEYE SNAPPER'
 MRIP.spec[MRIP.spec$Species == 'SCALLOPED HAMMERHEAD',2]<-'SCALLOPED HAMMERHEAD SHARK'
-write.csv(MRIP.spec,'data/HCC cleaned/MRIP Catch_by species.csv', row.names = F)
+write.csv(MRIP.spec,'data/MRIP Catch_by species.csv', row.names = F)
 
 MRIP.list<-data.frame(unique(MRIP.spec$Species)) #maybe go through and split species groups like FOSS--but only if there's time
 colnames(MRIP.list)<-c('Species')
@@ -785,22 +733,22 @@ colnames(MRIP.list)<-c('Species')
 MRIP.list$spec<-gsub(" FAMILY","",MRIP.list$Species) #drop the word FAMILY
 MRIP.list$spec.last<-word(MRIP.list$spec,-1) #pull out last word only
 
-write.csv(MRIP.list,paste('data/HCC cleaned/MRIP species list.csv', sep =''), row.names = F)
+write.csv(MRIP.list,paste('data/MRIP species list.csv', sep =''), row.names = F)
 
 #assign habitat groups (reef, pelagic, etc) directly in excel
 #also reassigned some species groups--most are fine using the last word of the species name
 #some changed (etc ALBACORE assigned to TUNA group)
 #read in species-habitat list
-spec.hab<-read.csv('data/HCC cleaned/MRIP species_habitat.csv') 
+spec.hab<-read.csv('data/MRIP species_habitat.csv') 
 MRIPgrouped<-join(MRIP.spec, spec.hab, by = 'Species', type = 'full')
 
 #check NAs
 MRIP.others<-MRIPgrouped[which(is.na(MRIPgrouped$Habitat) == 'TRUE'),] #no NAs! every species is accounted for
-write.csv(MRIPgrouped,'data/HCC cleaned/MRIP Catch_grouped.csv', row.names = F)
+write.csv(MRIPgrouped,'data/MRIP Catch_grouped.csv', row.names = F)
 
 ############## simple catch by species time series plot ##############
 #read in final mrip catch df with species and habitat groups assigned
-MRIPgrouped<-read.csv('data/HCC cleaned/MRIP Catch_grouped.csv')
+MRIPgrouped<-read.csv('data/MRIP Catch_grouped.csv')
 MRIPgrouped$Habitat<-as.factor(MRIPgrouped$Habitat)
 MRIPgrouped$Group<-as.factor(MRIPgrouped$Group)
 
@@ -811,10 +759,9 @@ MRIP.agg<-aggregate(.~Group, data= MRIP.ann, FUN = sum) # aggregate total catch 
 top<-top_n(MRIP.agg, 25, RCatch) # list of top 25 catch volumes
 top<-top[,c('Group','RCatch')] # get rid of year column
 names(top)<-c('Group','RCatch.tot') # rename columns
-write.csv(top,'data/HCC cleaned/MRIP Catch_top 25.csv')
+write.csv(top,'data/MRIP Catch_top 25.csv')
 
 ###### rearrange levels
-
 MRIP.ann0<-join(MRIP.ann,top, by = 'Group', type = 'inner') #keep only Group that are only in top 25 catch
 MRIP.ann0$Group<-str_to_title(MRIP.ann0$Group) # change Group labels to capitalized (will hopefully fit better in facet labels)
 MRIP.ann0<-arrange(MRIP.ann0, desc(RCatch.tot)) #arrange in descending order of total catch
@@ -824,7 +771,7 @@ MRIP.ann0$Group<-factor(MRIP.ann0$Group, levels = unique(MRIP.ann0$Group)) #conv
 MRIP.ann0$RCatch<-MRIP.ann0$RCatch/1000
 
 #join habitats to annual catch by species
-spec.hab<-read.csv('data/HCC cleaned/MRIP species_habitat.csv')
+spec.hab<-read.csv('data/MRIP species_habitat.csv')
 spec.hab<-spec.hab[,c('Group', 'Habitat')]
 spec.hab$Group<-str_to_title(spec.hab$Group)
 MRIP.ann0<-join(MRIP.ann0,spec.hab, type ='inner')
@@ -854,7 +801,7 @@ ggplot(MRIP.ann0, aes(Year, RCatch)) +
   guides(color=guide_legend(byrow=TRUE)) #so the legend is ordered by rows not columns
   
 
-  ggsave('figures/MRIP/MRIP top species Catch.png', 
+  ggsave('figures/MRIP top species Catch.png', 
        width =  12, height = 9, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -865,7 +812,7 @@ MRIP.all<-MRIPgrouped
 MRIP.all$Habitat<-'All Species'
 
 MRIPgrouped<-rbind(MRIP.all,MRIPgrouped)
-write.csv(MRIPgrouped, paste('data/HCC cleaned/MRIP species and groups.csv', sep =''), row.names = F)
+write.csv(MRIPgrouped, paste('data/MRIP species and groups.csv', sep =''), row.names = F)
 
 #code later will sum everything into an annual all species value, so no need to do it now
 #will also have to fix up the all species code that reads in from 'MRIP with Millions'
@@ -892,14 +839,14 @@ for(i in 1:length(unique(MRIPgrouped$Habitat))) {
   MRIP.group$Catch.Millions<-MRIP.group$RCatch.tot/1000000
   MRIP.fin<-MRIP.group[,c('Year', 'Catch.Millions','CommDiv')]
   
-  write.csv(MRIP.fin, paste('data/HCC cleaned/MRIP ',groups[i],' fish RCatch and Diversity.csv', sep =''), row.names = F)
+  write.csv(MRIP.fin, paste('data/MRIP ',groups[i],' fish RCatch and Diversity.csv', sep =''), row.names = F)
 }
 
 ################# GAMFIT TNT FUNCTION FOR EACH GROUP AND STACK DFS #############
 ####stack dfs into one with species separated and a group for all species
 #first load in all species to stack dfs for ind groups onto
-MRIP<-read.csv('data/HCC cleaned/MRIP All Species fish RCatch and Diversity.csv')
-MRIP.spec<-read.csv(paste('data/HCC cleaned/MRIP species and groups.csv', sep =''))
+MRIP<-read.csv('data/MRIP All Species fish RCatch and Diversity.csv')
+MRIP.spec<-read.csv(paste('data/MRIP species and groups.csv', sep =''))
 
 #vectors used
 MRIPvar<-colnames(MRIP)
@@ -915,7 +862,7 @@ for(k in 2:3) { # 2 MRIP variables are columns 3:4
   
   #run rest of species groups in a loop and rbind each to df-->overwrites with compiled df as the loop runs
   for(i in 1:length(groups)) {
-    df0<-read.csv(paste('data/HCC cleaned/MRIP ',groups[i],' fish RCatch and Diversity.csv', sep =''))
+    df0<-read.csv(paste('data/MRIP ',groups[i],' fish RCatch and Diversity.csv', sep =''))
     df0$Species.Type<-groups[i]
     if(nrow(unique(df0[k]))>1) { #need to put if there are multiple unique values in target column
       #because CommDiv of Jawed Verts and NWHI is only one because theres only 1 specified species--no GAM model can be calculated
@@ -942,8 +889,8 @@ for(k in 2:3) { # 2 MRIP variables are columns 3:4
     MRIP0<-rbind(df0,MRIP0)
   }
   
-  write.csv(df, paste('data/HCC cleaned/MRIP species compiled ',MRIPvar[k],'_gamfit.csv', sep =''), row.names = F)
-  write.csv(MRIP0, 'data/HCC cleaned/MRIP species compiled data points_raw.csv', row.names = F)  
+  write.csv(df, paste('data/MRIP species compiled ',MRIPvar[k],'_gamfit.csv', sep =''), row.names = F)
+  write.csv(MRIP0, 'data/MRIP species compiled data points_raw.csv', row.names = F)  
 }
 
 ############## PLOT ALL SPECIES GROUPS TOGETHER FOR EACH MRIP VAR ###############
@@ -953,7 +900,7 @@ MRIPlabs<-c('1','Recreational Landings (Millions of Fish)', 'Diversity (Effectiv
 MRIPtitle<-c('1', 'Recreational Landings', 'Catch Diversity')
 
 #read in raw data--includes all vars so read in outside of loop
-MRIP0<-read.csv('data/HCC cleaned/MRIP species compiled data points_raw.csv') #for plotting original data points
+MRIP0<-read.csv('data/MRIP species compiled data points_raw.csv') #for plotting original data points
 MRIPvar<-colnames(MRIP0)
 
 
@@ -961,7 +908,7 @@ str(MRIP0)
 MRIP0$Species.Type<-factor(MRIP0$Species.Type, levels = groups1)
 
 for(k in 2:3){ #k is MRIP vars
-  df1<-read.csv(paste('data/HCC cleaned/MRIP species compiled ',MRIPvar[k],'_gamfit.csv', sep =''))
+  df1<-read.csv(paste('data/MRIP species compiled ',MRIPvar[k],'_gamfit.csv', sep =''))
   df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
   str(df1)
   
@@ -1016,11 +963,11 @@ for(k in 2:3){ #k is MRIP vars
     scale_shape_manual(labels = groups1,
                        values = c(4,2,1,0,5,18))
   
-  ggsave(paste('figures/MRIP/',MRIPvar[k],' GAM_ggplot.png',sep=''), 
+  ggsave(paste('figures/MRIP ',MRIPvar[k],' GAM_ggplot.png',sep=''), 
          width =  9.2, height = 6.6, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
   
-#  ggsave(paste('figures/MRIP/',MRIPvar[k],' GAM_ggplot_2col leg.png',sep=''), 
+#  ggsave(paste('figures/MRIP ',MRIPvar[k],' GAM_ggplot_2col leg.png',sep=''), 
  #        width =  9.2, height = 6.6, units = 'in', #w & h in inches
   #       dpi = 300, bg = 'transparent')
   
@@ -1080,15 +1027,15 @@ for(k in 2:3){ #k is MRIP vars
     scale_shape_manual(labels = groups1[c(2,4:6)],
                        values = c(2,0,5,18))
   
-  ggsave(paste('figures/MRIP/',MRIPvar[k],' GAM_zoom.png',sep=''), 
+  ggsave(paste('figures/MRIP ',MRIPvar[k],' GAM_zoom.png',sep=''), 
          width =  9.2, height = 4.2, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
 }
 
 ############## SEPARATE MRIP PLOT FOR TRIPS--NO SPECIES DISAGG DATA ###############
 
-  df1<-read.csv(paste('data/MRIP MC sims/ MC Trips.Thousands all regions summary gamfit_MRIP.csv', sep=''))
-  MRIP0<-read.csv(paste('data/MRIP MC sims/MRIP Trips.Thousands_all regions_raw.csv', sep=''))
+  df1<-read.csv(paste('data/ MC Trips.Thousands all regions summary gamfit_MRIP.csv', sep=''))
+  MRIP0<-read.csv(paste('data/MRIP Trips.Thousands_all regions_raw.csv', sep=''))
   df1 <- df1[,colSums(is.na(df1))<nrow(df1)] #if any trend or threshold columns are all NA, delete
   df1<-df1[df1$Region == "Hawai'i",]
   MRIP0<-MRIP0[MRIP0$Region == "Hawai'i",]
@@ -1124,7 +1071,7 @@ for(k in 2:3){ #k is MRIP vars
       geom_line(aes(x=Year, y = dec.trend, group = Region),size = 2, color = "#D55E00", alpha = 0.6) } +
     labs(y = 'Recreational Trips (Millions)', x = "Year", title = 'Recreational Effort')   
   
-  ggsave(paste('figures/MRIP/Trips GAM_ggplot.png',sep=''), 
+  ggsave(paste('figures/Trips GAM_ggplot.png',sep=''), 
          width =  9.2, height = 5.8, units = 'in', #w & h in inches
          dpi = 300, bg = 'transparent')
 

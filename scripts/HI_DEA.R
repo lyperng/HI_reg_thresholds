@@ -7,14 +7,13 @@
 #Text: "Productivity and Efficiency Analysis", by Chris O'Donnell
 #Also calculate Quantity Indices frm page 83, "New Directions: Efficiency and 
 #Productivity" by Rolf Fare and Shawna Grosskopf
-#Author: John Walden, NMFS, NEFSC
-#Edited for 1) HI CSVI (spatial) Data and 2) time series DEA by Lansing Perng, NOAA PIFSC, UHM
+# Original DEA program: John Walden, NMFS, NEFSC
+#Adapted for 1) HI CSVI (spatial) Data and 2) time series DEA by Lansing Perng, NOAA PIFSC, UHM
 #February 27, 2021
 #############################################################################
 #First Clear any previous data stored in memory, and require lpSolveAPI, Rglpk,
 #lpSolveApI and readr
 ##############################################################################
-rm(list=ls())
 PKG <- c("lpSolveAPI", "readr", "Rglpk", "Benchmarking","ggplot2", "reshape2", 'psych', 'tigris',
          "data.table", "plyr", "dplyr","Compind", "tidyr","doBy","stringr", "Rmisc", "RColorBrewer")
 
@@ -31,7 +30,6 @@ for (p in PKG) {
 ######################CSVI DATA split by fishing communities#########################
 #####################################################################################
 ############################## load and clean data ##############################
-#this is where I was working with the HI soc data (original data from HDWG google drive)
 HIsoc0<-read.csv('data/HI_Soc_TS.csv')
 HIsoc<-HIsoc0[,c('Year','Community','County','TotPopulation','PopDensity',"PCTWaterCover",
                  "Pounds1000", "Value1000", "Dealers1000", "CommPermits1000", "RecFshTrps1000")]
@@ -46,8 +44,7 @@ REVENUEFILE[["Dollars1000"]] <- REVENUEFILE[["nominal_revenue"]]*
   unique(GDPDEF_annual$GDPDEF[GDPDEF_annual$Year==base_year])/REVENUEFILE$GDPDEF #deflating
 REVENUEFILE$GDPDEF <- NULL
 write.csv(REVENUEFILE,'data/HI_Soc_TS_deflated.csv', row.names = F) 
-##? for now not sure if this dataset needs deflation
-# i looked into the jepson et al. reference for the csvi data collection methods
+# deflated becausein jepson et al. reference for the csvi data collection methods,
 # source does not mention deflation
 
 ########## REPLACE PCT WATER COVER WITH ABSOLUTE ###############
@@ -154,12 +151,12 @@ ggplot(df_summary, aes(Year, val.mean)) +
         strip.placement = "outside") +
   guides(color=guide_legend(nrow=2),byrow=T) + #so the legend is ordered by rows not columns
   ggtitle('Indicator Values per Thousand Population')
-#ggsave(paste('figures/DEA/Indicators over time by County_se.png',sep=''), 
+#ggsave(paste('figures/Indicators over time by County_se.png',sep=''), 
  #      width =  12, height = 3.3, units = 'in', #w & h in inches
   #     dpi = 300, bg = 'transparent')
 
 #plot with no error
-ggsave(paste('figures/DEA/Indicators over time by County_means.png',sep=''), 
+ggsave(paste('figures/Indicators over time by County_means.png',sep=''), 
        width =  11.5, height = 3.7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -368,11 +365,6 @@ resfinal<-resfinal %>%
 # cannot save reordered df as csv because levels info is lost
 # when reading in, defaults to alphabetical order when plotting
 
-#####some hyp testing to compare values by county
-kruskal.test(ZI~County,data=resfinal) #(input)
-kruskal.test(EI~County,data=resfinal) #** (output)
-kruskal.test(EQI~County,data=resfinal)#** (input-output)
-
 ########################################################################
 ##################### BOXPLOTS BY COUNTY/COMMUNITY #####################
 ########################################################################
@@ -403,7 +395,7 @@ temp2<-ggplot(resfinal, aes(x=Community, y=EQI)) +
 
 temp2
 
-ggsave('figures/DEA/EQI by Community.png', 
+ggsave('figures/EQI by Community.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -432,7 +424,7 @@ temp2.1<-ggplot(resfinal, aes(x=County, y=EQI)) +
 
 temp2.1
 
-ggsave('figures/DEA/EQI by County.png', 
+ggsave('figures/EQI by County.png', 
        width =  9, height = 4.8, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -462,7 +454,7 @@ temp2qi<-ggplot(resfinal, aes(x=Community, y=EI))+
 
 temp2qi
 
-ggsave('figures/DEA/EI by Community.png', 
+ggsave('figures/EI by Community.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -489,7 +481,7 @@ temp2qi1<-ggplot(resfinal, aes(x=County, y=EI)) +
 
 temp2qi1
 
-ggsave('figures/DEA/EI by County.png', 
+ggsave('figures/EI by County.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -518,7 +510,7 @@ temp2zi<-ggplot(resfinal, aes(x=Community, y=ZI, fill = Community))+
   labs(x="Fishing Community", y="Environmental Input Index" , title="Environmental Input by Fishing Community")
 
 temp2zi
-ggsave('figures/DEA/ZI by Community.png', 
+ggsave('figures/ZI by Community.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -545,7 +537,7 @@ temp2zi1<-ggplot(resfinal, aes(x=County, y=ZI)) +
 
 temp2zi1
 
-ggsave('figures/DEA/ZI by County.png', 
+ggsave('figures/ZI by County.png', 
        width =  9, height = 5.5, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -585,41 +577,8 @@ ei1<-ggplot(resfinal, aes(x=Year, y=EI))+
   )
 
 ei1
-ggsave('figures/DEA/EI Over Time by Community.png', 
+ggsave('figures/EI Over Time by Community.png', 
        width =  9, height = 7, units = 'in', #w & h in inches
-       dpi = 300, bg = 'transparent')
-
-###################by county
-#using package 'Rmisc' 
-res_countySUM <- summarySE(resfinal, measurevar="EI", groupvars=c("Year","County"))
-res_countySUM
-
-ei2<-ggplot(resfinal, aes(x=Year, y=EI))+
-  geom_line( aes(group = Community, color = Community))+
-  scale_color_manual(values = mypalette) +
-  geom_line(data = res_countySUM, size =2, alpha = 0.7, aes(color = County), col = countypal) +
-  geom_point(data = res_countySUM, pch =1) +
-  geom_errorbar(data = res_countySUM,aes(ymin=EI-se, ymax=EI+se), width=.1, alpha = 0.5) +
-  facet_wrap(~County)+
-  labs(x="Year", y="Social Output Index")+
-  theme(plot.title=element_text(hjust=0.5, size = 21),
-        axis.text = element_text(size = 14),
-        axis.title.x = element_text(size = 17, vjust = -0.7), # vjust adjusts vertical space between plot & axis title
-        axis.title.y = element_text(size = 17, vjust = 3),
-        strip.background =element_rect(fill="gray94", colour = 'black', size =1), #change panel label color
-        strip.text = element_text(colour = 'black', size = 18),
-        panel.grid.major = element_blank(), #delete major grid lines
-        panel.grid.minor = element_blank(), #delete minor grid lines
-        panel.background = element_rect(fill = "transparent",colour = 'black', size = 1),
-        panel.spacing = unit(0.7, "lines"),
-        plot.background = element_rect(fill = "transparent",colour = NA),
-        plot.margin = unit(c(0,0,0.5,0.5), "cm"),
-        legend.position = 'none'
-  )
-
-ei2
-ggsave('figures/DEA/EI Over Time by County.png', 
-       width =  11.5, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
 ##################################ZI####################################
@@ -643,40 +602,7 @@ zi1<-ggplot(resfinal, aes(x=Year, y=ZI))+
   )
 
 zi1
-ggsave('figures/DEA/ZI Over Time by Community.png', 
-       width =  9, height = 7, units = 'in', #w & h in inches
-       dpi = 300, bg = 'transparent')
-
-#################by county
-#using package 'Rmisc' 
-res_countySUM <- summarySE(resfinal, measurevar="ZI", groupvars=c("Year","County"))
-res_countySUM
-
-zi2<-ggplot(resfinal, aes(x=Year, y=ZI))+
-  geom_line( aes(group = Community, color = Community))+
-  scale_color_manual(values = mypalette) +
-  geom_line(data = res_countySUM, size =2, alpha = 0.7, aes(color = County), col = countypal) +
-  geom_point(data = res_countySUM, pch =1) +
-  geom_errorbar(data = res_countySUM,aes(ymin=ZI-se, ymax=ZI+se), width=.1, alpha = 0.5) +
-  facet_wrap(~County)+
-  labs(x="Year", y="Environmental Input Index")+
-  theme(plot.title=element_text(hjust=0.5, size = 21),
-        axis.text = element_text(size = 14),
-        axis.title.x = element_text(size = 17, vjust = -0.7), # vjust adjusts vertical space between plot & axis title
-        axis.title.y = element_text(size = 17, vjust = 3),
-        strip.background =element_rect(fill="gray94", colour = 'black', size =1), #change panel label color
-        strip.text = element_text(colour = 'black', size = 18),
-        panel.grid.major = element_blank(), #delete major grid lines
-        panel.grid.minor = element_blank(), #delete minor grid lines
-        panel.background = element_rect(fill = "transparent",colour = 'black', size = 1),
-        panel.spacing = unit(0.7, "lines"),
-        plot.background = element_rect(fill = "transparent",colour = NA),
-        plot.margin = unit(c(0,0,0.5,0.5), "cm"),
-        legend.position = 'none'
-  )
-
-zi2
-ggsave('figures/DEA/ZI Over Time by County.png', 
+ggsave('figures/ZI Over Time by Community.png', 
        width =  9, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -701,44 +627,9 @@ eqi1<-ggplot(resfinal, aes(x=Year, y=EQI))+
   )
 
 eqi1
-ggsave('figures/DEA/EQI Over Time by Community.png', 
+ggsave('figures/EQI Over Time by Community.png', 
        width =  10, height = 8, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
-
-##################by county
-#using package 'Rmisc' 
-res_countySUM <- summarySE(resfinal, measurevar="EQI", groupvars=c("Year","County"))
-res_countySUM
-
-eqi2<-ggplot(resfinal, aes(x=Year, y=EQI))+
-  geom_line( aes(group = Community, color = Community))+
-  scale_color_manual(values = mypalette) +
-  geom_line(data = res_countySUM, size =2, alpha = 0.7, aes(color = County), col = countypal) +
-  geom_point(data = res_countySUM, pch =1) +
-  geom_errorbar(data = res_countySUM,aes(ymin=EQI-se, ymax=EQI+se), width=.1, alpha = 0.5) +
-  facet_wrap(~County)+
-  labs(x="Year", y="Social-Ecological Productivity Index")+
-  theme(plot.title=element_text(hjust=0.5, size = 21),
-        axis.text = element_text(size = 14),
-        axis.title.x = element_text(size = 17, vjust = -0.7), # vjust adjusts vertical space between plot & axis title
-        axis.title.y = element_text(size = 17, vjust = 3),
-        strip.background =element_rect(fill="gray94", colour = 'black', size =1), #change panel label color
-        strip.text = element_text(colour = 'black', size = 18),
-        panel.grid.major = element_blank(), #delete major grid lines
-        panel.grid.minor = element_blank(), #delete minor grid lines
-        panel.background = element_rect(fill = "transparent",colour = 'black', size = 1),
-        panel.spacing = unit(0.7, "lines"),
-        plot.background = element_rect(fill = "transparent",colour = NA),
-        plot.margin = unit(c(0,0,0.5,0.5), "cm"),
-        legend.position = 'none'
-  )
-
-eqi2
-ggsave('figures/DEA/EQI Over Time by County.png', 
-       width =  9, height = 7, units = 'in', #w & h in inches
-       dpi = 300, bg = 'transparent')
-
-#################################################################################
 
 #################################################################################
 ############################# DEA CALCS for statewide dfs #######################
@@ -1023,11 +914,11 @@ temp4<-ggplot(resfinal, aes(x=Year, y=Value))+
   )
 
 temp4
-#ggsave('figures/DEA/Facetted Indices Over Time.png', 
+#ggsave('figures/Facetted Indices Over Time.png', 
  #      width =  11, height = 4.3, units = 'in', #w & h in inches
   #     dpi = 300, bg = 'transparent')
 
-ggsave('figures/DEA/Facetted Indices Over Time_ENSO.png', 
+ggsave('figures/Facetted Indices Over Time_ENSO.png', 
        width =  12, height = 4.4, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 #########################################################################################

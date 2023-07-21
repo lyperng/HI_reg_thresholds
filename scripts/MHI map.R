@@ -4,7 +4,6 @@
 # install and load libraries
 PKG <- c('tidyverse','ggspatial', 'ggrepel','mapdata', 'marmap', 'sf','tigris',
          'rnaturalearth','rnaturalearthdata', 'scales', 'raster','RColorBrewer')
-#c("ggplot2", 'ggmap', 'maps','usmap', 'ggsn', 'usmap', "RColorBrewer")
 # 'marmap' for visualizing marine data, including bathymetric contours
 # 'ggrepel' could be useful for making sure labels don't run into each other
 # but didnt need for this map
@@ -115,10 +114,6 @@ HIccd_wgs <- HIccd_wgs %>% mutate(County = case_when(
 
 HIccd_wgs$County[which(HIccd_wgs$County == 'NA')] <- NA
 
-#################################################
-
-
-
 ##################################################
 
 ######## plot MHI map with fishing comms (CCDs) marked and bathy contours #######
@@ -154,7 +149,7 @@ inset<-ggplot() +
         plot.margin = unit(c(-0.2,-0.2,-0.2,-0.2), "cm"),)
 inset
 
-######## plot MHI map ########
+######## plot basic MHI map ########
 
 ### add contours
 map_cont<- ggplot() +
@@ -197,7 +192,7 @@ map2<-map1 +
   theme(plot.title = element_text(hjust = 0.5, size = 28),              
         axis.title=element_text(size=22,face="plain"), #adjust size of axis titles
         axis.text=element_text(size=16, color = 'black'), #adjust font size of axis tick labels
-        legend.position = c(0.17, 0.48),  # manually adjust legend position
+        legend.position = c(0.17, 0.51),  # manually adjust legend position
         legend.background = element_blank(), # need to set this otherwise it is opaque
         legend.box.background = element_rect(color = 'black', fill=alpha("white", 0.4)),
         # set legend border, fill, transparency
@@ -253,7 +248,7 @@ map_scale <-map2 +
 
 map_scale
 
-ggsave('MHI map.png', 
+ggsave('figures/MHI basic map.png', 
        width =  10, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
 
@@ -394,6 +389,6 @@ map_scale <-map_eqi2 +
 
 map_scale
 
-ggsave('figures/DEA/MHI soc_eco_prod map.png', 
+ggsave('figures/MHI soc_eco_prod map.png', 
        width =  10, height = 7, units = 'in', #w & h in inches
        dpi = 300, bg = 'transparent')
